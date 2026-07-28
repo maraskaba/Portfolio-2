@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UI Kit — Román Paparella</title>
+  <meta name="description" content="Design system y guía de estilos del portfolio de Román Paparella.">
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    h1, h2, h3, h4, h5, h6, p, figure { margin: 0; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { border: none; cursor: pointer; background: none; font-family: inherit; }
+    code { font-family: 'Inter', sans-serif; }
+
+    :root {
+      --black:       #050505;
+      --white:       #ffffff;
+      --dark:        #141414;
+      --gray-bg:     #f7f7f7;
+      --gray-border: #f2f2f2;
+      --gray-mid:    #a3a3a3;
+      --green:       #0ea43b;
+      --max-w:       1040px;
+      --sidebar-w:   248px;
+      --content-w:   900px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── LAYOUT ──────────────────────────────── */
+    .kit-layout {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    /* ── SIDEBAR ─────────────────────────────── */
+    .kit-sidebar {
+      width: var(--sidebar-w);
+      flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 32px 22px;
+      border-right: 1px solid var(--gray-border);
+    }
+    .kit-sidebar-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 28px;
+      padding: 0 10px;
+    }
+    .kit-sidebar-title span {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gray-mid);
+      margin-top: 2px;
+    }
+    .kit-sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .kit-sidebar-link {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--gray-mid);
+      padding: 8px 10px;
+      border-radius: 8px;
+      transition: color .15s, background .15s;
+    }
+    .kit-sidebar-link:hover { color: var(--black); background: var(--gray-bg); }
+    .kit-sidebar-link.active { color: var(--black); background: var(--gray-bg); font-weight: 600; }
+    .kit-sidebar-back {
+      margin-top: 24px;
+      padding: 14px 10px 0;
+      border-top: 1px solid var(--gray-border);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-mid);
+      transition: color .15s;
+    }
+    .kit-sidebar-back:hover { color: var(--black); }
+
+    /* ── MAIN ────────────────────────────────── */
+    .kit-main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* ── INTRO ───────────────────────────────── */
+    .kit-intro {
+      max-width: var(--content-w);
+      padding: 56px 40px 48px;
+    }
+    .kit-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--gray-mid);
+      margin-bottom: 14px;
+    }
+    .kit-intro h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .kit-intro p {
+      font-size: 16px;
+      line-height: 1.65;
+      color: #6b6b6b;
+      max-width: 620px;
+    }
+
+    /* ── SECTION SCAFFOLDING ─────────────────── */
+    .kit-section {
+      max-width: var(--content-w);
+      padding: 48px 40px;
+      border-top: 1px solid var(--gray-border);
+    }
+    .kit-section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .kit-section-head h2 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .kit-section-head p {
+      font-size: 13.5px;
+      color: var(--gray-mid);
+      max-width: 420px;
+    }
+    .kit-block-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gray-mid);
+      margin-bottom: 14px;
+    }
+
+    /* ── COLOR SWATCHES ──────────────────────── */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+    }
+    .swatch {
+      border: 1px solid var(--gray-border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .swatch-color {
+      height: 80px;
+    }
+    .swatch-info {
+      padding: 12px 14px;
+    }
+    .swatch-name {
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .swatch-hex {
+      font-family: 'Inter', sans-serif;
+      font-size: 11.5px;
+      color: var(--gray-mid);
+      margin-top: 3px;
+    }
+
+    /* ── TYPE SPECIMENS ──────────────────────── */
+    .type-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--gray-border);
+      flex-wrap: wrap;
+    }
+    .type-row:last-child { border-bottom: none; }
+    .type-meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 11.5px;
+      color: var(--gray-mid);
+      white-space: nowrap;
+    }
+    .t-h1     { font-size: clamp(32px, 6vw, 60px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.08; }
+    .t-h2     { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.02em; }
+    .t-h3     { font-size: 32px; font-weight: 500; letter-spacing: -1.28px; line-height: 38.4px; }
+    .t-h4     { font-size: 18px; font-weight: 600; }
+    .t-body   { font-size: 16px; line-height: 1.65; color: #6b6b6b; max-width: 480px; }
+    .t-small  { font-size: 13px; color: var(--gray-mid); }
+    .t-label  { font-size: 11.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-mid); }
+
+    /* ── COMPONENT PREVIEW WRAPPER ───────────── */
+    .preview {
+      border: 1px solid var(--gray-border);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      background: var(--white);
+      margin-bottom: 40px;
+    }
+    .preview-dark {
+      background: var(--dark);
+    }
+    .preview:last-child { margin-bottom: 0; }
+
+    /* ── BUTTONS (copied from site) ──────────── */
+    .btn-inner {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      line-height: 1;
+      height: 1em;
+    }
+    .btn-top, .btn-bot {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+      height: 1em;
+      white-space: nowrap;
+      transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .btn:hover .btn-top, .btn:hover .btn-bot { transform: translateY(-100%); }
+
+    /* Sistema de botones: 2 estilos (primary/outline) × 2 tamaños (sm/lg) */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 600;
+      border-radius: 100px;
+    }
+    .btn-primary {
+      background: var(--black);
+      color: var(--white);
+    }
+    .btn-outline {
+      border: 1.5px solid var(--black);
+      color: var(--black);
+    }
+    .btn-outline-white {
+      border: 1.5px solid rgba(255,255,255,0.28);
+      color: var(--white);
+    }
+    .btn-sm {
+      padding: 9px 18px;
+      font-size: 13.5px;
+    }
+    .btn-lg {
+      padding: 13px 28px;
+      font-size: 14.5px;
+    }
+
+    /* ── TAG PILLS ────────────────────────────── */
+    .tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #eaf7ef;
+      color: var(--green);
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 5px 13px;
+      border-radius: 100px;
+    }
+    .tag-pill-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+    .tag-pill-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(14,164,59,0.18);
+      color: #2ecc71;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 5px 13px;
+      border-radius: 100px;
+    }
+    .tag-pill-dark-dot { width: 7px; height: 7px; border-radius: 50%; background: #2ecc71; }
+    .project-tag {
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: -0.64px;
+      line-height: 24.8px;
+      font-feature-settings: "cv05", "cv06", "cv10", "cv11";
+      color: var(--gray-mid);
+    }
+    .project-sep {
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: -0.64px;
+      line-height: 24.8px;
+      font-feature-settings: "cv05", "cv06", "cv10", "cv11";
+      color: #d0d0d0;
+    }
+
+    /* ── ICON BUTTON / SKILL ICON ────────────── */
+    .footer-icon-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      transition: background .15s;
+    }
+    .footer-icon-btn:hover { background: rgba(255,255,255,0.1); }
+    .skill-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      background: var(--gray-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .skill-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 15px 16px;
+      border-radius: 14px;
+      transition: background .15s;
+    }
+    .skill-row:hover { background: var(--gray-bg); }
+    .skill-label { font-size: 15px; font-weight: 500; color: var(--black); }
+
+    /* ── CARDS ────────────────────────────────── */
+    .kit-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .project-card {
+      display: block;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--gray-bg);
+      border: 1px solid var(--gray-border);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .project-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(5,5,5,0.08); }
+    .project-cover { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: linear-gradient(135deg,#e4e4e4,#f2f2f2); }
+    .project-info { padding: 20px 22px 24px; }
+    .project-name { font-size: 15.5px; font-weight: 600; color: var(--black); margin-bottom: 8px; line-height: 1.35; }
+    .project-tags { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+
+    .tcard {
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .tcard-quote { font-size: 14px; line-height: 1.72; color: rgba(255,255,255,0.65); }
+    .tcard-author { display: flex; align-items: center; gap: 12px; }
+    .tcard-avatar {
+      width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg,#3a3a3a,#1c1c1c);
+    }
+    .tcard-name { font-size: 14px; font-weight: 600; color: var(--white); line-height: 1.3; }
+    .tcard-role { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.3; }
+
+    /* ── NAV / FOOTER MINI PREVIEWS ──────────── */
+    .mini-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 12px 20px;
+      border: 1px solid var(--gray-border);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.9);
+    }
+    .mini-nav-logo { display: flex; align-items: center; gap: 10px; }
+    .mini-avatar { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg,#d8d8d8,#efefef); flex-shrink: 0; }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.35; }
+    .nav-name { font-size: 13px; font-weight: 600; color: var(--black); }
+    .nav-title { font-size: 11.5px; color: var(--gray-mid); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-link { font-size: 14px; font-weight: 500; color: var(--black); }
+    .nav-lang { font-size: 14px; font-weight: 500; color: var(--black); }
+
+    .footer-field-label { font-size: 11.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 7px; }
+    .footer-field-val { font-size: 14px; color: var(--white); }
+
+    /* ── RADIUS / SPACING TOKENS ─────────────── */
+    .token-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 20px;
+    }
+    .token-item { text-align: left; }
+    .radius-demo {
+      width: 100%;
+      height: 64px;
+      background: var(--gray-bg);
+      border: 1px solid var(--gray-border);
+      margin-bottom: 10px;
+    }
+    .token-name { font-size: 12.5px; font-weight: 600; }
+    .token-val { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--gray-mid); }
+
+    .space-demo {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      height: 90px;
+    }
+    .space-bar { background: var(--black); width: 24px; border-radius: 4px 4px 0 0; }
+
+    /* ── CODE SWATCH TABLE ───────────────────── */
+    .kit-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .kit-table th {
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gray-mid);
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .kit-table td {
+      padding: 12px;
+      border-bottom: 1px solid var(--gray-border);
+      vertical-align: middle;
+    }
+    .kit-table tr:last-child td { border-bottom: none; }
+
+    footer.kit-footer {
+      max-width: var(--content-w);
+      padding: 32px 40px 64px;
+      border-top: 1px solid var(--gray-border);
+    }
+    .kit-footer p { font-size: 12px; color: var(--gray-mid); }
+
+    @media (max-width: 900px) {
+      .kit-layout { flex-direction: column; }
+      .kit-sidebar {
+        width: 100%;
+        height: auto;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        padding: 14px 20px;
+        border-right: none;
+        border-bottom: 1px solid var(--gray-border);
+        background: rgba(255,255,255,0.9);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        overflow-x: auto;
+      }
+      .kit-sidebar-title { margin-bottom: 0; padding: 0; white-space: nowrap; }
+      .kit-sidebar-title span { display: inline; margin-top: 0; margin-left: 4px; }
+      .kit-sidebar-nav { flex-direction: row; }
+      .kit-sidebar-link { white-space: nowrap; }
+      .kit-sidebar-back {
+        margin-top: 0;
+        margin-left: auto;
+        padding: 0;
+        border-top: none;
+        white-space: nowrap;
+      }
+      .kit-intro, .kit-section, footer.kit-footer { padding-left: 24px; padding-right: 24px; }
+    }
+
+    @media (max-width: 640px) {
+      .kit-section-head { flex-direction: column; }
+      .mini-nav { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="kit-layout">
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="kit-sidebar">
+      <div class="kit-sidebar-title">UI Kit <span>Román Paparella</span></div>
+      <nav class="kit-sidebar-nav">
+        <a href="#colores" class="kit-sidebar-link">Colores</a>
+        <a href="#tipografia" class="kit-sidebar-link">Tipografía</a>
+        <a href="#botones" class="kit-sidebar-link">Botones</a>
+        <a href="#tags" class="kit-sidebar-link">Tags</a>
+        <a href="#tarjetas" class="kit-sidebar-link">Tarjetas</a>
+        <a href="#navegacion" class="kit-sidebar-link">Navegación</a>
+        <a href="#iconos" class="kit-sidebar-link">Iconos</a>
+        <a href="#espaciado" class="kit-sidebar-link">Espaciado</a>
+      </nav>
+      <a href="./index.html" class="kit-sidebar-back">← Ver sitio</a>
+    </aside>
+
+    <main class="kit-main">
+
+  <!-- ── INTRO ── -->
+  <section class="kit-intro">
+    <p class="kit-eyebrow">DESIGN SYSTEM</p>
+    <h1>Guía de estilos</h1>
+    <p>Documentación de los tokens visuales y componentes usados en el portfolio: color, tipografía, botones, tags, tarjetas, navegación e iconografía. Sirve de referencia para mantener consistencia al agregar nuevas secciones.</p>
+  </section>
+
+  <!-- ── COLORES ── -->
+  <section class="kit-section" id="colores">
+    <div class="kit-section-head">
+      <h2>Colores</h2>
+      <p>Paleta base: neutros para texto y fondo, un acento verde para estados destacados.</p>
+    </div>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#050505"></div>
+        <div class="swatch-info"><div class="swatch-name">Black</div><div class="swatch-hex">--black · #050505</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#ffffff;border-bottom:1px solid #f2f2f2"></div>
+        <div class="swatch-info"><div class="swatch-name">White</div><div class="swatch-hex">--white · #ffffff</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#141414"></div>
+        <div class="swatch-info"><div class="swatch-name">Dark</div><div class="swatch-hex">--dark · #141414</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#f7f7f7"></div>
+        <div class="swatch-info"><div class="swatch-name">Gray BG</div><div class="swatch-hex">--gray-bg · #f7f7f7</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#f2f2f2"></div>
+        <div class="swatch-info"><div class="swatch-name">Gray Border</div><div class="swatch-hex">--gray-border · #f2f2f2</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#a3a3a3"></div>
+        <div class="swatch-info"><div class="swatch-name">Gray Mid</div><div class="swatch-hex">--gray-mid · #a3a3a3</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#6b6b6b"></div>
+        <div class="swatch-info"><div class="swatch-name">Body text</div><div class="swatch-hex">#6b6b6b</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0ea43b"></div>
+        <div class="swatch-info"><div class="swatch-name">Green (acento)</div><div class="swatch-hex">--green · #0ea43b</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#2ecc71"></div>
+        <div class="swatch-info"><div class="swatch-name">Green (dark mode)</div><div class="swatch-hex">#2ecc71</div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#eaf7ef"></div>
+        <div class="swatch-info"><div class="swatch-name">Green BG</div><div class="swatch-hex">#eaf7ef</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TIPOGRAFÍA ── -->
+  <section class="kit-section" id="tipografia">
+    <div class="kit-section-head">
+      <h2>Tipografía</h2>
+      <p>Inter en todos los pesos (400/500/600/700), incluyendo labels y microcopy técnico.</p>
+    </div>
+
+    <p class="kit-block-label">Familia</p>
+    <div class="type-row">
+      <span style="font-size:20px;">Inter — The quick brown fox</span>
+      <span class="type-meta">font-family: 'Inter', sans-serif</span>
+    </div>
+
+    <p class="kit-block-label" style="margin-top:36px;">Escala</p>
+    <div class="type-row">
+      <span class="t-h1">Headline 1</span>
+      <span class="type-meta">clamp(42px,7vw,76px) · 700 · -0.025em</span>
+    </div>
+    <div class="type-row">
+      <span class="t-h2">Headline 2</span>
+      <span class="type-meta">clamp(26px,4vw,38px) · 700 · -0.02em</span>
+    </div>
+    <div class="type-row">
+      <span class="t-h3">Headline 3</span>
+      <span class="type-meta">32px · 500 · -1.28px · line-height 38.4px</span>
+    </div>
+    <div class="type-row">
+      <span class="t-h4">Headline 4 — nombre de proyecto / card title</span>
+      <span class="type-meta">18px · 600</span>
+    </div>
+    <div class="type-row">
+      <span class="t-body">Texto de cuerpo — hero-desc, clients-label, párrafos introductorios.</span>
+      <span class="type-meta">16px · 400 · line-height 1.65</span>
+    </div>
+    <div class="type-row">
+      <span class="t-small">Texto secundario / meta</span>
+      <span class="type-meta">13px · 400 · gray-mid</span>
+    </div>
+    <div class="type-row">
+      <span class="t-label">Field Label</span>
+      <span class="type-meta">11.5px · 600 · uppercase · 0.06em</span>
+    </div>
+  </section>
+
+  <!-- ── BOTONES ── -->
+  <section class="kit-section" id="botones">
+    <div class="kit-section-head">
+      <h2>Botones</h2>
+      <p>2 estilos (primary / outline) × 2 tamaños (sm / lg). Todos comparten radio 100px (pill) y una micro-animación de dos líneas apiladas en hover.</p>
+    </div>
+
+    <p class="kit-block-label">Primary — fondo claro</p>
+    <div class="preview">
+      <a href="#" class="btn btn-primary btn-sm">
+        <span class="btn-inner">
+          <span class="btn-top">Descargar CV</span>
+          <span class="btn-bot" aria-hidden="true">Descargar CV</span>
+        </span>
+      </a>
+      <a href="#" class="btn btn-primary btn-lg">
+        <span class="btn-inner">
+          <span class="btn-top">Descargar CV</span>
+          <span class="btn-bot" aria-hidden="true">Descargar CV</span>
+        </span>
+      </a>
+    </div>
+
+    <p class="kit-block-label">Outline — fondo claro</p>
+    <div class="preview">
+      <a href="#" class="btn btn-outline btn-sm">
+        <span class="btn-inner">
+          <span class="btn-top">Ver todos los proyectos</span>
+          <span class="btn-bot" aria-hidden="true">Ver todos los proyectos</span>
+        </span>
+      </a>
+      <a href="#" class="btn btn-outline btn-lg">
+        <span class="btn-inner">
+          <span class="btn-top">Ver todos los proyectos</span>
+          <span class="btn-bot" aria-hidden="true">Ver todos los proyectos</span>
+        </span>
+      </a>
+    </div>
+
+    <p class="kit-block-label">Outline — fondo oscuro</p>
+    <div class="preview preview-dark">
+      <a href="#" class="btn btn-outline-white btn-sm">
+        <span class="btn-inner">
+          <span class="btn-top">Ver más en LinkedIn</span>
+          <span class="btn-bot" aria-hidden="true">Ver más en LinkedIn</span>
+        </span>
+      </a>
+      <a href="#" class="btn btn-outline-white btn-lg">
+        <span class="btn-inner">
+          <span class="btn-top">Ver más en LinkedIn</span>
+          <span class="btn-bot" aria-hidden="true">Ver más en LinkedIn</span>
+        </span>
+      </a>
+    </div>
+
+    <table class="kit-table">
+      <tr><th>Clase</th><th>Tipo</th><th>Estilo</th></tr>
+      <tr><td>.btn-primary</td><td>Estilo</td><td>fondo negro, texto blanco</td></tr>
+      <tr><td>.btn-outline</td><td>Estilo</td><td>borde 1.5px negro, texto negro (fondo claro)</td></tr>
+      <tr><td>.btn-outline-white</td><td>Estilo</td><td>borde 1.5px blanco 28%, texto blanco (fondo oscuro)</td></tr>
+      <tr><td>.btn-sm</td><td>Tamaño</td><td>padding 9px 18px · font-size 13.5px — CTAs en nav</td></tr>
+      <tr><td>.btn-lg</td><td>Tamaño</td><td>padding 13px 28px · font-size 14.5px — CTAs de sección</td></tr>
+    </table>
+  </section>
+
+  <!-- ── TAGS / PILLS ── -->
+  <section class="kit-section" id="tags">
+    <div class="kit-section-head">
+      <h2>Tags &amp; Pills</h2>
+      <p>Etiquetas de estado y metadata de proyectos.</p>
+    </div>
+    <div class="preview">
+      <div class="tag-pill"><span class="tag-pill-dot"></span>Mis skills</div>
+      <span class="project-tag">Blink.la</span>
+      <span class="project-sep">·</span>
+      <span class="project-tag">Diseño de producto</span>
+    </div>
+    <div class="preview preview-dark">
+      <div class="tag-pill-dark"><span class="tag-pill-dark-dot"></span>Testimonios</div>
+    </div>
+  </section>
+
+  <!-- ── TARJETAS ── -->
+  <section class="kit-section" id="tarjetas">
+    <div class="kit-section-head">
+      <h2>Tarjetas</h2>
+      <p>Project card (fondo claro) y testimonial card (fondo oscuro).</p>
+    </div>
+
+    <p class="kit-block-label">Project card</p>
+    <div class="kit-card-grid" style="margin-bottom:40px;">
+      <a href="#" class="project-card">
+        <div class="project-cover"></div>
+        <div class="project-info">
+          <h3 class="project-name">Nombre del proyecto</h3>
+          <div class="project-tags">
+            <span class="project-tag">Cliente</span>
+            <span class="project-sep">·</span>
+            <span class="project-tag">Disciplina</span>
+          </div>
+        </div>
+      </a>
+      <a href="#" class="project-card">
+        <div class="project-cover"></div>
+        <div class="project-info">
+          <h3 class="project-name">Otro proyecto</h3>
+          <div class="project-tags">
+            <span class="project-tag">Cliente</span>
+            <span class="project-sep">·</span>
+            <span class="project-tag">UX</span>
+            <span class="project-sep">·</span>
+            <span class="project-tag">Research</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <p class="kit-block-label">Testimonial card</p>
+    <div class="preview preview-dark" style="border-radius:16px;">
+      <div class="tcard" style="max-width:320px;">
+        <p class="tcard-quote">Cita o testimonio de un colega describiendo la colaboración...</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar"></div>
+          <div>
+            <div class="tcard-name">Nombre Apellido</div>
+            <div class="tcard-role">Cargo · Empresa</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NAVEGACIÓN / FOOTER ── -->
+  <section class="kit-section" id="navegacion">
+    <div class="kit-section-head">
+      <h2>Navegación &amp; Footer</h2>
+      <p>Header sticky con blur y footer oscuro con datos de contacto.</p>
+    </div>
+
+    <p class="kit-block-label">Nav</p>
+    <div class="preview" style="padding:0;">
+      <div class="mini-nav">
+        <div class="mini-nav-logo">
+          <div class="mini-avatar"></div>
+          <div class="nav-logo-text">
+            <span class="nav-name">Román Paparella</span>
+            <span class="nav-title">Diseñador de Producto</span>
+          </div>
+        </div>
+        <div class="nav-right">
+          <span class="nav-link">Proyectos</span>
+          <span class="nav-lang">ES</span>
+          <a href="#" class="btn btn-primary btn-sm">
+            <span class="btn-inner">
+              <span class="btn-top">Descargar CV</span>
+              <span class="btn-bot" aria-hidden="true">Descargar CV</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p class="kit-block-label">Footer</p>
+    <div class="preview preview-dark" style="flex-direction:column;align-items:stretch;border-radius:16px;">
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;">
+        <div style="display:flex;gap:40px;flex-wrap:wrap;">
+          <div>
+            <p class="footer-field-label">Email</p>
+            <a href="#" class="footer-field-val">romanpaparella@gmail.com</a>
+          </div>
+          <div>
+            <p class="footer-field-label">Ubicación</p>
+            <p class="footer-field-val">Ciudad de Buenos Aires, Argentina</p>
+          </div>
+        </div>
+        <div class="footer-icon-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ICONOS ── -->
+  <section class="kit-section" id="iconos">
+    <div class="kit-section-head">
+      <h2>Iconografía</h2>
+      <p>SVG lineales, stroke 1.5px, sin relleno. Contenedor de 38×38px con esquinas de 11px para skills.</p>
+    </div>
+    <div class="kit-card-grid">
+      <div class="skill-row">
+        <div class="skill-icon">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#050505" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="16" height="16" rx="3"/><path d="M2 7h16M7 7v11"/>
+          </svg>
+        </div>
+        <span class="skill-label">Wireframing &amp; Pixel-perfect UI</span>
+      </div>
+      <div class="skill-row">
+        <div class="skill-icon">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#050505" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/>
+          </svg>
+        </div>
+        <span class="skill-label">UX Research</span>
+      </div>
+      <div class="skill-row">
+        <div class="skill-icon">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#050505" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="7" height="7" rx="1.5"/><rect x="11" y="2" width="7" height="7" rx="1.5"/>
+            <rect x="2" y="11" width="7" height="7" rx="1.5"/><rect x="11" y="11" width="7" height="7" rx="1.5"/>
+          </svg>
+        </div>
+        <span class="skill-label">Design Systems</span>
+      </div>
+      <div class="skill-row">
+        <div class="skill-icon">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="#050505" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="5.5" cy="10" r="3.5"/><circle cx="14.5" cy="10" r="3.5"/><path d="M9 10h2"/>
+          </svg>
+        </div>
+        <span class="skill-label">Colaboración entre equipos</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ESPACIADO / RADIOS ── -->
+  <section class="kit-section" id="espaciado">
+    <div class="kit-section-head">
+      <h2>Espaciado &amp; radios</h2>
+      <p>Contenedor centrado a 1040px. Radios consistentes por tipo de elemento.</p>
+    </div>
+
+    <p class="kit-block-label">Border radius</p>
+    <div class="token-grid" style="margin-bottom:40px;">
+      <div class="token-item">
+        <div class="radius-demo" style="border-radius:100px;"></div>
+        <div class="token-name">Pill / botones</div>
+        <div class="token-val">100px</div>
+      </div>
+      <div class="token-item">
+        <div class="radius-demo" style="border-radius:20px;"></div>
+        <div class="token-name">Cards</div>
+        <div class="token-val">20px</div>
+      </div>
+      <div class="token-item">
+        <div class="radius-demo" style="border-radius:14px;"></div>
+        <div class="token-name">Skill row / mini nav</div>
+        <div class="token-val">14px</div>
+      </div>
+      <div class="token-item">
+        <div class="radius-demo" style="border-radius:11px;"></div>
+        <div class="token-name">Skill icon</div>
+        <div class="token-val">11px</div>
+      </div>
+      <div class="token-item">
+        <div class="radius-demo" style="border-radius:50%;"></div>
+        <div class="token-name">Avatares / icon btn</div>
+        <div class="token-val">50%</div>
+      </div>
+    </div>
+
+    <p class="kit-block-label">Contenedor</p>
+    <table class="kit-table">
+      <tr><th>Token</th><th>Valor</th><th>Uso</th></tr>
+      <tr><td>--max-w</td><td>1040px</td><td>Ancho máximo de todas las secciones del sitio</td></tr>
+      <tr><td>padding lateral</td><td>24px</td><td>Padding horizontal consistente en mobile/desktop</td></tr>
+      <tr><td>padding vertical (sección)</td><td>88px</td><td>Separación entre bloques grandes (Projects, Skills, Testimonials)</td></tr>
+      <tr><td>gap grid</td><td>16px</td><td>Separación entre cards en grillas</td></tr>
+    </table>
+  </section>
+
+  <footer class="kit-footer">
+    <p>UI Kit generado a partir de los estilos de index.html — actualizar aquí si cambian los tokens del sitio.</p>
+  </footer>
+
+    </main>
+  </div>
+
+  <script>
+    var links = document.querySelectorAll('.kit-sidebar-link');
+    var sections = Array.prototype.map.call(links, function (link) {
+      return document.querySelector(link.getAttribute('href'));
+    });
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        links.forEach(function (l) { l.classList.remove('active'); });
+        var active = document.querySelector('.kit-sidebar-link[href="#' + entry.target.id + '"]');
+        if (active) active.classList.add('active');
+      });
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+    sections.forEach(function (s) { if (s) observer.observe(s); });
+  </script>
+
+</body>
+</html>

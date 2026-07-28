@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; }
@@ -98,13 +98,33 @@
       font-weight: 500;
       color: var(--black);
     }
-    .nav-cta {
+    /* ── BUTTONS ─────────────────────────────── */
+    /* Sistema de botones: 2 estilos (primary/outline) × 2 tamaños (sm/lg) */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 600;
+      border-radius: 100px;
+    }
+    .btn-primary {
       background: var(--black);
       color: var(--white);
-      font-size: 13.5px;
-      font-weight: 600;
+    }
+    .btn-outline {
+      border: 1.5px solid var(--black);
+      color: var(--black);
+    }
+    .btn-outline-white {
+      border: 1.5px solid rgba(255,255,255,0.28);
+      color: var(--white);
+    }
+    .btn-sm {
       padding: 9px 18px;
-      border-radius: 100px;
+      font-size: 13.5px;
+    }
+    .btn-lg {
+      padding: 13px 28px;
+      font-size: 14.5px;
     }
 
     /* ── HERO ────────────────────────────────── */
@@ -116,8 +136,8 @@
       position: relative;
     }
     .hero-photo {
-      width: 88px;
-      height: 88px;
+      width: 132px;
+      height: 132px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center top;
@@ -147,16 +167,19 @@
     }
 
     /* ── CLIENTS ─────────────────────────────── */
+    .clients-bg {
+      background: var(--gray-bg);
+    }
     .clients {
       max-width: var(--max-w);
       margin: 0 auto;
-      padding: 44px 24px;
+      padding: 72px 24px;
     }
     .clients-label {
       text-align: center;
-      font-family: 'Fragment Mono', monospace;
-      font-size: 12px;
-      color: var(--gray-mid);
+      font-size: 16px;
+      line-height: 1.65;
+      color: #6b6b6b;
       margin-bottom: 32px;
     }
     .clients-track-wrapper {
@@ -183,7 +206,6 @@
       width: max-content;
       animation: marquee 22s linear infinite;
     }
-    .clients-track:hover { animation-play-state: paused; }
     /*
       Cada imagen lleva su propio margin-right.
       Así el ancho total incluye el espaciado trailing de TODOS
@@ -243,7 +265,7 @@
       padding: 20px 22px 24px;
     }
     .project-name {
-      font-size: 15.5px;
+      font-size: 18px;
       font-weight: 600;
       color: var(--black);
       margin-bottom: 8px;
@@ -256,26 +278,24 @@
       flex-wrap: wrap;
     }
     .project-tag {
-      font-size: 12px;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: -0.64px;
+      line-height: 24.8px;
+      font-feature-settings: "cv05", "cv06", "cv10", "cv11";
       color: var(--gray-mid);
     }
     .project-sep {
-      font-size: 12px;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: -0.64px;
+      line-height: 24.8px;
+      font-feature-settings: "cv05", "cv06", "cv10", "cv11";
       color: #d0d0d0;
     }
     .projects-cta {
       text-align: center;
       margin-top: 48px;
-    }
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      border: 1.5px solid var(--black);
-      border-radius: 100px;
-      padding: 12px 26px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--black);
     }
 
     /* ── SKILLS ──────────────────────────────── */
@@ -422,16 +442,6 @@
       text-align: center;
       margin-top: 56px;
     }
-    .btn-outline-white {
-      display: inline-flex;
-      align-items: center;
-      border: 1.5px solid rgba(255,255,255,0.28);
-      border-radius: 100px;
-      padding: 12px 26px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--white);
-    }
 
     /* ── FOOTER ──────────────────────────────── */
     .footer-bg {
@@ -518,13 +528,8 @@
       white-space: nowrap;
       transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .nav-cta:hover .btn-top,
-    .btn-outline:hover .btn-top,
-    .btn-outline-white:hover .btn-top { transform: translateY(-100%); }
-
-    .nav-cta:hover .btn-bot,
-    .btn-outline:hover .btn-bot,
-    .btn-outline-white:hover .btn-bot { transform: translateY(-100%); }
+    .btn:hover .btn-top,
+    .btn:hover .btn-bot { transform: translateY(-100%); }
 
     /* ── RESPONSIVE ──────────────────────────── */
     @media (max-width: 720px) {
@@ -534,6 +539,27 @@
       .footer-top         { flex-direction: column; gap: 28px; }
       .footer-contacts    { flex-direction: column; gap: 24px; }
       .nav-lang           { display: none; }
+
+      /* logos: de marquee a grilla estática */
+      .clients-track-wrapper {
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
+      .clients-track {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        gap: 32px 24px;
+        animation: none;
+      }
+      .clients-track img {
+        margin-right: 0;
+      }
+      .clients-track img:nth-child(n+7) {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -552,7 +578,7 @@
       <div class="nav-right">
         <a href="./proyectos" class="nav-link">Proyectos</a>
         <span class="nav-lang">ES</span>
-        <a href="#" class="nav-cta">
+        <a href="#" class="btn btn-primary btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Descargar CV</span>
             <span class="btn-bot" aria-hidden="true">Descargar CV</span>
@@ -574,27 +600,29 @@
   <hr class="divider">
 
   <!-- ── CLIENTS ── -->
-  <section class="clients">
-    <p class="clients-label">Algunos de los clientes con los que trabajé</p>
-    <div class="clients-track-wrapper">
-      <div class="clients-track" aria-hidden="true">
-        <!-- set 1 -->
-        <img src="https://framerusercontent.com/images/eDH2FuE1Y25JF08udJFXqIWr0.svg" alt="Client" height="24">
-        <img src="https://framerusercontent.com/images/Er1PAc5fBnvF87FleDOftIghKYE.svg" alt="Client" height="24">
-        <img src="https://framerusercontent.com/images/Q6cXhodHqfwqx8wpTQHB5AtGits.svg" alt="Client" height="24">
-        <img src="https://framerusercontent.com/images/8hNGyIlCEjh65eD0jJsDhQhyuXU.svg" alt="Client" height="24">
-        <img src="https://framerusercontent.com/images/MLjsHrkWld0mQfItiCsdvj0QvXE.svg" alt="Client" height="24">
-        <img src="https://framerusercontent.com/images/Q5wSsyqqKJN3w2JO489BwS8DhGI.svg" alt="Client" height="24">
-        <!-- set 2 — duplicado para loop seamless -->
-        <img src="https://framerusercontent.com/images/eDH2FuE1Y25JF08udJFXqIWr0.svg" alt="" height="24">
-        <img src="https://framerusercontent.com/images/Er1PAc5fBnvF87FleDOftIghKYE.svg" alt="" height="24">
-        <img src="https://framerusercontent.com/images/Q6cXhodHqfwqx8wpTQHB5AtGits.svg" alt="" height="24">
-        <img src="https://framerusercontent.com/images/8hNGyIlCEjh65eD0jJsDhQhyuXU.svg" alt="" height="24">
-        <img src="https://framerusercontent.com/images/MLjsHrkWld0mQfItiCsdvj0QvXE.svg" alt="" height="24">
-        <img src="https://framerusercontent.com/images/Q5wSsyqqKJN3w2JO489BwS8DhGI.svg" alt="" height="24">
+  <div class="clients-bg">
+    <section class="clients">
+      <p class="clients-label">Algunos de los clientes con los que trabajé</p>
+      <div class="clients-track-wrapper">
+        <div class="clients-track" aria-hidden="true">
+          <!-- set 1 -->
+          <img src="https://framerusercontent.com/images/eDH2FuE1Y25JF08udJFXqIWr0.svg" alt="Client" height="24">
+          <img src="https://framerusercontent.com/images/Er1PAc5fBnvF87FleDOftIghKYE.svg" alt="Client" height="24">
+          <img src="https://framerusercontent.com/images/Q6cXhodHqfwqx8wpTQHB5AtGits.svg" alt="Client" height="24">
+          <img src="https://framerusercontent.com/images/8hNGyIlCEjh65eD0jJsDhQhyuXU.svg" alt="Client" height="24">
+          <img src="https://framerusercontent.com/images/MLjsHrkWld0mQfItiCsdvj0QvXE.svg" alt="Client" height="24">
+          <img src="https://framerusercontent.com/images/Q5wSsyqqKJN3w2JO489BwS8DhGI.svg" alt="Client" height="24">
+          <!-- set 2 — duplicado para loop seamless -->
+          <img src="https://framerusercontent.com/images/eDH2FuE1Y25JF08udJFXqIWr0.svg" alt="" height="24">
+          <img src="https://framerusercontent.com/images/Er1PAc5fBnvF87FleDOftIghKYE.svg" alt="" height="24">
+          <img src="https://framerusercontent.com/images/Q6cXhodHqfwqx8wpTQHB5AtGits.svg" alt="" height="24">
+          <img src="https://framerusercontent.com/images/8hNGyIlCEjh65eD0jJsDhQhyuXU.svg" alt="" height="24">
+          <img src="https://framerusercontent.com/images/MLjsHrkWld0mQfItiCsdvj0QvXE.svg" alt="" height="24">
+          <img src="https://framerusercontent.com/images/Q5wSsyqqKJN3w2JO489BwS8DhGI.svg" alt="" height="24">
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <hr class="divider">
 
@@ -603,9 +631,37 @@
     <h2 class="section-title">Proyectos destacados</h2>
     <div class="projects-grid">
 
+      <a href="./proyectos/vendor-onboarding" class="project-card">
+        <img class="project-cover"
+             src="images/projects/vendor-onboarding/cover.png"
+             alt="Automatización de alta de proveedores">
+        <div class="project-info">
+          <h3 class="project-name">Automatización de alta de proveedores</h3>
+          <div class="project-tags">
+            <span class="project-tag">Blink.la</span>
+            <span class="project-sep">·</span>
+            <span class="project-tag">Diseño UX/UI / Pruebas de usabilidad</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="./proyectos/blink-content-studio" class="project-card">
+        <img class="project-cover"
+             src="images/projects/blink-content-studio/cover.png"
+             alt="Blink Content Studio">
+        <div class="project-info">
+          <h3 class="project-name">Blink Content Studio</h3>
+          <div class="project-tags">
+            <span class="project-tag">Blink.la</span>
+            <span class="project-sep">·</span>
+            <span class="project-tag">Diseño de producto</span>
+          </div>
+        </div>
+      </a>
+
       <a href="./proyectos/mkr" class="project-card">
         <img class="project-cover"
-             src="images/9Jxh5TtH4PQWSZ6VGDGzWPUlRFQ.avif"
+             src="images/projects/mkr/cover.png"
              alt="Automatización de ads a escala">
         <div class="project-info">
           <h3 class="project-name">Automatización de ads a escala</h3>
@@ -617,42 +673,26 @@
         </div>
       </a>
 
-      <a href="./proyectos/vendor-onboarding" class="project-card">
+      <a href="./proyectos/remax" class="project-card">
         <img class="project-cover"
-             src="images/dbAxEhdg0UVbWW0CIfGC64nX0o.avif"
-             alt="Portal de onboarding para proveedores">
-        <div class="project-info">
-          <h3 class="project-name">Portal de onboarding para proveedores</h3>
-          <div class="project-tags">
-            <span class="project-tag">Blink.la</span>
-            <span class="project-sep">·</span>
-            <span class="project-tag">kys</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="./proyectos" class="project-card">
-        <img class="project-cover"
-             src="images/Scwu1tZN9kixcrnd28OSw3IkWc0.avif"
+             src="images/projects/remax/cover.png"
              alt="Sistema de gestión de leads">
         <div class="project-info">
           <h3 class="project-name">Sistema de gestión de leads</h3>
           <div class="project-tags">
             <span class="project-tag">Remax</span>
             <span class="project-sep">·</span>
-            <span class="project-tag">Diseño de producto</span>
-            <span class="project-sep">·</span>
-            <span class="project-tag">Pruebas de usabilidad</span>
+            <span class="project-tag">Diseño de producto / Pruebas de usabilidad</span>
           </div>
         </div>
       </a>
 
       <a href="./proyectos/booking" class="project-card">
         <img class="project-cover"
-             src="images/erBsgIh5hXWiOmlybYqsnpTEe5U.avif"
-             alt="In-House Booking">
+             src="images/projects/booking/cover.png"
+             alt="Monitoreo y conciliación de horas presupuestadas">
         <div class="project-info">
-          <h3 class="project-name">In-House Booking</h3>
+          <h3 class="project-name">Monitoreo y conciliación de horas presupuestadas</h3>
           <div class="project-tags">
             <span class="project-tag">Blink.la</span>
             <span class="project-sep">·</span>
@@ -661,9 +701,51 @@
         </div>
       </a>
 
+      <a href="./proyectos/movistar-login" class="project-card">
+        <img class="project-cover"
+             src="images/projects/movistar-login/cover.png"
+             alt="Validación de registro y login unificado">
+        <div class="project-info">
+          <h3 class="project-name">Validación de registro y login unificado</h3>
+          <div class="project-tags">
+            <span class="project-tag">Movistar</span>
+            <span class="project-sep">·</span>
+            <span class="project-tag">Pruebas de usabilidad / Prototipado</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="./proyectos/ypf" class="project-card">
+        <img class="project-cover"
+             src="images/projects/ypf/cover.png"
+             alt="Sistema de gestión de incidentes ambientales">
+        <div class="project-info">
+          <h3 class="project-name">Sistema de gestión de incidentes ambientales</h3>
+          <div class="project-tags">
+            <span class="project-tag">YPF</span>
+            <span class="project-sep">·</span>
+            <span class="project-tag">Diseño UX</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="./proyectos/zurich" class="project-card">
+        <img class="project-cover"
+             src="images/projects/zurich/cover.png"
+             alt="Rediseño de la sección Inversiones">
+        <div class="project-info">
+          <h3 class="project-name">Rediseño de la sección Inversiones</h3>
+          <div class="project-tags">
+            <span class="project-tag">Zurich</span>
+            <span class="project-sep">·</span>
+            <span class="project-tag">Diseño UI / Front-End</span>
+          </div>
+        </div>
+      </a>
+
     </div>
     <div class="projects-cta">
-      <a href="./proyectos" class="btn-outline">
+      <a href="./proyectos" class="btn btn-outline btn-lg">
         <span class="btn-inner">
           <span class="btn-top">Ver todos los proyectos</span>
           <span class="btn-bot" aria-hidden="true">Ver todos los proyectos</span>
@@ -821,7 +903,7 @@
       </div>
 
       <div class="testimonials-cta">
-        <a href="https://www.linkedin.com/in/romanpaparella" target="_blank" rel="noopener" class="btn-outline-white">
+        <a href="https://www.linkedin.com/in/romanpaparella" target="_blank" rel="noopener" class="btn btn-outline-white btn-lg">
           <span class="btn-inner">
             <span class="btn-top">Ver más en LinkedIn <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
             <span class="btn-bot" aria-hidden="true">Ver más en LinkedIn <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>

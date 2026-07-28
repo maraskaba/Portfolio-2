@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monitoreo y conciliación de horas presupuestadas — Román Paparella</title>
+  <meta name="description" content="Proyecto de diseño de producto: Monitoreo y conciliación de horas presupuestadas, por Román Paparella.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    h1, p, figure { margin: 0; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { border: none; cursor: pointer; background: none; }
+
+    :root {
+      --black:       #050505;
+      --white:       #ffffff;
+      --gray-bg:     #f7f7f7;
+      --gray-border: #f2f2f2;
+      --gray-mid:    #a3a3a3;
+      --max-w:       1040px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ─────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-avatar {
+      width: 34px; height: 34px; border-radius: 50%;
+      object-fit: cover; object-position: center top; flex-shrink: 0;
+    }
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.35; }
+    .nav-name { font-size: 13px; font-weight: 600; color: var(--black); }
+    .nav-title { font-size: 11.5px; color: var(--gray-mid); }
+    .nav-right { display: flex; align-items: center; gap: 28px; }
+    .nav-link { font-size: 14px; font-weight: 500; color: var(--black); transition: opacity .15s; }
+    .nav-link:hover { opacity: .6; }
+    .nav-lang { font-size: 14px; font-weight: 500; color: var(--black); }
+
+    /* ── BUTTON ──────────────────────────────── */
+    .btn { display: inline-flex; align-items: center; font-weight: 600; border-radius: 100px; }
+    .btn-primary { background: var(--black); color: var(--white); }
+    .btn-sm { padding: 9px 18px; font-size: 13.5px; }
+    .btn-inner { display: flex; flex-direction: column; overflow: hidden; line-height: 1; height: 1em; }
+    .btn-top, .btn-bot { display: flex; align-items: center; gap: 8px; flex-shrink: 0; height: 1em; white-space: nowrap; transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1); }
+    .btn:hover .btn-top, .btn:hover .btn-bot { transform: translateY(-100%); }
+
+    /* ── DIVIDER ─────────────────────────────── */
+    .divider { border: none; border-top: 1px solid var(--gray-border); margin: 0; }
+
+    /* ── PROJECT HEADER ──────────────────────── */
+    .project-hero {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 56px 24px 40px;
+    }
+    .project-hero h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+    }
+    .project-cover-wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px 88px;
+    }
+    .project-cover-img {
+      width: 100%;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img class="nav-avatar" src="/images/KZLTNcn4RvS9l4sNroCNukVzk.avif" alt="Román Paparella">
+        <div class="nav-logo-text">
+          <span class="nav-name">Román Paparella</span>
+          <span class="nav-title">Diseñador de Producto</span>
+        </div>
+      </a>
+      <div class="nav-right">
+        <a href="/proyectos" class="nav-link">Proyectos</a>
+        <span class="nav-lang">ES</span>
+        <a href="#" class="btn btn-primary btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">Descargar CV</span>
+            <span class="btn-bot" aria-hidden="true">Descargar CV</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <hr class="divider">
+
+  <!-- ── PROJECT ── -->
+  <section class="project-hero">
+    <h1>Monitoreo y conciliación de horas presupuestadas</h1>
+  </section>
+  <div class="project-cover-wrap">
+    <img class="project-cover-img" src="/images/projects/booking/cover.png" alt="Monitoreo y conciliación de horas presupuestadas">
+  </div>
+
+</body>
+</html>
