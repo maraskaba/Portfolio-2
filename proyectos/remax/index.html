@@ -9,95 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
-    h1, p, figure { margin: 0; }
-    img { display: block; max-width: 100%; }
-    a { text-decoration: none; color: inherit; }
-    button { border: none; cursor: pointer; background: none; }
-
-    :root {
-      --black:       #050505;
-      --white:       #ffffff;
-      --gray-bg:     #f7f7f7;
-      --gray-border: #f2f2f2;
-      --gray-mid:    #a3a3a3;
-      --max-w:       1040px;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--white);
-      color: var(--black);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ── NAV ─────────────────────────────────── */
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255,255,255,0.88);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--gray-border);
-    }
-    .nav-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 10px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav-logo { display: flex; align-items: center; gap: 10px; }
-    .nav-avatar {
-      width: 34px; height: 34px; border-radius: 50%;
-      object-fit: cover; object-position: center top; flex-shrink: 0;
-    }
-    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.35; }
-    .nav-name { font-size: 13px; font-weight: 600; color: var(--black); }
-    .nav-title { font-size: 11.5px; color: var(--gray-mid); }
-    .nav-right { display: flex; align-items: center; gap: 28px; }
-    .nav-link { font-size: 14px; font-weight: 500; color: var(--black); transition: opacity .15s; }
-    .nav-link:hover { opacity: .6; }
-    .nav-lang { font-size: 14px; font-weight: 500; color: var(--black); }
-
-    /* ── BUTTON ──────────────────────────────── */
-    .btn { display: inline-flex; align-items: center; font-weight: 600; border-radius: 100px; }
-    .btn-primary { background: var(--black); color: var(--white); }
-    .btn-sm { padding: 9px 18px; font-size: 13.5px; }
-    .btn-inner { display: flex; flex-direction: column; overflow: hidden; line-height: 1; height: 1em; }
-    .btn-top, .btn-bot { display: flex; align-items: center; gap: 8px; flex-shrink: 0; height: 1em; white-space: nowrap; transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1); }
-    .btn:hover .btn-top, .btn:hover .btn-bot { transform: translateY(-100%); }
-
-    /* ── DIVIDER ─────────────────────────────── */
-    .divider { border: none; border-top: 1px solid var(--gray-border); margin: 0; }
-
-    /* ── PROJECT HEADER ──────────────────────── */
-    .project-hero {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 56px 24px 40px;
-    }
-    .project-hero h1 {
-      font-size: clamp(32px, 5vw, 48px);
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 1.1;
-    }
-    .project-cover-wrap {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 24px 88px;
-    }
-    .project-cover-img {
-      width: 100%;
-      border-radius: 20px;
-    }
-  </style>
 </head>
 <body>
 
@@ -126,12 +39,188 @@
 
   <hr class="divider">
 
-  <!-- ── PROJECT ── -->
-  <section class="project-hero">
+  <!-- ── CASE HERO ── -->
+  <section class="case-hero">
+    <p class="case-eyebrow" style="color:#e11d48;">RE/MAX</p>
     <h1>Sistema de gestión de leads</h1>
+    <p class="case-subtitle">Rediseño del proceso de gestión de leads de RE/MAX Argentina. De un flujo por email entre 160+ oficinas a un sistema centralizado con trazabilidad.</p>
   </section>
-  <div class="project-cover-wrap">
-    <img class="project-cover-img" src="/images/projects/remax/cover.png" alt="Sistema de gestión de leads">
+
+  <div class="case-cover-wrap">
+    <img class="case-img" style="margin-top:0;" src="/images/projects/remax/cover.png" alt="Sistema de gestión de leads">
+  </div>
+
+  <div class="case-meta-wrap">
+    <div class="case-meta">
+      <div>
+        <span class="case-meta-label">Cliente</span>
+        <span class="case-meta-val">Remax</span>
+      </div>
+      <div>
+        <span class="case-meta-label">Año</span>
+        <span class="case-meta-val">2022</span>
+      </div>
+      <div>
+        <span class="case-meta-label">Scope</span>
+        <span class="case-meta-val">Diseño de producto / UX Research</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONTEXTO ── -->
+  <section class="case-section">
+    <h2>Contexto</h2>
+    <p>RE/MAX Argentina recibía consultas de propiedades a través de un formulario web que derivaba en un flujo manual entre tres áreas: El equipo central, las oficinas RE/MAX, y los agentes. Cada lead circulaba por email, sin un sistema que diera visibilidad ni continuidad al proceso.</p>
+  </section>
+
+  <!-- ── EL DESAFÍO ── -->
+  <section class="case-section">
+    <h2>El desafío</h2>
+    <p>El desafío era proponer un flujo dentro del sistema actual (Red RE/MAX) que se pudiera adoptar en etapas, sin forzar un cambio cultural de un día para el otro.</p>
+    <p>Para eso, fue necesario entender cómo trabajaban las tres áreas involucradas, detectar los puntos de fricción reales y diseñar una solución que acompañara el proceso existente, pero que a la vez permitiera ordenarlo y escalarlo.</p>
+  </section>
+
+  <!-- ── MI ROL ── -->
+  <section class="case-section">
+    <h2>Mi rol</h2>
+    <p>Dentro del equipo de Kambrica, mi rol combinó research y diseño de producto. Conduje entrevistas exploratorias con los tres perfiles de usuario, lideré las pruebas de usabilidad sobre el prototipo funcional, y traduje los hallazgos en las decisiones de diseño del sistema.</p>
+  </section>
+
+  <!-- ── OBJETIVOS ── -->
+  <section class="case-section">
+    <h2>Objetivos</h2>
+    <p class="case-subhead" style="margin-top:0;">Objetivos de negocio</p>
+    <ul class="case-list">
+      <li>Centralizar la gestión de leads en una única plataforma (Red RE/MAX).</li>
+      <li>Dar trazabilidad al ciclo completo: Recepción → Asignación → Aceptación → Contacto → Captación.</li>
+      <li>Sentar las bases para una futura asignación automática y para generar métricas que permitieran evaluar performance por oficina y por agente.</li>
+    </ul>
+    <p class="case-subhead">Objetivos de experiencia</p>
+    <ul class="case-list">
+      <li>Reducir el tiempo de coordinación manual de la central y las oficinas RE/MAX.</li>
+      <li>Brindar a los agentes claridad sobre las acciones esperadas en cada paso.</li>
+      <li>Establecer un sistema simple y escalable, que admita nuevas funcionalidades sin saturar a los agentes.</li>
+    </ul>
+  </section>
+
+  <!-- ── RESEARCH Y HALLAZGOS ── -->
+  <section class="case-section">
+    <h2>Research y hallazgos</h2>
+    <p>El proceso comenzó con entrevistas en profundidad a las tres áreas: Agentes, responsables de las oficinas RE/MAX y el equipo central. El objetivo era mapear el flujo existente de punta a punta e identificar los puntos de fricción reales.</p>
+    <p class="case-subhead">Metodología</p>
+    <ul class="case-list">
+      <li>Conduje entrevistas exploratorias con equipos de las tres áreas.</li>
+      <li>Relevé el flujo completo, desde la consulta hasta la asignación.</li>
+      <li>Analicé las herramientas paralelas que los agentes usaban por fuera del sistema.</li>
+    </ul>
+    <p class="case-subhead">Hallazgos principales</p>
+    <ul class="case-list">
+      <li>Los agentes recién usaban Red RE/MAX desde el momento en el que una propiedad era captada. Todo el proceso previo vivía en el email y en herramientas personales.</li>
+      <li>Los responsables de las oficinas mostraron resistencia explícita a la asignación automática: no todos los agentes toman todas las propiedades, y las "guardias" tienen demasiadas excepciones que dificultan la automatización.</li>
+      <li>Dos de los cinco agentes entrevistados dijeron abiertamente que seguirían usando sus planillas personales "por las dudas", incluso con el sistema nuevo implementado.</li>
+    </ul>
+    <img class="case-img" src="/images/projects/remax/Remax%20-%20Flow%20-%20ES.png" alt="Proceso de asignación de leads">
+  </section>
+
+  <!-- ── ROADMAP ── -->
+  <section class="case-section">
+    <h2>Roadmap</h2>
+    <p>Con los hallazgos obtenidos, quedó claro que la solución no podía ser un sistema automatizado de entrada. Los responsables de las oficinas no lo iban a aceptar, los agentes no iban a confiar, y la central comprometería la implementación correcta del proceso.</p>
+    <p>La decisión fue diseñar un sistema en cuatro etapas progresivas, donde cada una preparara el terreno para la siguiente. El alcance de esta etapa sería la asignación manual, pero trazable.</p>
+    <img class="case-img" src="/images/projects/remax/Gantt%20-%20ES.png" alt="Roadmap de cuatro etapas hacia la automatización">
+  </section>
+
+  <!-- ── SOLUCIÓN ── -->
+  <section class="case-section">
+    <h2>Solución</h2>
+    <p>Trabajé en el diseño de un flujo de trabajo integrado en la plataforma existente para centralizar la gestión de leads. Organizado en tres puntos de contacto:</p>
+    <ul class="case-list">
+      <li>La central asignando a las oficinas RE/MAX.</li>
+      <li>Los responsables de dichas oficinas asignando a los agentes.</li>
+      <li>Los agentes aceptando y gestionando el lead.</li>
+    </ul>
+    <p class="case-subhead">Componentes clave</p>
+    <ul class="case-list">
+      <li>Listado de leads con filtros y priorización. Los leads tienen un contador de tiempo visible.</li>
+      <li>Sistema de asignación para oficinas y agentes.</li>
+      <li>Información para decidir a quién asignar: distancia al lead, cantidad de envíos y rechazos previos, y eventualmente puntaje (futura automatización).</li>
+      <li>Estados claros del proceso (recibido, asignado, contactado, captado, rechazado).</li>
+      <li>Historial de actividad para trazabilidad completa.</li>
+    </ul>
+    <p style="margin-top:28px;">Esto convirtió la coordinación manual dispersa en un flujo centralizado, con trazabilidad completa y preparado para una futura automatización.</p>
+    <img class="case-img" src="/images/projects/remax/Remax%20-%20Platform.png" alt="Listado de leads recibidos en la plataforma">
+    <img class="case-img" src="/images/projects/remax/Remax%20-%20screens.png" alt="Flujo de asignación de leads a oficinas y agentes">
+  </section>
+
+  <!-- ── VALIDACIÓN ── -->
+  <section class="case-section">
+    <h2>Validación</h2>
+    <p>Conduje las pruebas de usabilidad del prototipo con agentes y con responsables de las oficinas, cubriendo diferentes escenarios.</p>
+    <p class="case-subhead">Resultados de usabilidad</p>
+    <ul class="case-list">
+      <li>Todos los usuarios operaron el sistema sin problemas significativos de usabilidad.</li>
+      <li>Los puntos que generaban dudas se resolvían rápida e intuitivamente.</li>
+      <li>El proceso de rechazo/descarte de un lead recibido se entendió sin fricción.</li>
+      <li>El contador de tiempo fue correctamente interpretado como señal de urgencia y de reasignación.</li>
+    </ul>
+    <p class="case-subhead">Oportunidades de cambios identificadas</p>
+    <ul class="case-list">
+      <li>Se ocultaron los datos del cliente hasta la aceptación formal del lead. Los agentes sugerían llamar antes de aceptar.</li>
+      <li>Ajustes de copy y rótulos para generar claridad sobre cada una de las acciones.</li>
+      <li>Se incorporaron nuevos estados (como "en seguimiento") que los agentes pidieron explícitamente.</li>
+    </ul>
+    <img class="case-img" src="/images/projects/remax/Remax%20-%20Prototype.png" alt="Overview del prototipo navegable en Figma">
+  </section>
+
+  <!-- ── RESULTADOS ── -->
+  <section class="case-section">
+    <h2>Resultados</h2>
+    <p>El proyecto dejó un sistema diseñado y validado:</p>
+    <ul class="case-list">
+      <li>El sistema organiza los leads mediante estados claros del proceso (recibido, asignado, contactado, captado, rechazado).</li>
+      <li>Permite la asignación a oficinas y agentes.</li>
+      <li>Prioriza las consultas urgentes.</li>
+      <li>Proporciona trazabilidad completa a través del historial de actividad.</li>
+    </ul>
+    <img class="case-img" src="/images/projects/remax/handoff.png" alt="Documentación de handoff del sistema de gestión de leads">
+  </section>
+
+  <!-- ── PREV / NEXT ── -->
+  <div class="case-nav">
+    <a href="/proyectos/mkr" class="case-nav-prev" aria-label="Proyecto anterior">
+      <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3L4 7l7 4"/></svg>
+    </a>
+    <a href="/proyectos/booking" class="case-nav-next">
+      Próximo proyecto
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+    </a>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <div class="footer-bg">
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-contacts">
+          <div>
+            <p class="footer-field-label">Email</p>
+            <a href="mailto:romanpaparella@gmail.com" class="footer-field-val">romanpaparella@gmail.com</a>
+          </div>
+          <div>
+            <p class="footer-field-label">Ubicación</p>
+            <p class="footer-field-val">Ciudad de Buenos Aires, Argentina</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/romanpaparella" target="_blank" rel="noopener" class="footer-icon-btn" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-disclaimer">El contenido de este portfolio, incluyendo capturas de pantalla, flujos, datos y nombres de clientes, es confidencial. Está destinado exclusivamente a procesos de evaluación profesional y no puede ser reproducido, compartido ni utilizado sin autorización expresa.</p>
+    </footer>
   </div>
 
 </body>

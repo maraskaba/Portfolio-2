@@ -10,34 +10,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
-    h1, h2, h3, h4, h5, h6, p, figure { margin: 0; }
-    img { display: block; max-width: 100%; }
-    a { text-decoration: none; color: inherit; }
-    button { border: none; cursor: pointer; background: none; font-family: inherit; }
+    button { font-family: inherit; }
     code { font-family: 'Inter', sans-serif; }
 
     :root {
-      --black:       #050505;
-      --white:       #ffffff;
-      --dark:        #141414;
-      --gray-bg:     #f7f7f7;
-      --gray-border: #f2f2f2;
-      --gray-mid:    #a3a3a3;
-      --green:       #0ea43b;
-      --max-w:       1040px;
       --sidebar-w:   248px;
       --content-w:   900px;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--white);
-      color: var(--black);
-      -webkit-font-smoothing: antialiased;
     }
 
     /* ── LAYOUT ──────────────────────────────── */
@@ -232,53 +213,6 @@
     }
     .preview:last-child { margin-bottom: 0; }
 
-    /* ── BUTTONS (copied from site) ──────────── */
-    .btn-inner {
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      line-height: 1;
-      height: 1em;
-    }
-    .btn-top, .btn-bot {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-shrink: 0;
-      height: 1em;
-      white-space: nowrap;
-      transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .btn:hover .btn-top, .btn:hover .btn-bot { transform: translateY(-100%); }
-
-    /* Sistema de botones: 2 estilos (primary/outline) × 2 tamaños (sm/lg) */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      font-weight: 600;
-      border-radius: 100px;
-    }
-    .btn-primary {
-      background: var(--black);
-      color: var(--white);
-    }
-    .btn-outline {
-      border: 1.5px solid var(--black);
-      color: var(--black);
-    }
-    .btn-outline-white {
-      border: 1.5px solid rgba(255,255,255,0.28);
-      color: var(--white);
-    }
-    .btn-sm {
-      padding: 9px 18px;
-      font-size: 13.5px;
-    }
-    .btn-lg {
-      padding: 13px 28px;
-      font-size: 14.5px;
-    }
-
     /* ── TAG PILLS ────────────────────────────── */
     .tag-pill {
       display: inline-flex;
@@ -304,56 +238,6 @@
       border-radius: 100px;
     }
     .tag-pill-dark-dot { width: 7px; height: 7px; border-radius: 50%; background: #2ecc71; }
-    .project-tag {
-      font-size: 16px;
-      font-weight: 400;
-      letter-spacing: -0.64px;
-      line-height: 24.8px;
-      font-feature-settings: "cv05", "cv06", "cv10", "cv11";
-      color: var(--gray-mid);
-    }
-    .project-sep {
-      font-size: 16px;
-      font-weight: 400;
-      letter-spacing: -0.64px;
-      line-height: 24.8px;
-      font-feature-settings: "cv05", "cv06", "cv10", "cv11";
-      color: #d0d0d0;
-    }
-
-    /* ── ICON BUTTON / SKILL ICON ────────────── */
-    .footer-icon-btn {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.14);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      transition: background .15s;
-    }
-    .footer-icon-btn:hover { background: rgba(255,255,255,0.1); }
-    .skill-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 11px;
-      background: var(--gray-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .skill-row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 15px 16px;
-      border-radius: 14px;
-      transition: background .15s;
-    }
-    .skill-row:hover { background: var(--gray-bg); }
-    .skill-label { font-size: 15px; font-weight: 500; color: var(--black); }
 
     /* ── CARDS ────────────────────────────────── */
     .kit-card-grid {
@@ -361,19 +245,8 @@
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 16px;
     }
-    .project-card {
-      display: block;
-      border-radius: 20px;
-      overflow: hidden;
-      background: var(--gray-bg);
-      border: 1px solid var(--gray-border);
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-    .project-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(5,5,5,0.08); }
-    .project-cover { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: linear-gradient(135deg,#e4e4e4,#f2f2f2); }
-    .project-info { padding: 20px 22px 24px; }
-    .project-name { font-size: 15.5px; font-weight: 600; color: var(--black); margin-bottom: 8px; line-height: 1.35; }
-    .project-tags { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    /* placeholder degradado: en el kit no hay imagen real de cover */
+    .kit-card-grid .project-cover { background: linear-gradient(135deg,#e4e4e4,#f2f2f2); }
 
     .tcard {
       background: rgba(255,255,255,0.055);
@@ -407,15 +280,6 @@
     }
     .mini-nav-logo { display: flex; align-items: center; gap: 10px; }
     .mini-avatar { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg,#d8d8d8,#efefef); flex-shrink: 0; }
-    .nav-logo-text { display: flex; flex-direction: column; line-height: 1.35; }
-    .nav-name { font-size: 13px; font-weight: 600; color: var(--black); }
-    .nav-title { font-size: 11.5px; color: var(--gray-mid); }
-    .nav-right { display: flex; align-items: center; gap: 20px; }
-    .nav-link { font-size: 14px; font-weight: 500; color: var(--black); }
-    .nav-lang { font-size: 14px; font-weight: 500; color: var(--black); }
-
-    .footer-field-label { font-size: 11.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 7px; }
-    .footer-field-val { font-size: 14px; color: var(--white); }
 
     /* ── RADIUS / SPACING TOKENS ─────────────── */
     .token-grid {
@@ -525,6 +389,7 @@
         <a href="#tags" class="kit-sidebar-link">Tags</a>
         <a href="#tarjetas" class="kit-sidebar-link">Tarjetas</a>
         <a href="#navegacion" class="kit-sidebar-link">Navegación</a>
+        <a href="#case-study" class="kit-sidebar-link">Case study</a>
         <a href="#iconos" class="kit-sidebar-link">Iconos</a>
         <a href="#espaciado" class="kit-sidebar-link">Espaciado</a>
       </nav>
@@ -816,6 +681,69 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ── CASE STUDY ── -->
+  <section class="kit-section" id="case-study">
+    <div class="kit-section-head">
+      <h2>Case study</h2>
+      <p>Estructura de una página de proyecto completa (ej. /proyectos/ypf): eyebrow, meta, secciones de contenido y navegación prev/next.</p>
+    </div>
+
+    <p class="kit-block-label">Eyebrow</p>
+    <div class="preview">
+      <p class="case-eyebrow" style="margin-bottom:0;">YPF</p>
+    </div>
+
+    <p class="kit-block-label">Meta (Cliente / Año / Scope)</p>
+    <div class="preview" style="display:block;">
+      <div class="case-meta" style="border-bottom:none; padding-bottom:0;">
+        <div>
+          <span class="case-meta-label">Cliente</span>
+          <span class="case-meta-val">YPF</span>
+        </div>
+        <div>
+          <span class="case-meta-label">Año</span>
+          <span class="case-meta-val">2022</span>
+        </div>
+        <div>
+          <span class="case-meta-label">Scope</span>
+          <span class="case-meta-val">Diseño UX / Diseño UI / Agile (Scrum)</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="kit-block-label">Sección de contenido + lista</p>
+    <div class="preview" style="display:block;">
+      <h2 style="font-size:20px; font-weight:700; letter-spacing:-0.01em; margin-bottom:16px;">Desafío</h2>
+      <ul class="case-list" style="max-width:none;">
+        <li>Era fácil perder el progreso o cometer errores.</li>
+        <li>No existía una forma confiable de manejar la conectividad deficiente o nula.</li>
+      </ul>
+    </div>
+
+    <p class="kit-block-label">Navegación prev / next</p>
+    <div class="preview" style="justify-content:space-between;">
+      <a href="#" class="case-nav-prev" aria-label="Proyecto anterior">
+        <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3L4 7l7 4"/></svg>
+      </a>
+      <a href="#" class="case-nav-next">
+        Próximo proyecto
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+      </a>
+    </div>
+
+    <table class="kit-table">
+      <tr><th>Clase</th><th>Uso</th></tr>
+      <tr><td>.case-eyebrow</td><td>Nombre del cliente arriba del título, azul</td></tr>
+      <tr><td>.case-hero / .case-subtitle</td><td>Título del caso + bajada descriptiva</td></tr>
+      <tr><td>.case-meta</td><td>Fila Cliente / Año / Scope con borde inferior</td></tr>
+      <tr><td>.case-section</td><td>Cada bloque de contenido (Contexto, Desafío, Enfoque, etc.)</td></tr>
+      <tr><td>.case-subhead</td><td>Subtítulo dentro de una sección (ej. "Metodología", "Componentes clave")</td></tr>
+      <tr><td>.case-list</td><td>Lista con bullet circular gris</td></tr>
+      <tr><td>.case-img / .case-img-grid</td><td>Imagen de soporte a ancho completo, o grilla de 2</td></tr>
+      <tr><td>.case-nav-prev / .case-nav-next</td><td>Navegación entre proyectos al pie de la página</td></tr>
+    </table>
   </section>
 
   <!-- ── ICONOS ── -->
