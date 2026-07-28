@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Vendor onboarding automation — Román Paparella</title>
+  <meta name="description" content="Product design project: Vendor onboarding automation, by Román Paparella.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/en/" class="nav-logo">
+        <img class="nav-avatar" src="/images/KZLTNcn4RvS9l4sNroCNukVzk.avif" alt="Román Paparella">
+        <div class="nav-logo-text">
+          <span class="nav-name">Román Paparella</span>
+          <span class="nav-title">Product Designer</span>
+        </div>
+      </a>
+      <div class="nav-right">
+        <a href="/proyectos/en/" class="nav-link">Projects</a>
+        <a href="/proyectos/vendor-onboarding" class="nav-lang">EN</a>
+        <a href="#" class="btn btn-primary btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">Download CV</span>
+            <span class="btn-bot" aria-hidden="true">Download CV</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <hr class="divider">
+
+  <!-- ── CASE HERO ── -->
+  <section class="case-hero">
+    <p class="case-eyebrow">Blink.la</p>
+    <h1>Vendor onboarding automation</h1>
+    <p class="case-subtitle">Design of a guided experience for vendors to complete their onboarding without operational assistance, with fewer errors and greater clarity throughout the process.</p>
+  </section>
+
+  <div class="case-cover-wrap">
+    <img class="case-img" style="margin-top:0;" src="/images/projects/vendor-onboarding/cover.png" alt="Vendor onboarding automation">
+  </div>
+
+  <div class="case-meta-wrap">
+    <div class="case-meta">
+      <div>
+        <span class="case-meta-label">Client</span>
+        <span class="case-meta-val">Blink.la</span>
+      </div>
+      <div>
+        <span class="case-meta-label">Year</span>
+        <span class="case-meta-val">2023</span>
+      </div>
+      <div>
+        <span class="case-meta-label">Scope</span>
+        <span class="case-meta-val">Product design / Usability testing</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONTEXT ── -->
+  <section class="case-section">
+    <h2>Context</h2>
+    <p>Blink is an audiovisual production company that connects talent and creative teams around the world. The company had internal platforms for managing productions, vendors, and finances, but the initial vendor onboarding still relied on a manual process run by Operations.</p>
+  </section>
+
+  <!-- ── PROBLEM ── -->
+  <section class="case-section">
+    <h2>Problem</h2>
+    <p>Vendor onboarding was an operational bottleneck that could jeopardize the start of a production.</p>
+    <p>Operations had to collect personal information, company data, tax forms, document photos, error corrections, and contract signatures. All of this happened close to the start of production, when timing was most sensitive.</p>
+    <p>The main issues identified were:</p>
+    <ul class="case-list">
+      <li>A manual, slow process.</li>
+      <li>Constant dependency on the Operations team.</li>
+      <li>Information prone to errors.</li>
+      <li>Risk of delaying the start of production.</li>
+    </ul>
+  </section>
+
+  <!-- ── RESEARCH AND PROCESS MAPPING ── -->
+  <section class="case-section">
+    <h2>Research and process mapping</h2>
+    <p>We first mapped the As-Is process together with the Operations team to understand how a vendor was onboarded, which steps depended on the internal team, and where the main friction points appeared.</p>
+    <p>The analysis showed the problem wasn't only about the interface: many rules, decisions, and validations lived in the team's institutional knowledge, but weren't documented or built into the system.</p>
+    <p class="case-subhead">Key findings</p>
+    <ul class="case-list">
+      <li>Different onboarding scenarios existed depending on the vendor type.</li>
+      <li>Required documentation varied case by case.</li>
+      <li>Tax, banking, and legal data required specific validations.</li>
+      <li>There was no clear or standardized flow.</li>
+    </ul>
+    <p style="margin-top:28px;">This complexity meant onboarding couldn't be solved with a single linear form. It needed a flexible, guided flow with early validations.</p>
+    <p>The goal was to turn that process into a guided system able to collect personal, tax, and banking information, validate critical data, and prepare the documentation needed for operational review and approval.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/Smartsheets.png" alt="Spreadsheet the production team used to request vendor onboarding">
+    <p class="case-caption">Spreadsheet the production team used to request vendor onboarding</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/Figjam.png" alt="As-Is process mapping">
+    <p class="case-caption">As-Is process mapping</p>
+  </section>
+
+  <!-- ── DESIGN DECISIONS ── -->
+  <section class="case-section">
+    <h2>Design decisions</h2>
+    <p>Based on the process mapping, we defined a series of decisions to reduce complexity, anticipate errors, and lower operational dependency.</p>
+    <ul class="case-list">
+      <li>Many complex steps → <strong>Multi-step form</strong></li>
+      <li>Different vendor types → <strong>Conditional flow</strong></li>
+      <li>Errors in critical data → <strong>Early validations</strong></li>
+      <li>Sensitive information → <strong>Contextual help</strong></li>
+      <li>Contract requests by email → <strong>Contracts integrated into the flow</strong></li>
+    </ul>
+  </section>
+
+  <!-- ── SOLUTION ── -->
+  <section class="case-section">
+    <h2>Solution</h2>
+    <p>We designed a guided onboarding flow that adapts its steps based on vendor type and centralizes data entry, documentation, tax forms, review, and contract signing.</p>
+    <p>The flow was organized into stages to reduce cognitive load, show only the necessary information, and allow early validations before operational approval.</p>
+    <ul class="case-list">
+      <li>Early identification of vendor type</li>
+      <li>Progressive step-by-step navigation</li>
+      <li>Adaptive forms</li>
+      <li>Real-time validations</li>
+      <li>Immediate feedback on errors and missing fields</li>
+      <li>Final review before submission</li>
+    </ul>
+    <img class="case-img" src="/images/projects/vendor-onboarding/Vendor%20portal%20-%20Flujo.png" alt="To-Be flow of the complete onboarding process">
+    <p class="case-caption">To-Be flow of the complete onboarding process, including validations, operational review, and final approval.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/Design-proposal.jpg" alt="End-to-end onboarding flow">
+    <p class="case-caption">End-to-end onboarding flow, from entering information and documentation to approval or correction requests and sending the contract.</p>
+  </section>
+
+  <!-- ── VALIDATION ── -->
+  <section class="case-section">
+    <h2>Validation</h2>
+    <p>We ran usability testing with company vendors to validate how well the flow was understood and identify opportunities for improvement before handoff.</p>
+    <p>Validation showed a good overall understanding of the process and helped surface friction in specific steps.</p>
+    <div class="case-stat">
+      <div class="case-stat-value">0%</div>
+      <div class="case-stat-label">Effectiveness</div>
+    </div>
+    <p class="case-subhead" style="margin-top:0;">Key findings</p>
+    <ul class="case-list">
+      <li>The overall flow was well understood.</li>
+      <li>The stages were clear to users.</li>
+      <li>Vendors were able to correctly identify their profile type.</li>
+      <li>The tax form was chosen correctly.</li>
+      <li>Some users started onboarding without having key information on hand.</li>
+      <li>It wasn't always obvious that the legal name had to match exactly across all documents.</li>
+      <li>Downloading, signing, and re-uploading forms created friction.</li>
+    </ul>
+  </section>
+
+  <!-- ── ITERATION AND FINAL PROPOSAL ── -->
+  <section class="case-section">
+    <h2>Iteration and final proposal</h2>
+    <p>Based on the validation findings, we adjusted the flow to better anticipate required information, reduce errors in critical data, and make the relationship between documentation, taxes, contract, and operational review clearer.</p>
+
+    <p style="margin-top:28px;">We added visibility into status and required information at the start of the process.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-1.jpg" alt="Start screen with visibility into process status">
+
+    <p style="margin-top:28px;">We identified vendor type upfront to adapt the flow and show only the necessary steps and fields.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-2.jpg" alt="Vendor type identification screen">
+
+    <p style="margin-top:28px;">In the personal information step, we added a confirmation of the legal name against the documentation.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-3.jpg" alt="Legal name confirmation screen">
+
+    <p style="margin-top:28px;">We guided tax form selection based on tax residency and reinforced the use of the validated legal name.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-4.jpg" alt="Tax form selection screen">
+
+    <p style="margin-top:28px;">We allowed payment details to be temporarily skipped so onboarding could continue.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-5.jpg" alt="Payment information screen with skip option">
+
+    <p style="margin-top:28px;">We integrated data validation, onboarding approval, and freelancer contract sending into Content Studio.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-6.jpg" alt="Validation and approval screen in Content Studio">
+
+    <p style="margin-top:28px;">Operations can request corrections from the platform, and the vendor updates their data to move the process forward.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-7.jpg" alt="Correction request screen">
+
+    <p style="margin-top:28px;">We centralized digital contract signing within the onboarding flow.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-8.jpg" alt="Digital contract signing screen">
+  </section>
+
+  <!-- ── IMPACT ── -->
+  <section class="case-section">
+    <h2>Impact</h2>
+    <div class="case-stat">
+      <div class="case-stat-value">3x</div>
+      <div class="case-stat-label">Productivity increase</div>
+    </div>
+    <ul class="case-list">
+      <li>Operations team involvement was significantly reduced.</li>
+      <li>Errors in documentation and critical data decreased.</li>
+      <li>Vendor onboarding times sped up.</li>
+      <li>The system was able to absorb a higher onboarding volume without increasing operational workload.</li>
+    </ul>
+    <p class="case-callout">👉 The Operations team stopped managing repetitive tasks and was able to focus on critical production situations.</p>
+  </section>
+
+  <!-- ── PREV / NEXT ── -->
+  <div class="case-nav" style="justify-content:flex-end;">
+    <a href="/proyectos/blink-content-studio/en/" class="case-nav-next">
+      Next project
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+    </a>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <div class="footer-bg">
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-contacts">
+          <div>
+            <p class="footer-field-label">Email</p>
+            <a href="mailto:romanpaparella@gmail.com" class="footer-field-val">romanpaparella@gmail.com</a>
+          </div>
+          <div>
+            <p class="footer-field-label">Location</p>
+            <p class="footer-field-val">Buenos Aires City, Argentina</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/romanpaparella" target="_blank" rel="noopener" class="footer-icon-btn" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-disclaimer">The content of this portfolio, including screenshots, flows, data, and client names, is confidential. It is intended exclusively for professional evaluation purposes and may not be reproduced, shared, or used without express authorization.</p>
+    </footer>
+  </div>
+
+</body>
+</html>

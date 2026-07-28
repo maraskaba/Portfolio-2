@@ -27,7 +27,7 @@
       </a>
       <div class="nav-right">
         <a href="/proyectos" class="nav-link">Proyectos</a>
-        <span class="nav-lang">ES</span>
+        <a href="/proyectos/movistar-login/en/" class="nav-lang">ES</a>
         <a href="#" class="btn btn-primary btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Descargar CV</span>
@@ -40,12 +40,160 @@
 
   <hr class="divider">
 
-  <!-- ── PROJECT ── -->
-  <section class="project-hero">
+  <!-- ── CASE HERO ── -->
+  <section class="case-hero">
+    <p class="case-eyebrow">Movistar</p>
     <h1>Validación de registro y login unificado</h1>
+    <p class="case-subtitle">Validamos un flujo de login y registro unificado para detectar fricciones antes de desarrollo.</p>
   </section>
-  <div class="project-cover-wrap">
-    <img class="project-cover-img" src="/images/projects/movistar-login/cover.png" alt="Validación de registro y login unificado">
+
+  <div class="case-cover-wrap">
+    <img class="case-img" style="margin-top:0;" src="/images/projects/movistar-login/cover.png" alt="Validación de registro y login unificado">
+  </div>
+
+  <div class="case-meta-wrap">
+    <div class="case-meta">
+      <div>
+        <span class="case-meta-label">Cliente</span>
+        <span class="case-meta-val">Movistar</span>
+      </div>
+      <div>
+        <span class="case-meta-label">Año</span>
+        <span class="case-meta-val">2022</span>
+      </div>
+      <div>
+        <span class="case-meta-label">Scope</span>
+        <span class="case-meta-val">Pruebas de usabilidad / Prototipado</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONTEXTO ── -->
+  <section class="case-section">
+    <h2>Contexto</h2>
+    <p>Movistar buscaba unificar la experiencia de acceso para distintos tipos de usuarios, productos y servicios dentro de un único sistema.</p>
+    <p>El desafío consistía en validar una arquitectura capaz de integrar distintos tipos de cuentas, productos y métodos de autenticación dentro de un mismo flujo y reducir fricciones antes de su implementación.</p>
+    <p>Conduje pruebas con usuarios remotas para validar un flujo propuesto por el equipo de UX de Movistar.</p>
+  </section>
+
+  <!-- ── EL PROBLEMA ── -->
+  <section class="case-section">
+    <h2>El problema</h2>
+    <p>La complejidad del proyecto no estaba únicamente en las pantallas, sino en cómo los usuarios podían comprender la lógica del sistema y las relaciones entre cuentas, líneas, productos y métodos de autenticación.</p>
+    <p>El flujo debía contemplar:</p>
+    <ul class="case-list">
+      <li>Usuarios individuales y corporativos.</li>
+      <li>Líneas móviles y productos hogar (WiFi, TV).</li>
+      <li>Productos propios y de terceros.</li>
+      <li>Autenticación por SMS, usuario y contraseña.</li>
+      <li>Múltiples métodos de validación de identidad (KYC).</li>
+      <li>Cuentas asociadas a DNI (Personas) y CUIT (Empresas).</li>
+    </ul>
+    <p style="margin-top:28px;">El principal desafío era validar si los usuarios comprendían:</p>
+    <ul class="case-list">
+      <li>Cómo acceder a sus servicios.</li>
+      <li>Qué podían gestionar dentro de una misma sesión.</li>
+      <li>Cómo funcionaban las asociaciones entre cuentas, líneas y productos.</li>
+    </ul>
+  </section>
+
+  <!-- ── METODOLOGÍA ── -->
+  <section class="case-section">
+    <h2>Metodología</h2>
+    <p>18 sesiones remotas moderadas con usuarios individuales y corporativos para validar la propuesta recibida de Movistar.</p>
+    <p>Participé en la moderación de sesiones y en el análisis de insights junto al equipo para identificar fricciones, validar flujos y obtener oportunidades de mejora.</p>
+    <img class="case-img" src="/images/projects/movistar-login/usuarios.png" alt="Usuarios participantes de las sesiones de research">
+  </section>
+
+  <!-- ── PROTOTIPO FUNCIONAL ── -->
+  <section class="case-section">
+    <h2>Prototipo funcional (HTML, PHP, JS)</h2>
+    <p>Para este proyecto desarrollé un prototipo funcional de alta fidelidad basado en los diseños del equipo de Movistar. Debido a la complejidad de los flujos y a las limitaciones de los prototipos tradicionales, lo realicé en HTML, PHP y JavaScript, con capacidad de simular condiciones cercanas a producción.</p>
+    <p>El propio proceso de construcción del prototipo también ayudó a detectar inconsistencias y oportunidades de mejora en la documentación de los flujos, elevando significativamente la calidad de los insights obtenidos durante las pruebas.</p>
+    <p style="margin-top:28px;">A diferencia de un prototipo tradicional, este entorno permitió:</p>
+    <ul class="case-list">
+      <li>Simular interacciones reales: interacción con campos de formulario, estados, validaciones y errores.</li>
+      <li>Integrar SMS reales: los usuarios recibían códigos en sus propios dispositivos.</li>
+      <li>Evaluar una performance más realista: tiempos de carga y respuesta similares a producción.</li>
+    </ul>
+  </section>
+
+  <!-- ── HALLAZGOS CLAVE ── -->
+  <section class="case-section">
+    <h2>Hallazgos clave</h2>
+    <ul class="case-list">
+      <li>Muchos de los problemas detectados no estaban relacionados con UI visual sino con desajustes entre el modelo mental de los usuarios y la lógica del sistema.</li>
+      <li>Los usuarios no siempre comprendían cuándo debían ingresar con sus propios datos y cuándo con los datos del titular del servicio.</li>
+      <li>Los usuarios interpretaban los labels literalmente. "Agregar más líneas" era entendido únicamente como sumar líneas móviles.</li>
+      <li>La mayoría accedía mediante SMS y evitaba el login tradicional con usuario y contraseña.</li>
+      <li>Los usuarios tendían a asumir que el sistema estaba fallando cuando el flujo no respondía como esperaban.</li>
+      <li>El concepto "DNI, CUIT o ambos" resultó ambiguo dentro del modelo mental de los usuarios.</li>
+    </ul>
+    <img class="case-img" src="/images/projects/movistar-login/03.png" alt="Hallazgo: confusión en la opción de registro con DNI, CUIT o ambos">
+    <img class="case-img" src="/images/projects/movistar-login/02.png" alt="Observaciones e insights de efectividad y eficiencia">
+    <img class="case-img" src="/images/projects/movistar-login/01.png" alt="Resultado del SUS (System Usability Score)">
+  </section>
+
+  <!-- ── RESULTADOS ── -->
+  <section class="case-section">
+    <h2>Resultados</h2>
+    <p>El proceso de validación permitió:</p>
+    <ul class="case-list">
+      <li>Detectar fricciones conceptuales antes de desarrollo.</li>
+      <li>Redefinir rótulos y lógica de agrupación de servicios.</li>
+      <li>Confirmar el SMS como principal método de acceso.</li>
+      <li>Identificar limitaciones específicas en flujos corporativos.</li>
+      <li>Mejorar el feedback y la claridad operativa en escenarios críticos.</li>
+    </ul>
+  </section>
+
+  <!-- ── CONCLUSIONES ── -->
+  <section class="case-section">
+    <h2>Conclusiones</h2>
+    <ul class="case-list">
+      <li>La validación temprana permitió detectar fricciones estructurales antes de implementación y tomar decisiones de producto respaldadas por comportamiento real de usuarios.</li>
+      <li>El uso de un prototipo funcional fue determinante: al replicar condiciones cercanas a producción, los usuarios interactuaron con el sistema de forma genuina y se elevó significativamente la calidad de los hallazgos obtenidos.</li>
+      <li>El estudio confirmó que no era necesario replantear la arquitectura general. Las principales mejoras debían concentrarse en la comunicación, el feedback y la claridad visual de los flujos.</li>
+    </ul>
+    <img class="case-img" src="/images/projects/movistar-login/Movistar%20IDP%2001.png" alt="Sesión de trabajo del equipo de investigación">
+  </section>
+
+  <!-- ── PREV / NEXT ── -->
+  <div class="case-nav">
+    <a href="/proyectos/booking" class="case-nav-prev" aria-label="Proyecto anterior">
+      <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3L4 7l7 4"/></svg>
+    </a>
+    <a href="/proyectos/ypf" class="case-nav-next">
+      Próximo proyecto
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+    </a>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <div class="footer-bg">
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-contacts">
+          <div>
+            <p class="footer-field-label">Email</p>
+            <a href="mailto:romanpaparella@gmail.com" class="footer-field-val">romanpaparella@gmail.com</a>
+          </div>
+          <div>
+            <p class="footer-field-label">Ubicación</p>
+            <p class="footer-field-val">Ciudad de Buenos Aires, Argentina</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/romanpaparella" target="_blank" rel="noopener" class="footer-icon-btn" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-disclaimer">El contenido de este portfolio, incluyendo capturas de pantalla, flujos, datos y nombres de clientes, es confidencial. Está destinado exclusivamente a procesos de evaluación profesional y no puede ser reproducido, compartido ni utilizado sin autorización expresa.</p>
+    </footer>
   </div>
 
 </body>

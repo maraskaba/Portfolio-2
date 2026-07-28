@@ -27,7 +27,7 @@
       </a>
       <div class="nav-right">
         <a href="/proyectos" class="nav-link">Proyectos</a>
-        <span class="nav-lang">ES</span>
+        <a href="/proyectos/vendor-onboarding/en/" class="nav-lang">ES</a>
         <a href="#" class="btn btn-primary btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Descargar CV</span>
@@ -40,12 +40,206 @@
 
   <hr class="divider">
 
-  <!-- ── PROJECT ── -->
-  <section class="project-hero">
+  <!-- ── CASE HERO ── -->
+  <section class="case-hero">
+    <p class="case-eyebrow">Blink.la</p>
     <h1>Automatización de alta de proveedores</h1>
+    <p class="case-subtitle">Diseño de una experiencia guiada para que los proveedores pudieran completar su alta sin asistencia operativa, con menos errores y mayor claridad durante el proceso.</p>
   </section>
-  <div class="project-cover-wrap">
-    <img class="project-cover-img" src="/images/projects/vendor-onboarding/cover.png" alt="Automatización de alta de proveedores">
+
+  <div class="case-cover-wrap">
+    <img class="case-img" style="margin-top:0;" src="/images/projects/vendor-onboarding/cover.png" alt="Automatización de alta de proveedores">
+  </div>
+
+  <div class="case-meta-wrap">
+    <div class="case-meta">
+      <div>
+        <span class="case-meta-label">Cliente</span>
+        <span class="case-meta-val">Blink.la</span>
+      </div>
+      <div>
+        <span class="case-meta-label">Año</span>
+        <span class="case-meta-val">2023</span>
+      </div>
+      <div>
+        <span class="case-meta-label">Scope</span>
+        <span class="case-meta-val">Diseño de producto / Pruebas de usabilidad</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONTEXTO ── -->
+  <section class="case-section">
+    <h2>Contexto</h2>
+    <p>Blink es una productora audiovisual que conecta talento y equipos creativos en distintas partes del mundo. La empresa contaba con plataformas internas para gestionar producciones, proveedores y finanzas, pero el alta inicial de proveedores todavía dependía de un proceso manual administrado por Operaciones.</p>
+  </section>
+
+  <!-- ── PROBLEMA ── -->
+  <section class="case-section">
+    <h2>Problema</h2>
+    <p>El onboarding de proveedores era un cuello de botella operativo que podía comprometer el inicio de una producción.</p>
+    <p>Operaciones tenía que recolectar información personal, datos de compañía, formularios fiscales, fotos de documentos, ajustes por errores y firma de contratos. Todo esto ocurría cerca del inicio de la producción, cuando los tiempos eran más sensibles.</p>
+    <p>Las principales problemáticas relevadas fueron:</p>
+    <ul class="case-list">
+      <li>Proceso manual y lento.</li>
+      <li>Dependencia constante del equipo de Operaciones.</li>
+      <li>Información propensa a errores.</li>
+      <li>Riesgo de demora en el inicio de la producción.</li>
+    </ul>
+  </section>
+
+  <!-- ── RESEARCH Y MAPEO DEL PROCESO ── -->
+  <section class="case-section">
+    <h2>Research y mapeo del proceso</h2>
+    <p>Primero mapeamos el proceso As-Is junto al equipo de Operaciones para entender cómo se daba de alta un proveedor, qué pasos dependían del equipo interno y dónde aparecían los principales puntos de fricción.</p>
+    <p>El análisis mostró que el problema no era solo de interfaz: muchas reglas, decisiones y validaciones vivían en el conocimiento del equipo, pero no estaban documentadas ni incorporadas en el sistema.</p>
+    <p class="case-subhead">Principales hallazgos</p>
+    <ul class="case-list">
+      <li>Existían distintos escenarios de onboarding según el tipo de proveedor.</li>
+      <li>La documentación requerida cambiaba según cada caso.</li>
+      <li>Los datos fiscales, bancarios y legales requerían validaciones específicas.</li>
+      <li>No existía un flujo claro ni estandarizado.</li>
+    </ul>
+    <p style="margin-top:28px;">Esta complejidad hacía que el onboarding no pudiera resolverse con un único formulario lineal. Necesitaba un flujo flexible, guiado y con validaciones tempranas.</p>
+    <p>El objetivo fue convertir ese proceso en un sistema guiado capaz de recopilar información personal, fiscal y bancaria, validar datos críticos y preparar la documentación necesaria para la revisión y aprobación operativa.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/Smartsheets.png" alt="Planilla con la que el equipo de producción solicitaba el alta de proveedores">
+    <p class="case-caption">Planilla con la que el equipo de producción solicitaba el alta de proveedores</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/Figjam.png" alt="Mapeo del proceso As-Is">
+    <p class="case-caption">Mapeo del proceso As-Is</p>
+  </section>
+
+  <!-- ── DECISIONES DE DISEÑO ── -->
+  <section class="case-section">
+    <h2>Decisiones de diseño</h2>
+    <p>A partir del mapeo del proceso, definimos una serie de decisiones para reducir complejidad, anticipar errores y disminuir la dependencia operativa.</p>
+    <ul class="case-list">
+      <li>Muchos pasos complejos → <strong>Formulario multi-step</strong></li>
+      <li>Diferentes tipos de proveedor → <strong>Flujo condicional</strong></li>
+      <li>Errores en datos críticos → <strong>Validaciones tempranas</strong></li>
+      <li>Información sensible → <strong>Ayudas contextuales</strong></li>
+      <li>Pedidos de contratos por email → <strong>Integración de contratos al flujo</strong></li>
+    </ul>
+  </section>
+
+  <!-- ── SOLUCIÓN ── -->
+  <section class="case-section">
+    <h2>Solución</h2>
+    <p>Diseñamos un onboarding guiado que adapta los pasos según el tipo de proveedor y centraliza la carga de datos, documentación, tax forms, revisión y firma de contrato.</p>
+    <p>El flujo se organizó por etapas para reducir carga cognitiva, mostrar solo la información necesaria y permitir validaciones tempranas antes de la aprobación operativa.</p>
+    <ul class="case-list">
+      <li>Identificación temprana del tipo de proveedor</li>
+      <li>Navegación progresiva por etapas</li>
+      <li>Formularios adaptativos</li>
+      <li>Validaciones en tiempo real</li>
+      <li>Feedback inmediato sobre errores y faltantes</li>
+      <li>Revisión final antes del envío</li>
+    </ul>
+    <img class="case-img" src="/images/projects/vendor-onboarding/Vendor%20portal%20-%20Flujo.png" alt="Flujo To-Be del proceso completo de onboarding">
+    <p class="case-caption">Flujo To-Be del proceso completo de onboarding, incluyendo validaciones, revisión operativa y aprobación final.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/Design-proposal.jpg" alt="Flujo end-to-end del onboarding">
+    <p class="case-caption">Flujo end-to-end del onboarding, desde la carga de información y documentación, aprobación o pedido de ajustes y envío del contrato.</p>
+  </section>
+
+  <!-- ── VALIDACIÓN ── -->
+  <section class="case-section">
+    <h2>Validación</h2>
+    <p>Realizamos pruebas de usabilidad con proveedores de la empresa para validar la comprensión del flujo e identificar oportunidades de mejora antes del handoff.</p>
+    <p>La validación mostró una buena comprensión general del proceso y permitió detectar fricciones en pasos específicos.</p>
+    <div class="case-stat">
+      <div class="case-stat-value">0%</div>
+      <div class="case-stat-label">Efectividad</div>
+    </div>
+    <p class="case-subhead" style="margin-top:0;">Principales hallazgos</p>
+    <ul class="case-list">
+      <li>El flujo general se entendió bien.</li>
+      <li>Las etapas fueron claras para los usuarios.</li>
+      <li>Los proveedores pudieron identificar correctamente su tipo de perfil.</li>
+      <li>El tax form fue elegido correctamente.</li>
+      <li>Algunos usuarios iniciaron el onboarding sin tener la información clave a mano.</li>
+      <li>No siempre era evidente que el nombre legal debía coincidir exactamente en todos los documentos.</li>
+      <li>Descargar, firmar y volver a subir formularios generaba fricción.</li>
+    </ul>
+  </section>
+
+  <!-- ── ITERACIÓN Y PROPUESTA FINAL ── -->
+  <section class="case-section">
+    <h2>Iteración y propuesta final</h2>
+    <p>A partir de los hallazgos de la validación, ajustamos el flujo para anticipar mejor la información requerida, reducir errores en datos críticos y hacer más clara la relación entre documentación, taxes, contrato y revisión operativa.</p>
+
+    <p style="margin-top:28px;">Sumamos visibilidad del estado e información requerida al inicio del proceso.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-1.jpg" alt="Pantalla de inicio con visibilidad del estado del proceso">
+
+    <p style="margin-top:28px;">Identificamos el tipo de proveedor al inicio para adaptar el flujo y mostrar solo los pasos y campos necesarios.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-2.jpg" alt="Pantalla de identificación del tipo de proveedor">
+
+    <p style="margin-top:28px;">En la carga de información personal sumamos una confirmación del nombre legal contra la documentación.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-3.jpg" alt="Pantalla de confirmación de nombre legal">
+
+    <p style="margin-top:28px;">Guiamos la selección del formulario según la residencia fiscal y reforzamos el uso del nombre legal validado.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-4.jpg" alt="Pantalla de selección de formulario fiscal">
+
+    <p style="margin-top:28px;">Permitimos omitir temporalmente los datos de pago y continuar con el onboarding.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-5.jpg" alt="Pantalla de datos de pago con opción de omitir">
+
+    <p style="margin-top:28px;">Integramos en Content Studio las acciones para validar datos, aprobar el onboarding y enviar el contrato de freelancer.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-6.jpg" alt="Pantalla de validación y aprobación en Content Studio">
+
+    <p style="margin-top:28px;">Operaciones puede solicitar correcciones desde la plataforma y el proveedor actualiza los datos para avanzar con el proceso.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-7.jpg" alt="Pantalla de solicitud de correcciones">
+
+    <p style="margin-top:28px;">Centralizamos la firma digital del contrato dentro del flujo de alta.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-8.jpg" alt="Pantalla de firma digital del contrato">
+  </section>
+
+  <!-- ── IMPACTO ── -->
+  <section class="case-section">
+    <h2>Impacto</h2>
+    <div class="case-stat">
+      <div class="case-stat-value">3x</div>
+      <div class="case-stat-label">Incremento de productividad</div>
+    </div>
+    <ul class="case-list">
+      <li>Se redujo significativamente la intervención del equipo de Operaciones.</li>
+      <li>Disminuyeron los errores en documentación y datos críticos.</li>
+      <li>Se aceleraron los tiempos de alta de proveedores.</li>
+      <li>El sistema pudo absorber un mayor volumen de onboarding sin incrementar la carga operativa.</li>
+    </ul>
+    <p class="case-callout">👉 El equipo de Operaciones dejó de gestionar tareas repetitivas y pudo enfocarse en situaciones críticas de producción.</p>
+  </section>
+
+  <!-- ── PREV / NEXT ── -->
+  <div class="case-nav" style="justify-content:flex-end;">
+    <a href="/proyectos/blink-content-studio" class="case-nav-next">
+      Próximo proyecto
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+    </a>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <div class="footer-bg">
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-contacts">
+          <div>
+            <p class="footer-field-label">Email</p>
+            <a href="mailto:romanpaparella@gmail.com" class="footer-field-val">romanpaparella@gmail.com</a>
+          </div>
+          <div>
+            <p class="footer-field-label">Ubicación</p>
+            <p class="footer-field-val">Ciudad de Buenos Aires, Argentina</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/romanpaparella" target="_blank" rel="noopener" class="footer-icon-btn" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-disclaimer">El contenido de este portfolio, incluyendo capturas de pantalla, flujos, datos y nombres de clientes, es confidencial. Está destinado exclusivamente a procesos de evaluación profesional y no puede ser reproducido, compartido ni utilizado sin autorización expresa.</p>
+    </footer>
   </div>
 
 </body>

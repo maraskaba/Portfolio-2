@@ -106,7 +106,7 @@
     .kit-intro p {
       font-size: 16px;
       line-height: 1.65;
-      color: #6b6b6b;
+      color: var(--text-body);
       max-width: 620px;
     }
 
@@ -192,7 +192,7 @@
     .t-h2     { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.02em; }
     .t-h3     { font-size: 32px; font-weight: 500; letter-spacing: -1.28px; line-height: 38.4px; }
     .t-h4     { font-size: 18px; font-weight: 600; }
-    .t-body   { font-size: 16px; line-height: 1.65; color: #6b6b6b; max-width: 480px; }
+    .t-body   { font-size: 16px; line-height: 1.65; color: var(--text-body); max-width: 480px; }
     .t-small  { font-size: 13px; color: var(--gray-mid); }
     .t-label  { font-size: 11.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-mid); }
 
@@ -214,30 +214,17 @@
     .preview:last-child { margin-bottom: 0; }
 
     /* ── TAG PILLS ────────────────────────────── */
-    .tag-pill {
+    .tag-pill-neutral {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      background: #eaf7ef;
-      color: var(--green);
-      font-size: 12.5px;
-      font-weight: 600;
-      padding: 5px 13px;
+      background: var(--gray-bg);
+      color: var(--black);
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      padding: 6px 16px;
       border-radius: 100px;
     }
-    .tag-pill-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
-    .tag-pill-dark {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: rgba(14,164,59,0.18);
-      color: #2ecc71;
-      font-size: 12.5px;
-      font-weight: 600;
-      padding: 5px 13px;
-      border-radius: 100px;
-    }
-    .tag-pill-dark-dot { width: 7px; height: 7px; border-radius: 50%; background: #2ecc71; }
 
     /* ── CARDS ────────────────────────────────── */
     .kit-card-grid {
@@ -245,8 +232,6 @@
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 16px;
     }
-    /* placeholder degradado: en el kit no hay imagen real de cover */
-    .kit-card-grid .project-cover { background: linear-gradient(135deg,#e4e4e4,#f2f2f2); }
 
     .tcard {
       background: rgba(255,255,255,0.055);
@@ -387,7 +372,8 @@
         <a href="#tipografia" class="kit-sidebar-link">Tipografía</a>
         <a href="#botones" class="kit-sidebar-link">Botones</a>
         <a href="#tags" class="kit-sidebar-link">Tags</a>
-        <a href="#tarjetas" class="kit-sidebar-link">Tarjetas</a>
+        <a href="#project-card" class="kit-sidebar-link">Project Card</a>
+        <a href="#testimonial-card" class="kit-sidebar-link">Testimonial Card</a>
         <a href="#navegacion" class="kit-sidebar-link">Navegación</a>
         <a href="#case-study" class="kit-sidebar-link">Case study</a>
         <a href="#iconos" class="kit-sidebar-link">Iconos</a>
@@ -437,8 +423,8 @@
         <div class="swatch-info"><div class="swatch-name">Gray Mid</div><div class="swatch-hex">--gray-mid · #a3a3a3</div></div>
       </div>
       <div class="swatch">
-        <div class="swatch-color" style="background:#6b6b6b"></div>
-        <div class="swatch-info"><div class="swatch-name">Body text</div><div class="swatch-hex">#6b6b6b</div></div>
+        <div class="swatch-color" style="background:#1f2937"></div>
+        <div class="swatch-info"><div class="swatch-name">Body text</div><div class="swatch-hex">--text-body · #1f2937</div></div>
       </div>
       <div class="swatch">
         <div class="swatch-color" style="background:#0ea43b"></div>
@@ -568,55 +554,75 @@
   <section class="kit-section" id="tags">
     <div class="kit-section-head">
       <h2>Tags &amp; Pills</h2>
-      <p>Etiquetas de estado y metadata de proyectos.</p>
+      <p>Badge neutro (Mis skills, Testimonios) y metadata de proyectos.</p>
     </div>
     <div class="preview">
-      <div class="tag-pill"><span class="tag-pill-dot"></span>Mis skills</div>
+      <div class="tag-pill-neutral">Mis skills</div>
+      <div class="tag-pill-neutral">Testimonios</div>
       <span class="project-tag">Blink.la</span>
       <span class="project-sep">·</span>
       <span class="project-tag">Diseño de producto</span>
     </div>
-    <div class="preview preview-dark">
-      <div class="tag-pill-dark"><span class="tag-pill-dark-dot"></span>Testimonios</div>
-    </div>
   </section>
 
-  <!-- ── TARJETAS ── -->
-  <section class="kit-section" id="tarjetas">
+  <!-- ── PROJECT CARD ── -->
+  <section class="kit-section" id="project-card">
     <div class="kit-section-head">
-      <h2>Tarjetas</h2>
-      <p>Project card (fondo claro) y testimonial card (fondo oscuro).</p>
+      <h2>Project Card</h2>
+      <p>Usada en la grilla de proyectos de home y en /proyectos. Cover 16:9, nombre y tags separados por punto medio.</p>
     </div>
 
-    <p class="kit-block-label">Project card</p>
-    <div class="kit-card-grid" style="margin-bottom:40px;">
+    <div class="kit-card-grid" style="margin-bottom:32px;">
       <a href="#" class="project-card">
-        <div class="project-cover"></div>
+        <div class="project-cover-frame">
+          <img class="project-cover" src="/images/projects/ypf/cover.png" alt="">
+        </div>
         <div class="project-info">
-          <h3 class="project-name">Nombre del proyecto</h3>
+          <h3 class="project-name">Sistema de gestión de incidentes ambientales</h3>
           <div class="project-tags">
-            <span class="project-tag">Cliente</span>
+            <span class="project-tag">YPF</span>
             <span class="project-sep">·</span>
-            <span class="project-tag">Disciplina</span>
+            <span class="project-tag">Diseño UX</span>
           </div>
         </div>
       </a>
       <a href="#" class="project-card">
-        <div class="project-cover"></div>
+        <div class="project-cover-frame">
+          <img class="project-cover" src="/images/projects/zurich/cover.png" alt="">
+        </div>
         <div class="project-info">
-          <h3 class="project-name">Otro proyecto</h3>
+          <h3 class="project-name">Rediseño de la sección Inversiones</h3>
           <div class="project-tags">
-            <span class="project-tag">Cliente</span>
+            <span class="project-tag">Zurich</span>
             <span class="project-sep">·</span>
-            <span class="project-tag">UX</span>
+            <span class="project-tag">Diseño UI</span>
             <span class="project-sep">·</span>
-            <span class="project-tag">Research</span>
+            <span class="project-tag">Front-End</span>
           </div>
         </div>
       </a>
     </div>
 
-    <p class="kit-block-label">Testimonial card</p>
+    <table class="kit-table">
+      <tr><th>Clase</th><th>Uso</th></tr>
+      <tr><td>.projects-grid</td><td>Grilla de 2 columnas que contiene las cards (1 columna en mobile)</td></tr>
+      <tr><td>.project-card</td><td>Contenedor &lt;a&gt;: sin fondo ni borde propio, el texto queda "afuera" de la imagen</td></tr>
+      <tr><td>.project-cover-frame</td><td>Envoltorio de la imagen: radio 20px + overflow hidden, recorta el zoom del hover</td></tr>
+      <tr><td>.project-cover</td><td>Imagen de portada, aspect-ratio 16:9. En hover del card, escala a 1.06 (transición 0.6s)</td></tr>
+      <tr><td>.project-info</td><td>Padding superior mínimo debajo del cover, sin fondo</td></tr>
+      <tr><td>.project-name</td><td>Título del proyecto — Headline 4, 18px / 600</td></tr>
+      <tr><td>.project-tags</td><td>Fila flex de tags + separadores</td></tr>
+      <tr><td>.project-tag</td><td>Cliente o disciplina, 16px, color gray-mid</td></tr>
+      <tr><td>.project-sep</td><td>Punto medio "·" entre tags, color #d0d0d0</td></tr>
+    </table>
+  </section>
+
+  <!-- ── TESTIMONIAL CARD ── -->
+  <section class="kit-section" id="testimonial-card">
+    <div class="kit-section-head">
+      <h2>Testimonial Card</h2>
+      <p>Usada en la sección de testimonios de home, sobre fondo oscuro.</p>
+    </div>
     <div class="preview preview-dark" style="border-radius:16px;">
       <div class="tcard" style="max-width:320px;">
         <p class="tcard-quote">Cita o testimonio de un colega describiendo la colaboración...</p>
@@ -743,6 +749,10 @@
       <tr><td>.case-list</td><td>Lista con bullet circular gris</td></tr>
       <tr><td>.case-img / .case-img-grid</td><td>Imagen de soporte a ancho completo, o grilla de 2</td></tr>
       <tr><td>.case-nav-prev / .case-nav-next</td><td>Navegación entre proyectos al pie de la página</td></tr>
+      <tr><td>.case-caption</td><td>Texto gris chico centrado debajo de una imagen</td></tr>
+      <tr><td>.case-quote</td><td>Cita destacada con borde izquierdo, para una frase clave</td></tr>
+      <tr><td>.case-stat</td><td>Métrica destacada (número grande + label)</td></tr>
+      <tr><td>.case-callout</td><td>Bloque destacado con fondo gris para un mensaje final</td></tr>
     </table>
   </section>
 
