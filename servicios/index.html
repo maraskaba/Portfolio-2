@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Servicios — Román Paparella</title>
+  <meta name="description" content="Diseño de productos digitales, sitios web y experiencias claras, funcionales y listas para implementar.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="/assets/style.css?v=33">
+
+  <style>
+    /* Estilos propios de /servicios.
+       Solo layout: todo color viene de :root y todo tamaño de texto
+       de la escala documentada en /estilos.html. */
+
+    /* ── HERO ────────────────────────────────── */
+    .srv-hero {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 120px 24px;
+    }
+    .srv-hero .description {
+      max-width: 720px;
+    }
+
+    /* Headline 2 — valores exactos de /estilos.html.
+       Va acá porque no existe una regla global de h2 con font-size:
+       hoy cada página lo reimplementa por su cuenta. Ver nota. */
+    .srv-section h2 {
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* ── SECCIÓN GRIS ────────────────────────── */
+    .srv-bg-gray {
+      background: var(--gray-bg);
+    }
+    .srv-section {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 104px 24px;
+    }
+
+    /* .tag-pill-neutral vive en style.css. Acá solo el modificador:
+       sobre fondo gris se invierte a blanco para que se despegue. */
+    .tag-pill-neutral.on-gray {
+      background: var(--white);
+    }
+
+    .srv-section-head {
+      margin-bottom: 56px;
+    }
+    .srv-section-head .tag-pill-neutral {
+      margin-bottom: 24px;
+    }
+
+    /* ── LISTA DE SERVICIOS ──────────────────── */
+    /* Border Medium (--gray-300) en vez de --gray-border: sobre el fondo
+       gris de la sección, #f2f2f2 queda a 1.04:1 y no se ve. */
+    .srv-list {
+      border-top: 1px solid var(--gray-300);
+    }
+    .srv-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--gray-300);
+    }
+    .srv-item h3 {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.4em;
+      color: var(--black);
+    }
+    .srv-item p {
+      font-size: 16px;
+      line-height: 1.65em;
+      color: var(--text-body);
+    }
+
+    /* ── IA / HERRAMIENTAS ───────────────────── */
+    .srv-ai-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 64px;
+      margin-bottom: 56px;
+    }
+    .srv-ai-text {
+      flex: 1;
+      min-width: 0;
+    }
+    .srv-ai-text h2 {
+      margin-bottom: 16px;
+    }
+    .srv-stars {
+      position: relative;
+      width: 143px;
+      height: 149px;
+      flex-shrink: 0;
+    }
+    .srv-star-lg {
+      position: absolute;
+      top: 0;
+      right: 22px;
+      width: 121px;
+    }
+    .srv-star-sm {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 53px;
+    }
+
+    .srv-tools-label {
+      margin-bottom: 16px;
+    }
+
+    /* Tarjeta de herramienta — el look lo comparten la grilla y el carrusel */
+    .srv-tool {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 8px 16px;
+      background: var(--gray-bg);
+      border: 1px solid var(--gray-border);
+      border-radius: 12px;
+    }
+    .srv-tool img {
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .srv-tool span {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      white-space: nowrap;
+    }
+
+    /* GRILLA — versión activa.
+       4 columnas: 7 herramientas entran como 4 + 3, todas del mismo
+       ancho. Con wrap libre quedaban 6 + 1 y el huérfano se veía mal. */
+    .srv-tools {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    /* ─────────────────────────────────────────────
+       CARRUSEL — VERSIÓN INACTIVA, NO BORRAR.
+       Guardada por si se quiere volver a ella.
+       Para reactivar: descomentar el bloque <div class="srv-tools-wrapper">
+       del HTML y comentar el <div class="srv-tools">.
+       Estas reglas no afectan nada mientras ese markup no exista.
+
+       Patrón calcado del marquee de logos de la home: track duplicado
+       y cada ítem con su propio margin-right (no gap), para que el
+       translateX(-50%) caiga exacto al inicio del segundo set.
+       Calibrado a 44.4 px/s para igualar los 44.1 px/s de la home.
+       ───────────────────────────────────────────── */
+    .srv-tools-wrapper {
+      overflow: hidden;
+      /* fade en los extremos */
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 14%,
+        black 86%,
+        transparent 100%
+      );
+      mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 14%,
+        black 86%,
+        transparent 100%
+      );
+    }
+    .srv-tools-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: srv-marquee 24s linear infinite;
+    }
+    .srv-tools-track .srv-tool {
+      flex-shrink: 0;
+      margin-right: 16px;
+    }
+    @keyframes srv-marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .srv-tools-wrapper {
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
+      .srv-tools-track {
+        animation: none;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+      .srv-tools-track .srv-tool[aria-hidden="true"] { display: none; }
+    }
+    /* ───────── fin carrusel inactivo ───────── */
+
+    /* ── CONTACTO ────────────────────────────── */
+    .srv-contact {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .srv-contact-intro h2 {
+      margin-bottom: 24px;
+    }
+    .srv-contact-intro p {
+      font-size: 16px;
+      line-height: 1.65em;
+      color: var(--text-body);
+    }
+
+    .srv-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .srv-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .srv-field {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .srv-field label {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      color: var(--black);
+    }
+    .srv-field input,
+    .srv-field textarea {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.4em;
+      color: var(--black);
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 12px;
+      padding: 16px;
+      width: 100%;
+      resize: vertical;
+    }
+    .srv-field textarea {
+      min-height: 140px;
+    }
+    .srv-field input::placeholder,
+    .srv-field textarea::placeholder {
+      color: var(--gray-mid);
+    }
+    .srv-field input:focus,
+    .srv-field textarea:focus {
+      outline: none;
+      border-color: var(--black);
+    }
+    .srv-form-submit {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 12px;
+    }
+
+    /* ── RESPONSIVE ──────────────────────────── */
+    @media (max-width: 900px) {
+      .srv-contact { grid-template-columns: 1fr; gap: 40px; }
+      .srv-tools   { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 720px) {
+      .srv-hero    { padding: 72px 24px; }
+      .srv-section { padding: 72px 24px; }
+      .srv-item    { grid-template-columns: 1fr; gap: 8px; }
+      .srv-ai-head { flex-direction: column; gap: 32px; }
+      .srv-stars   { align-self: flex-end; }
+      .srv-form-row { grid-template-columns: 1fr; }
+      .srv-tools   { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 420px) {
+      .srv-tools   { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img class="nav-avatar" src="/images/KZLTNcn4RvS9l4sNroCNukVzk.avif" alt="Román Paparella">
+        <div class="nav-logo-text">
+          <span class="nav-name">Román Paparella</span>
+          <span class="nav-title">Diseñador de Producto</span>
+        </div>
+      </a>
+      <div class="nav-right">
+        <a href="/proyectos" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">Proyectos</span>
+            <span class="btn-bot" aria-hidden="true">Proyectos</span>
+          </span>
+        </a>
+        <a href="/servicios" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">Servicios</span>
+            <span class="btn-bot" aria-hidden="true">Servicios</span>
+          </span>
+        </a>
+        <a href="/estilos.html" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">Estilos</span>
+            <span class="btn-bot" aria-hidden="true">Estilos</span>
+          </span>
+        </a>
+        <a href="/en/" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">ES</span>
+            <span class="btn-bot" aria-hidden="true">ES</span>
+          </span>
+        </a>
+        <a href="#" class="btn btn-primary btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">Descargar CV</span>
+            <span class="btn-bot" aria-hidden="true">Descargar CV</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <hr class="divider">
+
+  <!-- ── HERO ── -->
+  <section class="srv-hero">
+    <h1>Diseño digital para agencias, equipos y productos en crecimiento</h1>
+    <p class="description">Diseño productos digitales, sitios web y experiencias claras, funcionales y listas para implementar. Trabajo con agencias, equipos de producto y empresas que necesitan sumar experiencia en UX/UI, mejorar un producto existente o transformar una idea en una solución concreta.</p>
+  </section>
+
+  <!-- ── SERVICIOS ── -->
+  <div class="srv-bg-gray">
+    <section class="srv-section">
+      <div class="srv-section-head">
+        <span class="tag-pill-neutral on-gray">Mis servicios</span>
+        <h2>Servicios de diseño de inicio a fin</h2>
+      </div>
+
+      <div class="srv-list">
+        <div class="srv-item">
+          <h3>Product Design y UX/UI</h3>
+          <p>Diseño de productos digitales de principio a fin: definición de flujos, wireframes, interfaces, prototipos y documentación para desarrollo.</p>
+        </div>
+        <div class="srv-item">
+          <h3>Sitios web y landing pages</h3>
+          <p>Diseño y desarrollo sitios institucionales, landing pages y micrositios listos para publicar, combinando UX/UI, Figma, herramientas no-code y desarrollo asistido por IA.</p>
+        </div>
+        <div class="srv-item">
+          <h3>Auditoría UX y rediseño de productos</h3>
+          <p>Analizo productos y flujos existentes para detectar problemas de usabilidad, ordenar contenidos y definir mejoras de experiencia e interfaz.</p>
+        </div>
+        <div class="srv-item">
+          <h3>Design systems en Figma</h3>
+          <p>Diseño de interfaces, componentes reutilizables, variables, estilos y documentación para lograr productos consistentes y fáciles de escalar.</p>
+        </div>
+        <div class="srv-item">
+          <h3>Colaboración freelance para agencias</h3>
+          <p>Me incorporo rápidamente a proyectos en curso para sumar capacidad en UX/UI, cubrir picos de trabajo o resolver entregas específicas.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ── IA Y HERRAMIENTAS ── -->
+  <section class="srv-section">
+    <div class="srv-ai-head">
+      <div class="srv-ai-text">
+        <h2>Diseño potenciado por IA</h2>
+        <p class="description">Uso la IA para agilizar tareas de investigación, ordenar información, explorar alternativas y construir prototipos. Esto me permite avanzar más rápido y evaluar más opciones, sin perder de vista el criterio y la experiencia humana.</p>
+      </div>
+      <div class="srv-stars" aria-hidden="true">
+        <img class="srv-star-lg" src="/images/servicios/star-large.png" alt="">
+        <img class="srv-star-sm" src="/images/servicios/star-small.png" alt="">
+      </div>
+    </div>
+
+    <div class="srv-tools-label">
+      <span class="tag-pill-neutral">Herramientas con las que trabajo</span>
+    </div>
+    <!-- GRILLA — versión activa -->
+    <div class="srv-tools">
+      <div class="srv-tool"><img src="/images/servicios/tool-figma.png" alt=""><span>Figma</span></div>
+      <div class="srv-tool"><img src="/images/servicios/tool-claude.png" alt=""><span>Claude</span></div>
+      <div class="srv-tool"><img src="/images/servicios/tool-notion.png" alt=""><span>Notion</span></div>
+      <div class="srv-tool"><img src="/images/servicios/tool-webflow.png" alt=""><span>Webflow</span></div>
+      <div class="srv-tool"><img src="/images/servicios/tool-slack.png" alt=""><span>Slack</span></div>
+      <div class="srv-tool"><img src="/images/servicios/tool-linear.png" alt=""><span>Linear</span></div>
+      <div class="srv-tool"><img src="/images/servicios/tool-miro.png" alt=""><span>Miro</span></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         CARRUSEL — VERSIÓN INACTIVA, NO BORRAR.
+         Para volver a ella: descomentar este bloque y comentar el
+         <div class="srv-tools"> de arriba. El CSS ya está en el <style>
+         (bloque "CARRUSEL — VERSIÓN INACTIVA"), no hay que tocarlo.
+         ═══════════════════════════════════════════════════════════
+    <div class="srv-tools-wrapper">
+      <div class="srv-tools-track">
+        SET 1
+        <div class="srv-tool"><img src="/images/servicios/tool-figma.png" alt=""><span>Figma</span></div>
+        <div class="srv-tool"><img src="/images/servicios/tool-claude.png" alt=""><span>Claude</span></div>
+        <div class="srv-tool"><img src="/images/servicios/tool-notion.png" alt=""><span>Notion</span></div>
+        <div class="srv-tool"><img src="/images/servicios/tool-webflow.png" alt=""><span>Webflow</span></div>
+        <div class="srv-tool"><img src="/images/servicios/tool-slack.png" alt=""><span>Slack</span></div>
+        <div class="srv-tool"><img src="/images/servicios/tool-linear.png" alt=""><span>Linear</span></div>
+        <div class="srv-tool"><img src="/images/servicios/tool-miro.png" alt=""><span>Miro</span></div>
+        SET 2 — duplicado para el loop, invisible para lectores de pantalla
+        <div class="srv-tool" aria-hidden="true"><img src="/images/servicios/tool-figma.png" alt=""><span>Figma</span></div>
+        <div class="srv-tool" aria-hidden="true"><img src="/images/servicios/tool-claude.png" alt=""><span>Claude</span></div>
+        <div class="srv-tool" aria-hidden="true"><img src="/images/servicios/tool-notion.png" alt=""><span>Notion</span></div>
+        <div class="srv-tool" aria-hidden="true"><img src="/images/servicios/tool-webflow.png" alt=""><span>Webflow</span></div>
+        <div class="srv-tool" aria-hidden="true"><img src="/images/servicios/tool-slack.png" alt=""><span>Slack</span></div>
+        <div class="srv-tool" aria-hidden="true"><img src="/images/servicios/tool-linear.png" alt=""><span>Linear</span></div>
+        <div class="srv-tool" aria-hidden="true"><img src="/images/servicios/tool-miro.png" alt=""><span>Miro</span></div>
+      </div>
+    </div>
+         ═══════════════════════════════════════════════════════════ -->
+  </section>
+
+  <!-- ── CONTACTO ── -->
+  <div class="srv-bg-gray">
+    <section class="srv-section">
+      <div class="srv-section-head">
+        <span class="tag-pill-neutral on-gray">Contacto</span>
+      </div>
+
+      <div class="srv-contact">
+        <div class="srv-contact-intro">
+          <h2>¿Necesitás reforzar tu equipo de diseño?</h2>
+          <p>Dejame tus datos y contame de qué se trata tu propuesta. Estaré encantado de analizar tu desafío y responderte a la brevedad.</p>
+        </div>
+
+        <form class="srv-form" action="#" method="post">
+          <div class="srv-form-row">
+            <div class="srv-field">
+              <label for="srv-nombre">Nombre</label>
+              <input id="srv-nombre" name="nombre" type="text" placeholder="Tu nombre completo" autocomplete="name">
+            </div>
+            <div class="srv-field">
+              <label for="srv-email">Email</label>
+              <input id="srv-email" name="email" type="email" placeholder="tuemail@ejemplo.com" autocomplete="email">
+            </div>
+          </div>
+          <div class="srv-field">
+            <label for="srv-mensaje">Mensaje</label>
+            <textarea id="srv-mensaje" name="mensaje" placeholder="Contame sobre tu producto, desafío u oportunidad..."></textarea>
+          </div>
+          <div class="srv-form-submit">
+            <button type="submit" class="btn btn-primary btn-sm">
+              <span class="btn-inner">
+                <span class="btn-top">Enviar mensaje</span>
+                <span class="btn-bot" aria-hidden="true">Enviar mensaje</span>
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <div class="footer-bg">
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-contacts">
+          <div>
+            <p class="footer-field-label">Email</p>
+            <a href="mailto:romanpaparella@gmail.com" class="footer-field-val">romanpaparella@gmail.com</a>
+          </div>
+          <div>
+            <p class="footer-field-label">Ubicación</p>
+            <p class="footer-field-val">Ciudad de Buenos Aires, Argentina</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/romanpaparella" target="_blank" rel="noopener" class="footer-icon-btn" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-disclaimer">El contenido de este portfolio, incluyendo capturas de pantalla, flujos, datos y nombres de clientes, es confidencial. Está destinado exclusivamente a procesos de evaluación profesional y no puede ser reproducido, compartido ni utilizado sin autorización expresa.</p>
+    </footer>
+  </div>
+
+</body>
+</html>

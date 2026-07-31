@@ -316,6 +316,243 @@ h2 {
   color: var(--text-body);
 }
 
+/* ── HOME — hero, clients, projects wrapper, skills, testimonials ──
+   Compartido por index.html (ES) y en/index.html (EN). Antes vivía
+   duplicado en un <style> embebido en cada una de las dos homes. */
+.hero {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 72px 24px 88px;
+  text-align: center;
+  position: relative;
+}
+.hero-photo {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  margin: 0 auto 36px;
+}
+/* .hero-h1 es redundante con el h1 global (mismo color y margin-bottom)
+   — se mantiene documentada porque en/index.html todavía la referencia. */
+.hero-h1 {
+  color: var(--black);
+  margin-bottom: 24px;
+}
+.hero-desc {
+  font-size: 18px;
+  line-height: 1.65em;
+  color: var(--text-body);
+  margin: 0 auto;
+  max-width: 680px;
+}
+
+.clients-bg {
+  background: var(--gray-bg);
+}
+.clients {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 72px 24px;
+}
+.clients-label {
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.65em;
+  color: var(--text-body);
+  margin-bottom: 32px;
+}
+.clients-track-wrapper {
+  overflow: hidden;
+  /* fade en los extremos */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 14%,
+    black 86%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 14%,
+    black 86%,
+    transparent 100%
+  );
+}
+.clients-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+/*
+  Cada imagen lleva su propio margin-right.
+  Así el ancho total incluye el espaciado trailing de TODOS
+  los ítems, y translateX(-50%) cae exactamente al inicio
+  del segundo set → loop sin salto visible.
+*/
+.clients-track img {
+  height: 24px;
+  width: auto;
+  opacity: 0.55;
+  filter: grayscale(1);
+  flex-shrink: 0;
+  margin-right: 64px;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.projects {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 88px 24px;
+}
+.section-title {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -0.02em;
+  margin-bottom: 48px;
+}
+.projects-cta {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.skills {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 88px 24px;
+  border-top: 1px solid var(--gray-border);
+  text-align: center;
+}
+.skills-h2 {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 48px;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  text-align: left;
+}
+
+.testimonials-bg {
+  border-top: 1px solid var(--gray-border);
+}
+.testimonials {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 96px 24px;
+  text-align: center;
+}
+.tag-pill-neutral {
+  display: inline-flex;
+  align-items: center;
+  background: var(--gray-bg);
+  color: var(--black);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+.testimonials-h2 {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+.tcard {
+  background: var(--gray-bg);
+  border-radius: 16px;
+  padding: 24px 20px;
+  height: 352px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tcard-quote {
+  font-size: 16px;
+  line-height: 1.55em;
+  letter-spacing: -0.04em;
+  color: var(--black);
+}
+.tcard-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.tcard-photo {
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.tcard-name {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--black);
+  line-height: 1.4em;
+}
+.tcard-role {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-tertiary);
+  opacity: 0.7;
+  line-height: 1.3em;
+  margin-top: 2px;
+}
+.testimonials-cta {
+  text-align: center;
+  margin-top: 96px;
+}
+
+@media (max-width: 720px) {
+  .hero-desc          { font-size: 16px; }
+  .testimonials-grid  { grid-template-columns: 1fr; }
+  .skills-grid        { grid-template-columns: 1fr; }
+
+  /* logos: de marquee a grilla estática */
+  .clients-track-wrapper {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .clients-track {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    gap: 32px 24px;
+    animation: none;
+  }
+  .clients-track img {
+    margin-right: 0;
+  }
+  .clients-track img:nth-child(n+7) {
+    display: none;
+  }
+}
+
 /* ── SKILL ROW (home /skills, documentado en UI Kit) ── */
 .skill-row {
   display: flex;
