@@ -10,7 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="/assets/style.css?v=32">
 
   <style>
     button { font-family: inherit; }
@@ -97,15 +99,11 @@
       margin-bottom: 14px;
     }
     .kit-intro h1 {
-      font-size: clamp(32px, 5vw, 48px);
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 1.1;
       margin-bottom: 16px;
     }
     .kit-intro p {
       font-size: 16px;
-      line-height: 1.65;
+      line-height: 1.65em;
       color: var(--text-body);
       max-width: 620px;
     }
@@ -131,7 +129,7 @@
     }
     .kit-section-head p {
       font-size: 13.5px;
-      color: var(--gray-mid);
+      color: var(--text-body);
       max-width: 420px;
     }
     .kit-block-label {
@@ -139,7 +137,7 @@
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--gray-mid);
+      color: var(--text-body);
       margin-bottom: 14px;
     }
 
@@ -167,8 +165,15 @@
     .swatch-hex {
       font-family: 'Inter', sans-serif;
       font-size: 11.5px;
-      color: var(--gray-mid);
+      color: var(--text-body);
       margin-top: 3px;
+    }
+    .swatch-hex small {
+      display: block;
+      margin-top: 4px;
+      font-size: 10.5px;
+      line-height: 1.4em;
+      color: var(--gray-mid);
     }
 
     /* ── TYPE SPECIMENS ──────────────────────── */
@@ -185,16 +190,78 @@
     .type-meta {
       font-family: 'Inter', sans-serif;
       font-size: 11.5px;
-      color: var(--gray-mid);
+      color: var(--text-body);
       white-space: nowrap;
     }
-    .t-h1     { font-size: clamp(32px, 6vw, 60px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.08; }
-    .t-h2     { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.02em; }
-    .t-h3     { font-size: 32px; font-weight: 500; letter-spacing: -1.28px; line-height: 38.4px; }
-    .t-h4     { font-size: 18px; font-weight: 600; }
-    .t-body   { font-size: 16px; line-height: 1.65; color: var(--text-body); max-width: 480px; }
-    .t-small  { font-size: 13px; color: var(--gray-mid); }
-    .t-label  { font-size: 11.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-mid); }
+    /* Headlines → Black · resto → Body Text */
+    .t-h1     { font-size: clamp(38px, 6vw, 72px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.25em; color: var(--black); }
+    .t-h2     { font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2em; color: var(--black); }
+    .t-h3     { font-size: 32px; font-weight: 500; letter-spacing: -0.04em; line-height: 1.2em; color: var(--black); }
+    .t-h4     { font-size: 18px; font-weight: 600; color: var(--black); }
+    .t-body   { font-size: 16px; line-height: 1.65em; color: var(--text-body); max-width: 480px; }
+    .t-small  { font-size: 13px; color: var(--text-body); }
+    .t-label  { font-size: 11.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-body); }
+
+    /* ── TYPE SCALE — comparativa por breakpoint ── */
+    .ts-wrap { overflow-x: auto; }
+    .ts-grid {
+      display: grid;
+      grid-template-columns: 128px repeat(3, minmax(178px, 1fr));
+      min-width: 700px;
+    }
+    .ts-grid > * {
+      padding: 22px 16px;
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .ts-grid > .ts-head {
+      padding-top: 0;
+      padding-bottom: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-body);
+    }
+    .ts-head span {
+      display: block;
+      margin-top: 3px;
+      font-weight: 400;
+      font-size: 10.5px;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--gray-mid);
+    }
+    .ts-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--black);
+    }
+    .ts-name span {
+      display: block;
+      margin-top: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--gray-mid);
+    }
+    .ts-sample {
+      color: var(--black);
+      white-space: nowrap;
+      margin-bottom: 16px;
+    }
+    .ts-specs {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      line-height: 1.7em;
+      color: var(--text-body);
+    }
+    .ts-specs b {
+      display: inline-block;
+      min-width: 58px;
+      font-weight: 400;
+      color: var(--gray-mid);
+    }
 
     /* ── COMPONENT PREVIEW WRAPPER ───────────── */
     .preview {
@@ -243,14 +310,14 @@
       justify-content: space-between;
       gap: 24px;
     }
-    .tcard-quote { font-size: 14px; line-height: 1.72; color: rgba(255,255,255,0.65); }
+    .tcard-quote { font-size: 14px; line-height: 1.72em; color: rgba(255,255,255,0.65); }
     .tcard-author { display: flex; align-items: center; gap: 12px; }
     .tcard-avatar {
       width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
       background: linear-gradient(135deg,#3a3a3a,#1c1c1c);
     }
-    .tcard-name { font-size: 14px; font-weight: 600; color: var(--white); line-height: 1.3; }
-    .tcard-role { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.3; }
+    .tcard-name { font-size: 14px; font-weight: 600; color: var(--white); line-height: 1.3em; }
+    .tcard-role { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.3em; }
 
     /* ── NAV / FOOTER MINI PREVIEWS ──────────── */
     .mini-nav {
@@ -263,8 +330,8 @@
       border-radius: 14px;
       background: rgba(255,255,255,0.9);
     }
-    .mini-nav-logo { display: flex; align-items: center; gap: 10px; }
-    .mini-avatar { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg,#d8d8d8,#efefef); flex-shrink: 0; }
+    .mini-nav-logo { display: flex; align-items: center; gap: 14px; }
+    .mini-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg,#d8d8d8,#efefef); flex-shrink: 0; }
 
     /* ── RADIUS / SPACING TOKENS ─────────────── */
     .token-grid {
@@ -281,7 +348,7 @@
       margin-bottom: 10px;
     }
     .token-name { font-size: 12.5px; font-weight: 600; }
-    .token-val { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--gray-mid); }
+    .token-val { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--text-body); }
 
     .space-demo {
       display: flex;
@@ -303,7 +370,7 @@
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      color: var(--gray-mid);
+      color: var(--text-body);
       padding: 10px 12px;
       border-bottom: 1px solid var(--gray-border);
     }
@@ -319,7 +386,7 @@
       padding: 32px 40px 64px;
       border-top: 1px solid var(--gray-border);
     }
-    .kit-footer p { font-size: 12px; color: var(--gray-mid); }
+    .kit-footer p { font-size: 12px; color: var(--text-body); }
 
     @media (max-width: 900px) {
       .kit-layout { flex-direction: column; }
@@ -378,6 +445,8 @@
         <a href="#case-study" class="kit-sidebar-link">Case study</a>
         <a href="#iconos" class="kit-sidebar-link">Iconos</a>
         <a href="#espaciado" class="kit-sidebar-link">Espaciado</a>
+        <a href="#responsive" class="kit-sidebar-link">Responsive</a>
+        <a href="#stat-counter" class="kit-sidebar-link">Stat Counter</a>
       </nav>
       <a href="./index.html" class="kit-sidebar-back">← Ver sitio</a>
     </aside>
@@ -386,6 +455,7 @@
 
   <!-- ── INTRO ── -->
   <section class="kit-intro">
+    <a href="/" class="btn btn-text btn-sm" style="margin-bottom: 24px;"><span class="btn-inner"><span class="btn-top">← Volver al sitio</span><span class="btn-bot" aria-hidden="true">← Volver al sitio</span></span></a>
     <p class="kit-eyebrow">DESIGN SYSTEM</p>
     <h1>Guía de estilos</h1>
     <p>Documentación de los tokens visuales y componentes usados en el portfolio: color, tipografía, botones, tags, tarjetas, navegación e iconografía. Sirve de referencia para mantener consistencia al agregar nuevas secciones.</p>
@@ -395,48 +465,117 @@
   <section class="kit-section" id="colores">
     <div class="kit-section-head">
       <h2>Colores</h2>
-      <p>Paleta base: neutros para texto y fondo, un acento verde para estados destacados.</p>
+      <p>Paleta completa organizada por función. El texto usa 3 niveles — Black para headlines, Body Text para párrafos, Tertiary para texto de apoyo — más Muted para meta y labels. Cada color referencia su equivalente en Tailwind (familia neutral).</p>
     </div>
+
+    <p class="kit-block-label">Texto</p>
     <div class="swatch-grid">
       <div class="swatch">
         <div class="swatch-color" style="background:#050505"></div>
-        <div class="swatch-info"><div class="swatch-name">Black</div><div class="swatch-hex">--black · #050505</div></div>
+        <div class="swatch-info"><div class="swatch-name">Black</div><div class="swatch-hex">--black · #050505<small>≈ tw neutral-950 · headlines h1–h6</small></div></div>
       </div>
       <div class="swatch">
-        <div class="swatch-color" style="background:#ffffff;border-bottom:1px solid #f2f2f2"></div>
-        <div class="swatch-info"><div class="swatch-name">White</div><div class="swatch-hex">--white · #ffffff</div></div>
+        <div class="swatch-color" style="background:#525252"></div>
+        <div class="swatch-info"><div class="swatch-name">Body Text</div><div class="swatch-hex">--text-body · #525252<small>tw neutral-600 · párrafos</small></div></div>
       </div>
       <div class="swatch">
-        <div class="swatch-color" style="background:#141414"></div>
-        <div class="swatch-info"><div class="swatch-name">Dark</div><div class="swatch-hex">--dark · #141414</div></div>
-      </div>
-      <div class="swatch">
-        <div class="swatch-color" style="background:#f7f7f7"></div>
-        <div class="swatch-info"><div class="swatch-name">Gray BG</div><div class="swatch-hex">--gray-bg · #f7f7f7</div></div>
-      </div>
-      <div class="swatch">
-        <div class="swatch-color" style="background:#f2f2f2"></div>
-        <div class="swatch-info"><div class="swatch-name">Gray Border</div><div class="swatch-hex">--gray-border · #f2f2f2</div></div>
+        <div class="swatch-color" style="background:#404040"></div>
+        <div class="swatch-info"><div class="swatch-name">Tertiary</div><div class="swatch-hex">--text-tertiary · #404040<small>tw neutral-700 · texto de apoyo</small></div></div>
       </div>
       <div class="swatch">
         <div class="swatch-color" style="background:#a3a3a3"></div>
-        <div class="swatch-info"><div class="swatch-name">Gray Mid</div><div class="swatch-hex">--gray-mid · #a3a3a3</div></div>
+        <div class="swatch-info"><div class="swatch-name">Muted Text</div><div class="swatch-hex">--gray-mid · #a3a3a3<small>tw neutral-400 · meta y labels</small></div></div>
+      </div>
+    </div>
+
+    <p class="kit-block-label" style="margin-top:32px;">Fondos</p>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#ffffff;border-bottom:1px solid #f2f2f2"></div>
+        <div class="swatch-info"><div class="swatch-name">White</div><div class="swatch-hex">--white · #ffffff<small>tw white</small></div></div>
       </div>
       <div class="swatch">
-        <div class="swatch-color" style="background:#1f2937"></div>
-        <div class="swatch-info"><div class="swatch-name">Body text</div><div class="swatch-hex">--text-body · #1f2937</div></div>
+        <div class="swatch-color" style="background:#141414"></div>
+        <div class="swatch-info"><div class="swatch-name">Dark</div><div class="swatch-hex">--dark · #141414<small>≈ tw neutral-900 · footer, testimonios</small></div></div>
       </div>
       <div class="swatch">
-        <div class="swatch-color" style="background:#0ea43b"></div>
-        <div class="swatch-info"><div class="swatch-name">Green (acento)</div><div class="swatch-hex">--green · #0ea43b</div></div>
-      </div>
-      <div class="swatch">
-        <div class="swatch-color" style="background:#2ecc71"></div>
-        <div class="swatch-info"><div class="swatch-name">Green (dark mode)</div><div class="swatch-hex">#2ecc71</div></div>
+        <div class="swatch-color" style="background:#f7f7f7"></div>
+        <div class="swatch-info"><div class="swatch-name">Light BG</div><div class="swatch-hex">--gray-bg · #f7f7f7<small>≈ tw neutral-100 · secciones, hover de btn-text</small></div></div>
       </div>
       <div class="swatch">
         <div class="swatch-color" style="background:#eaf7ef"></div>
-        <div class="swatch-info"><div class="swatch-name">Green BG</div><div class="swatch-hex">#eaf7ef</div></div>
+        <div class="swatch-info"><div class="swatch-name">Success BG</div><div class="swatch-hex">--success-bg · #eaf7ef<small>≈ tw green-50</small></div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#efefef"></div>
+        <div class="swatch-info"><div class="swatch-name">Subtle BG</div><div class="swatch-hex">--subtle-bg · #efefef<small>≈ tw neutral-200</small></div></div>
+      </div>
+    </div>
+
+    <p class="kit-block-label" style="margin-top:32px;">Bordes</p>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#f2f2f2"></div>
+        <div class="swatch-info"><div class="swatch-name">Border Light</div><div class="swatch-hex">--gray-border · #f2f2f2<small>≈ tw neutral-200 · divisores, bordes de imagen</small></div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#d0d0d0"></div>
+        <div class="swatch-info"><div class="swatch-name">Border Medium</div><div class="swatch-hex">--gray-300 · #d0d0d0<small>≈ tw neutral-300 · separadores de tags</small></div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#f0f0f0"></div>
+        <div class="swatch-info"><div class="swatch-name">Border Subtle</div><div class="swatch-hex">--gray-100 · #f0f0f0<small>≈ tw neutral-100</small></div></div>
+      </div>
+    </div>
+
+    <p class="kit-block-label" style="margin-top:32px;">Acentos</p>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0ea43b"></div>
+        <div class="swatch-info"><div class="swatch-name">Green Primary</div><div class="swatch-hex">--green · #0ea43b<small>≈ tw green-600 · badge de disponibilidad</small></div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#2ecc71"></div>
+        <div class="swatch-info"><div class="swatch-name">Green Secondary</div><div class="swatch-hex">--green-secondary · #2ecc71<small>≈ tw green-500 · sobre fondo oscuro</small></div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#6A71DF"></div>
+        <div class="swatch-info"><div class="swatch-name">Purple Accent</div><div class="swatch-hex">--purple-500 · #6A71DF<small>≈ tw indigo-400 · eyebrows, bullets, stats</small></div></div>
+      </div>
+    </div>
+
+    <p class="kit-block-label" style="margin-top:32px;">Overlays sobre fondo oscuro</p>
+    <p style="font-size:13px;color:var(--text-body);max-width:620px;margin:-6px 0 16px;">
+      Blanco con alpha, para el footer y las testimonial cards. No son colores planos: dependen del fondo sobre el que se apoyan.
+    </p>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#141414;position:relative;"><div style="position:absolute;inset:16px;background:rgba(255,255,255,0.07);border-radius:6px;"></div></div>
+        <div class="swatch-info"><div class="swatch-name">Line</div><div class="swatch-hex">--on-dark-line · white 7%<small>divisores del footer</small></div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#141414;position:relative;"><div style="position:absolute;inset:16px;background:rgba(255,255,255,0.1);border-radius:6px;"></div></div>
+        <div class="swatch-info"><div class="swatch-name">Hover</div><div class="swatch-hex">--on-dark-hover · white 10%<small>fondo hover de icon button</small></div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#141414;position:relative;"><div style="position:absolute;inset:16px;background:rgba(255,255,255,0.14);border-radius:6px;"></div></div>
+        <div class="swatch-info"><div class="swatch-name">Border</div><div class="swatch-hex">--on-dark-border · white 14%<small>bordes de control</small></div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#141414;position:relative;"><div style="position:absolute;inset:16px;background:rgba(255,255,255,0.28);border-radius:6px;"></div></div>
+        <div class="swatch-info"><div class="swatch-name">Text</div><div class="swatch-hex">--on-dark-text · white 28%<small>disclaimer, borde de btn-outline-white</small></div></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#141414;position:relative;"><div style="position:absolute;inset:16px;background:rgba(255,255,255,0.35);border-radius:6px;"></div></div>
+        <div class="swatch-info"><div class="swatch-name">Label</div><div class="swatch-hex">--on-dark-label · white 35%<small>labels del footer</small></div></div>
+      </div>
+    </div>
+
+    <p class="kit-block-label" style="margin-top:32px;">Estados</p>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1c1c1c"></div>
+        <div class="swatch-info"><div class="swatch-name">Dark Hover</div><div class="swatch-hex">--dark-hover · #1c1c1c<small>≈ tw neutral-900 · hover de btn-primary</small></div></div>
       </div>
     </div>
   </section>
@@ -454,34 +593,159 @@
       <span class="type-meta">font-family: 'Inter', sans-serif</span>
     </div>
 
-    <p class="kit-block-label" style="margin-top:36px;">Escala</p>
-    <div class="type-row">
-      <span class="t-h1">Headline 1</span>
-      <span class="type-meta">clamp(42px,7vw,76px) · 700 · -0.025em</span>
-    </div>
-    <div class="type-row">
-      <span class="t-h2">Headline 2</span>
-      <span class="type-meta">clamp(26px,4vw,38px) · 700 · -0.02em</span>
-    </div>
-    <div class="type-row">
-      <span class="t-h3">Headline 3</span>
-      <span class="type-meta">32px · 500 · -1.28px · line-height 38.4px</span>
-    </div>
-    <div class="type-row">
-      <span class="t-h4">Headline 4 — nombre de proyecto / card title</span>
-      <span class="type-meta">18px · 600</span>
-    </div>
-    <div class="type-row">
-      <span class="t-body">Texto de cuerpo — hero-desc, clients-label, párrafos introductorios.</span>
-      <span class="type-meta">16px · 400 · line-height 1.65</span>
-    </div>
-    <div class="type-row">
-      <span class="t-small">Texto secundario / meta</span>
-      <span class="type-meta">13px · 400 · gray-mid</span>
-    </div>
-    <div class="type-row">
-      <span class="t-label">Field Label</span>
-      <span class="type-meta">11.5px · 600 · uppercase · 0.06em</span>
+    <p class="kit-block-label" style="margin-top:36px;">Escala por breakpoint</p>
+    <p style="font-size:13px;color:var(--text-body);max-width:620px;margin-bottom:24px;">
+      Valores computados reales medidos a 1440px, 768px y 375px. Headline 1 y 2 usan <code>clamp()</code>,
+      así que escalan de forma fluida entre esos anchos; el resto de la escala es fija.
+    </p>
+    <p style="font-size:13px;color:var(--text-body);max-width:620px;margin-bottom:24px;">
+      El <code>line-height</code> se declara en <strong>em</strong> y el px entre paréntesis es lo que computa.
+      Los que dicen <em>heredado</em> no declaran uno propio: toman el <code>1.4em</code> de <code>body</code>,
+      que resuelve a 22.4px fijos y se hereda como ese px, no como proporción.
+    </p>
+
+    <div class="ts-wrap">
+      <div class="ts-grid">
+        <div class="ts-head"></div>
+        <div class="ts-head">Desktop <span>1440px</span></div>
+        <div class="ts-head">Tablet <span>768px</span></div>
+        <div class="ts-head">Mobile <span>375px</span></div>
+
+        <!-- Headline 1 -->
+        <div class="ts-name">Headline 1<span>h1 · clamp(38px, 6vw, 72px)</span></div>
+        <div>
+          <div class="ts-sample" style="font-size:72px;line-height:1.25em;letter-spacing:-0.025em;font-weight:700;">Aa</div>
+          <div class="ts-specs"><b>size</b>72px<br><b>line-h</b>1.25em (90px)<br><b>weight</b>700<br><b>track</b>-0.025em</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:46.08px;line-height:1.25em;letter-spacing:-0.025em;font-weight:700;">Aa</div>
+          <div class="ts-specs"><b>size</b>46.08px<br><b>line-h</b>1.25em (57.6px)<br><b>weight</b>700<br><b>track</b>-0.025em</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:38px;line-height:1.25em;letter-spacing:-0.025em;font-weight:700;">Aa</div>
+          <div class="ts-specs"><b>size</b>38px<br><b>line-h</b>1.25em (47.5px)<br><b>weight</b>700<br><b>track</b>-0.025em</div>
+        </div>
+
+        <!-- Headline 2 -->
+        <div class="ts-name">Headline 2<span>h2 · clamp(26px, 4vw, 38px)</span></div>
+        <div>
+          <div class="ts-sample" style="font-size:38px;line-height:1.2em;letter-spacing:-0.02em;font-weight:700;">Aa</div>
+          <div class="ts-specs"><b>size</b>38px<br><b>line-h</b>1.2em (45.6px)<br><b>weight</b>700<br><b>track</b>-0.02em</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:30.72px;line-height:1.2em;letter-spacing:-0.02em;font-weight:700;">Aa</div>
+          <div class="ts-specs"><b>size</b>30.72px<br><b>line-h</b>1.2em (36.86px)<br><b>weight</b>700<br><b>track</b>-0.02em</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:26px;line-height:1.2em;letter-spacing:-0.02em;font-weight:700;">Aa</div>
+          <div class="ts-specs"><b>size</b>26px<br><b>line-h</b>1.2em (31.2px)<br><b>weight</b>700<br><b>track</b>-0.02em</div>
+        </div>
+
+        <!-- Headline 3 -->
+        <div class="ts-name">Headline 3<span>h3 · fijo</span></div>
+        <div>
+          <div class="ts-sample" style="font-size:32px;line-height:1.2em;letter-spacing:-0.04em;font-weight:500;">Aa</div>
+          <div class="ts-specs"><b>size</b>32px<br><b>line-h</b>1.2em (38.4px)<br><b>weight</b>500<br><b>track</b>-0.04em</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:32px;line-height:1.2em;letter-spacing:-0.04em;font-weight:500;">Aa</div>
+          <div class="ts-specs"><b>size</b>32px<br><b>line-h</b>1.2em (38.4px)<br><b>weight</b>500<br><b>track</b>-0.04em</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:32px;line-height:1.2em;letter-spacing:-0.04em;font-weight:500;">Aa</div>
+          <div class="ts-specs"><b>size</b>32px<br><b>line-h</b>1.2em (38.4px)<br><b>weight</b>500<br><b>track</b>-0.04em</div>
+        </div>
+
+        <!-- Headline 4 -->
+        <div class="ts-name">Headline 4<span>card title · fijo</span></div>
+        <div>
+          <div class="ts-sample" style="font-size:18px;line-height:22.4px;font-weight:600;">Aa</div>
+          <div class="ts-specs"><b>size</b>18px<br><b>line-h</b>heredado (22.4px)<br><b>weight</b>600<br><b>track</b>normal</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:18px;line-height:22.4px;font-weight:600;">Aa</div>
+          <div class="ts-specs"><b>size</b>18px<br><b>line-h</b>heredado (22.4px)<br><b>weight</b>600<br><b>track</b>normal</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:18px;line-height:22.4px;font-weight:600;">Aa</div>
+          <div class="ts-specs"><b>size</b>18px<br><b>line-h</b>heredado (22.4px)<br><b>weight</b>600<br><b>track</b>normal</div>
+        </div>
+
+        <!-- Stats -->
+        <div class="ts-name">Stats<span>.stat-counter · fijo</span></div>
+        <div>
+          <div class="ts-sample" style="font-size:48px;line-height:1.2em;font-weight:700;">Aa</div>
+          <div class="ts-specs"><b>size</b>48px<br><b>line-h</b>1.2em (57.6px)<br><b>weight</b>700<br><b>track</b>normal</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:48px;line-height:1.2em;font-weight:700;">Aa</div>
+          <div class="ts-specs"><b>size</b>48px<br><b>line-h</b>1.2em (57.6px)<br><b>weight</b>700<br><b>track</b>normal</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:48px;line-height:1.2em;font-weight:700;">Aa</div>
+          <div class="ts-specs"><b>size</b>48px<br><b>line-h</b>1.2em (57.6px)<br><b>weight</b>700<br><b>track</b>normal</div>
+        </div>
+
+        <!-- Description -->
+        <div class="ts-name">Description<span>.description · fijo</span></div>
+        <div>
+          <div class="ts-sample" style="font-size:18px;line-height:1.4em;font-weight:400;color:var(--text-body);">Aa</div>
+          <div class="ts-specs"><b>size</b>18px<br><b>line-h</b>1.4em (25.2px)<br><b>weight</b>400<br><b>max-w</b>640px</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:18px;line-height:1.4em;font-weight:400;color:var(--text-body);">Aa</div>
+          <div class="ts-specs"><b>size</b>18px<br><b>line-h</b>1.4em (25.2px)<br><b>weight</b>400<br><b>max-w</b>640px</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:18px;line-height:1.4em;font-weight:400;color:var(--text-body);">Aa</div>
+          <div class="ts-specs"><b>size</b>18px<br><b>line-h</b>1.4em (25.2px)<br><b>weight</b>400<br><b>max-w</b>640px</div>
+        </div>
+
+        <!-- Body -->
+        <div class="ts-name">Body Text<span>párrafos · fijo</span></div>
+        <div>
+          <div class="ts-sample" style="font-size:16px;line-height:1.65em;font-weight:400;color:var(--text-body);">Aa</div>
+          <div class="ts-specs"><b>size</b>16px<br><b>line-h</b>1.65em (26.4px)<br><b>weight</b>400<br><b>track</b>normal</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:16px;line-height:1.65em;font-weight:400;color:var(--text-body);">Aa</div>
+          <div class="ts-specs"><b>size</b>16px<br><b>line-h</b>1.65em (26.4px)<br><b>weight</b>400<br><b>track</b>normal</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:16px;line-height:1.65em;font-weight:400;color:var(--text-body);">Aa</div>
+          <div class="ts-specs"><b>size</b>16px<br><b>line-h</b>1.65em (26.4px)<br><b>weight</b>400<br><b>track</b>normal</div>
+        </div>
+
+        <!-- Secundario -->
+        <div class="ts-name">Texto secundario<span>meta · fijo</span></div>
+        <div>
+          <div class="ts-sample" style="font-size:13px;line-height:22.4px;font-weight:400;color:var(--text-body);">Aa</div>
+          <div class="ts-specs"><b>size</b>13px<br><b>line-h</b>heredado (22.4px)<br><b>weight</b>400<br><b>track</b>normal</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:13px;line-height:22.4px;font-weight:400;color:var(--text-body);">Aa</div>
+          <div class="ts-specs"><b>size</b>13px<br><b>line-h</b>heredado (22.4px)<br><b>weight</b>400<br><b>track</b>normal</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:13px;line-height:22.4px;font-weight:400;color:var(--text-body);">Aa</div>
+          <div class="ts-specs"><b>size</b>13px<br><b>line-h</b>heredado (22.4px)<br><b>weight</b>400<br><b>track</b>normal</div>
+        </div>
+
+        <!-- Field Label -->
+        <div class="ts-name">Field Label<span>uppercase · fijo</span></div>
+        <div>
+          <div class="ts-sample" style="font-size:11.5px;line-height:22.4px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-body);">Aa</div>
+          <div class="ts-specs"><b>size</b>11.5px<br><b>line-h</b>heredado (22.4px)<br><b>weight</b>600<br><b>track</b>0.06em</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:11.5px;line-height:22.4px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-body);">Aa</div>
+          <div class="ts-specs"><b>size</b>11.5px<br><b>line-h</b>heredado (22.4px)<br><b>weight</b>600<br><b>track</b>0.06em</div>
+        </div>
+        <div>
+          <div class="ts-sample" style="font-size:11.5px;line-height:22.4px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-body);">Aa</div>
+          <div class="ts-specs"><b>size</b>11.5px<br><b>line-h</b>heredado (22.4px)<br><b>weight</b>600<br><b>track</b>0.06em</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -540,13 +804,45 @@
       </a>
     </div>
 
+    <p class="kit-block-label">Text — fondo claro</p>
+    <div class="preview">
+      <a href="#" class="btn btn-text btn-sm">
+        <span class="btn-inner">
+          <span class="btn-top">Enlace de texto</span>
+          <span class="btn-bot" aria-hidden="true">Enlace de texto</span>
+        </span>
+      </a>
+      <a href="#" class="btn btn-text btn-lg">
+        <span class="btn-inner">
+          <span class="btn-top">Enlace de texto</span>
+          <span class="btn-bot" aria-hidden="true">Enlace de texto</span>
+        </span>
+      </a>
+    </div>
+
+    <p class="kit-block-label">Outline con icono — "Próximo proyecto"</p>
+    <div class="preview">
+      <a href="#" class="btn btn-outline btn-sm">
+        <span class="btn-inner">
+          <span class="btn-top">Próximo proyecto <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+          <span class="btn-bot" aria-hidden="true">Próximo proyecto <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+        </span>
+      </a>
+    </div>
+    <p style="font-size:13px;color:var(--text-body);max-width:620px;margin-bottom:40px;">
+      El icono va <strong>dentro</strong> de <code>.btn-top</code> y <code>.btn-bot</code>, después del texto. El <code>gap: 8px</code> de esas capas lo separa, y con <code>stroke="currentColor"</code> toma el color del botón. Se usa al pie de cada case study.
+    </p>
+
     <table class="kit-table">
       <tr><th>Clase</th><th>Tipo</th><th>Estilo</th></tr>
       <tr><td>.btn-primary</td><td>Estilo</td><td>fondo negro, texto blanco</td></tr>
       <tr><td>.btn-outline</td><td>Estilo</td><td>borde 1.5px negro, texto negro (fondo claro)</td></tr>
       <tr><td>.btn-outline-white</td><td>Estilo</td><td>borde 1.5px blanco 28%, texto blanco (fondo oscuro)</td></tr>
-      <tr><td>.btn-sm</td><td>Tamaño</td><td>padding 9px 18px · font-size 13.5px — CTAs en nav</td></tr>
-      <tr><td>.btn-lg</td><td>Tamaño</td><td>padding 13px 28px · font-size 14.5px — CTAs de sección</td></tr>
+      <tr><td>.btn-text</td><td>Estilo</td><td>sin borde, solo texto — fondo gris sutil en hover (--gray-bg)</td></tr>
+      <tr><td>icono</td><td>Variante</td><td>SVG 14×14 con <code>stroke="currentColor"</code> dentro de .btn-top / .btn-bot</td></tr>
+      <tr><td>font-weight</td><td>Todos</td><td>500 · Consistente para todos los botones</td></tr>
+      <tr><td>.btn-sm</td><td>Tamaño</td><td>padding 14px 20px · font-size 16px · height 44px — CTA de nav</td></tr>
+      <tr><td>.btn-lg</td><td>Tamaño</td><td>padding 13px 28px · font-size 16px — CTAs de sección</td></tr>
     </table>
   </section>
 
@@ -612,8 +908,8 @@
       <tr><td>.project-info</td><td>Padding superior mínimo debajo del cover, sin fondo</td></tr>
       <tr><td>.project-name</td><td>Título del proyecto — Headline 4, 18px / 600</td></tr>
       <tr><td>.project-tags</td><td>Fila flex de tags + separadores</td></tr>
-      <tr><td>.project-tag</td><td>Cliente o disciplina, 16px, color gray-mid</td></tr>
-      <tr><td>.project-sep</td><td>Punto medio "·" entre tags, color #d0d0d0</td></tr>
+      <tr><td>.project-tag</td><td>Cliente o disciplina, 16px, color body text</td></tr>
+      <tr><td>.project-sep</td><td>Punto medio "·" entre tags, color body text</td></tr>
     </table>
   </section>
 
@@ -641,7 +937,7 @@
   <section class="kit-section" id="navegacion">
     <div class="kit-section-head">
       <h2>Navegación &amp; Footer</h2>
-      <p>Header sticky con blur y footer oscuro con datos de contacto.</p>
+      <p>Header sticky con fondo blanco sólido y footer oscuro con datos de contacto.</p>
     </div>
 
     <p class="kit-block-label">Nav</p>
@@ -696,7 +992,14 @@
       <p>Estructura de una página de proyecto completa (ej. /proyectos/ypf): eyebrow, meta, secciones de contenido y navegación prev/next.</p>
     </div>
 
-    <p class="kit-block-label">Eyebrow</p>
+    <p class="kit-block-label">Logo del cliente (antes del título)</p>
+    <div class="preview">
+      <img class="case-logo" style="margin-bottom:0;" src="/images/logos/logo-ypf.svg" alt="YPF">
+      <img class="case-logo" style="margin-bottom:0;" src="/images/logos/logo-remax.svg" alt="RE/MAX">
+      <img class="case-logo" style="margin-bottom:0;" src="/images/logos/logo-zurich.svg" alt="Zurich">
+    </div>
+
+    <p class="kit-block-label">Eyebrow de texto (fallback sin logo disponible)</p>
     <div class="preview">
       <p class="case-eyebrow" style="margin-bottom:0;">YPF</p>
     </div>
@@ -728,27 +1031,30 @@
       </ul>
     </div>
 
-    <p class="kit-block-label">Navegación prev / next</p>
-    <div class="preview" style="justify-content:space-between;">
-      <a href="#" class="case-nav-prev" aria-label="Proyecto anterior">
-        <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3L4 7l7 4"/></svg>
-      </a>
-      <a href="#" class="case-nav-next">
-        Próximo proyecto
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+    <p class="kit-block-label">Próximo proyecto</p>
+    <div class="preview" style="justify-content:flex-end;">
+      <a href="#" class="btn btn-outline btn-sm">
+        <span class="btn-inner">
+          <span class="btn-top">Próximo proyecto <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+          <span class="btn-bot" aria-hidden="true">Próximo proyecto <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+        </span>
       </a>
     </div>
+    <p style="font-size:13px;color:var(--text-body);max-width:620px;margin-bottom:40px;">
+      Va al pie de cada case study, dentro de <code>.case-nav</code> (alineado a la derecha). Es el <code>.btn-outline</code> del sistema con una flecha a la derecha; hereda la animación de hover de dos capas. No hay botón "anterior". El último proyecto vuelve al primero, y el link siempre apunta al mismo idioma de la página.
+    </p>
 
     <table class="kit-table">
       <tr><th>Clase</th><th>Uso</th></tr>
-      <tr><td>.case-eyebrow</td><td>Nombre del cliente arriba del título, azul</td></tr>
+      <tr><td>.case-logo</td><td>Logo del cliente arriba del título — height 28px, ancho auto (/images/logos)</td></tr>
+      <tr><td>.case-eyebrow</td><td>Nombre del cliente en texto — fallback cuando no hay logo</td></tr>
       <tr><td>.case-hero / .case-subtitle</td><td>Título del caso + bajada descriptiva</td></tr>
       <tr><td>.case-meta</td><td>Fila Cliente / Año / Scope con borde inferior</td></tr>
       <tr><td>.case-section</td><td>Cada bloque de contenido (Contexto, Desafío, Enfoque, etc.)</td></tr>
       <tr><td>.case-subhead</td><td>Subtítulo dentro de una sección (ej. "Metodología", "Componentes clave")</td></tr>
       <tr><td>.case-list</td><td>Lista con bullet circular gris</td></tr>
       <tr><td>.case-img / .case-img-grid</td><td>Imagen de soporte a ancho completo, o grilla de 2</td></tr>
-      <tr><td>.case-nav-prev / .case-nav-next</td><td>Navegación entre proyectos al pie de la página</td></tr>
+      <tr><td>.case-nav</td><td>Contenedor del botón "Próximo proyecto" al pie — un solo <code>.btn-outline</code> con flecha, alineado a la derecha</td></tr>
       <tr><td>.case-caption</td><td>Texto gris chico centrado debajo de una imagen</td></tr>
       <tr><td>.case-quote</td><td>Cita destacada con borde izquierdo, para una frase clave</td></tr>
       <tr><td>.case-stat</td><td>Métrica destacada (número grande + label)</td></tr>
@@ -838,11 +1144,104 @@
     <p class="kit-block-label">Contenedor</p>
     <table class="kit-table">
       <tr><th>Token</th><th>Valor</th><th>Uso</th></tr>
-      <tr><td>--max-w</td><td>1040px</td><td>Ancho máximo de todas las secciones del sitio</td></tr>
+      <tr><td>--max-w</td><td>1040px</td><td>Ancho máximo de todas las secciones del sitio (imágenes, grillas)</td></tr>
+      <tr><td>--case-text-w</td><td>880px</td><td>Ancho máximo para secciones de texto en case studies (más estrecho que imágenes)</td></tr>
       <tr><td>padding lateral</td><td>24px</td><td>Padding horizontal consistente en mobile/desktop</td></tr>
       <tr><td>padding vertical (sección)</td><td>88px</td><td>Separación entre bloques grandes (Projects, Skills, Testimonials)</td></tr>
       <tr><td>gap grid</td><td>16px</td><td>Separación entre cards en grillas</td></tr>
     </table>
+  </section>
+
+  <!-- ── RESPONSIVE ── -->
+  <section class="kit-section" id="responsive">
+    <div class="kit-section-head">
+      <h2>Responsive</h2>
+      <p>Cómo se adaptan los estilos tipográficos y espaciados en diferentes resoluciones.</p>
+    </div>
+
+    <p class="kit-block-label">Headline 1 (título principal)</p>
+    <table class="kit-table">
+      <tr><th></th><th>Mobile 375px</th><th>Tablet 768px</th><th>Desktop 1440px</th></tr>
+      <tr><td>font-size</td><td>38px</td><td>46.08px</td><td>72px</td></tr>
+      <tr><td>font-weight</td><td colspan="3">700</td></tr>
+      <tr><td>line-height</td><td colspan="3">1.25em</td></tr>
+      <tr><td>letter-spacing</td><td colspan="3">-0.025em</td></tr>
+      <tr><td>declaración</td><td colspan="3">clamp(38px, 6vw, 72px)</td></tr>
+    </table>
+
+    <p class="kit-block-label">Headline 2</p>
+    <table class="kit-table">
+      <tr><th></th><th>Mobile 375px</th><th>Tablet 768px</th><th>Desktop 1440px</th></tr>
+      <tr><td>font-size</td><td>26px</td><td>30.72px</td><td>38px</td></tr>
+      <tr><td>font-weight</td><td colspan="3">700</td></tr>
+      <tr><td>line-height</td><td colspan="3">1.2em</td></tr>
+      <tr><td>letter-spacing</td><td colspan="3">-0.02em</td></tr>
+      <tr><td>declaración</td><td colspan="3">clamp(26px, 4vw, 38px)</td></tr>
+    </table>
+
+    <p class="kit-block-label">Body Text</p>
+    <table class="kit-table">
+      <tr><th></th><th>Mobile (max 720px)</th><th>Tablet/Desktop</th></tr>
+      <tr><td>font-size</td><td>16px</td><td>16px</td></tr>
+      <tr><td>line-height</td><td colspan="2">1.65em</td></tr>
+      <tr><td>color</td><td colspan="2">var(--text-body) · #525252</td></tr>
+    </table>
+
+    <p class="kit-block-label">Botones</p>
+    <table class="kit-table">
+      <tr><th></th><th>Mobile (max 720px)</th><th>Desktop</th></tr>
+      <tr><td>.btn-sm</td><td>padding: 10px 16px · font-size: 14px</td><td>padding: 14px 20px · font-size: 16px</td></tr>
+      <tr><td>.btn-lg</td><td colspan="2">padding: 13px 28px · font-size: 14.5px</td></tr>
+      <tr><td>border-radius</td><td colspan="2">100px (pill)</td></tr>
+    </table>
+
+    <p class="kit-block-label">Espaciado de secciones</p>
+    <table class="kit-table">
+      <tr><th></th><th>Mobile</th><th>Desktop</th></tr>
+      <tr><td>padding vertical (sección)</td><td>48px</td><td>88px</td></tr>
+      <tr><td>padding horizontal</td><td colspan="2">24px (ambos)</td></tr>
+      <tr><td>gap grid (cards)</td><td>16px (1 columna mobile)</td><td>16px (2 columnas)</td></tr>
+    </table>
+
+    <p class="kit-block-label">Breakpoints</p>
+    <table class="kit-table">
+      <tr><th>Nombre</th><th>Tamaño máximo</th><th>Cambios principales</th></tr>
+      <tr><td>Mobile</td><td>max-width: 720px</td><td>font-size reducidos, padding, 1 columna grillas</td></tr>
+      <tr><td>Tablet</td><td>720px - 1024px</td><td>sizing intermedio, 2 columnas</td></tr>
+      <tr><td>Desktop</td><td>1024px+</td><td>tamaños completos, max-width 1040px</td></tr>
+    </table>
+  </section>
+
+  <!-- ── STAT COUNTER ── -->
+  <section class="kit-section" id="stat-counter">
+    <div class="kit-section-head">
+      <h2>Stat Counter</h2>
+      <p>Componente de número animado que crece desde 0 cuando entra en viewport.</p>
+    </div>
+
+    <p class="kit-block-label">Ejemplo</p>
+    <div class="preview">
+      <div class="stat-counter" data-value="15" data-unit="+">
+        <span class="stat-value">0</span><span class="stat-unit">+</span>
+      </div>
+      <span style="font-size: 13px; color: var(--gray-mid); display: block; margin-top: 16px;">años de experiencia</span>
+    </div>
+
+    <table class="kit-table">
+      <tr><th>Atributo</th><th>Tipo</th><th>Descripción</th></tr>
+      <tr><td>data-value</td><td>número</td><td>Valor final al que animar (ej: 15, 30, 95)</td></tr>
+      <tr><td>data-unit</td><td>string</td><td>Unidad a mostrar después del número (ej: +, %, años)</td></tr>
+      <tr><td>.stat-value</td><td>elemento</td><td>Contenedor para el número que se anima</td></tr>
+      <tr><td>.stat-unit</td><td>elemento</td><td>Contenedor para la unidad</td></tr>
+    </table>
+
+    <p class="kit-block-label">Comportamiento</p>
+    <ul style="margin-left: 24px;">
+      <li>El contador detecta cuando entra en viewport usando IntersectionObserver</li>
+      <li>Anima el número desde 0 hasta el valor especificado en ~1.5 segundos</li>
+      <li>Solo anima una vez por sesión</li>
+      <li>Compatible con valores enteros y decimales</li>
+    </ul>
   </section>
 
   <footer class="kit-footer">
@@ -866,6 +1265,37 @@
       });
     }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
     sections.forEach(function (s) { if (s) observer.observe(s); });
+
+    /* Stat Counter Animation */
+    var statCounters = document.querySelectorAll('.stat-counter');
+    var counterObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting || entry.target.dataset.animated) return;
+        entry.target.dataset.animated = 'true';
+
+        var valueElement = entry.target.querySelector('.stat-value');
+        var targetValue = parseInt(entry.target.dataset.value);
+        var duration = 1500; // ms
+        var startTime = Date.now();
+
+        function animateValue() {
+          var elapsed = Date.now() - startTime;
+          var progress = Math.min(elapsed / duration, 1);
+          var currentValue = Math.floor(progress * targetValue);
+          valueElement.textContent = currentValue;
+
+          if (progress < 1) {
+            requestAnimationFrame(animateValue);
+          }
+        }
+
+        animateValue();
+      });
+    }, { threshold: 0.1 });
+
+    statCounters.forEach(function (counter) {
+      counterObserver.observe(counter);
+    });
   </script>
 
 </body>

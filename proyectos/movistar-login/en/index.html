@@ -10,7 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="/assets/style.css?v=32">
 
 </head>
 <body>
@@ -26,8 +28,19 @@
         </div>
       </a>
       <div class="nav-right">
-        <a href="/proyectos/en/" class="nav-link">Projects</a>
-        <a href="/proyectos/movistar-login" class="nav-lang">EN</a>
+        <a href="/en/proyectos" class="btn btn-text btn-sm"><span class="btn-inner"><span class="btn-top">Projects</span><span class="btn-bot" aria-hidden="true">Projects</span></span></a>
+        <a href="/estilos.html" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">Styles</span>
+            <span class="btn-bot" aria-hidden="true">Styles</span>
+          </span>
+        </a>
+        <a href="/proyectos/movistar-login/" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">EN</span>
+            <span class="btn-bot" aria-hidden="true">EN</span>
+          </span>
+        </a>
         <a href="#" class="btn btn-primary btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Download CV</span>
@@ -42,9 +55,9 @@
 
   <!-- ── CASE HERO ── -->
   <section class="case-hero">
-    <p class="case-eyebrow">Movistar</p>
+    <img class="case-logo" src="/images/logos/logo-movistar.svg" alt="Movistar">
     <h1>Unified sign-up &amp; login validation</h1>
-    <p class="case-subtitle">We validated a unified login and sign-up flow to catch friction points before development.</p>
+    <p class="description">We validated a unified login and sign-up flow to catch friction points before development.</p>
   </section>
 
   <div class="case-cover-wrap">
@@ -105,6 +118,8 @@
     <img class="case-img" src="/images/projects/movistar-login/usuarios.png" alt="Participants of the research sessions">
   </section>
 
+  </section>
+
   <!-- ── FUNCTIONAL PROTOTYPE ── -->
   <section class="case-section">
     <h2>Functional prototype (HTML, PHP, JS)</h2>
@@ -134,6 +149,8 @@
     <img class="case-img" src="/images/projects/movistar-login/01.png" alt="SUS (System Usability Score) result">
   </section>
 
+  </section>
+
   <!-- ── RESULTS ── -->
   <section class="case-section">
     <h2>Results</h2>
@@ -158,14 +175,15 @@
     <img class="case-img" src="/images/projects/movistar-login/Movistar%20IDP%2001.png" alt="Research team working session">
   </section>
 
-  <!-- ── PREV / NEXT ── -->
+  </section>
+
+  <!-- ── NEXT PROJECT ── -->
   <div class="case-nav">
-    <a href="/proyectos/booking/en/" class="case-nav-prev" aria-label="Previous project">
-      <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3L4 7l7 4"/></svg>
-    </a>
-    <a href="/proyectos/ypf/en/" class="case-nav-next">
-      Next project
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+    <a href="/proyectos/ypf/en/" class="btn btn-outline btn-sm">
+      <span class="btn-inner">
+        <span class="btn-top">Next project <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+        <span class="btn-bot" aria-hidden="true">Next project <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+      </span>
     </a>
   </div>
 

@@ -10,7 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="/assets/style.css?v=32">
 
 </head>
 <body>
@@ -26,8 +28,19 @@
         </div>
       </a>
       <div class="nav-right">
-        <a href="/proyectos/en/" class="nav-link">Projects</a>
-        <a href="/proyectos/zurich" class="nav-lang">EN</a>
+        <a href="/en/proyectos" class="btn btn-text btn-sm"><span class="btn-inner"><span class="btn-top">Projects</span><span class="btn-bot" aria-hidden="true">Projects</span></span></a>
+        <a href="/estilos.html" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">Styles</span>
+            <span class="btn-bot" aria-hidden="true">Styles</span>
+          </span>
+        </a>
+        <a href="/proyectos/zurich/" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">EN</span>
+            <span class="btn-bot" aria-hidden="true">EN</span>
+          </span>
+        </a>
         <a href="#" class="btn btn-primary btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Download CV</span>
@@ -42,9 +55,9 @@
 
   <!-- ── CASE HERO ── -->
   <section class="case-hero">
-    <p class="case-eyebrow">Zurich</p>
+    <img class="case-logo" src="/images/logos/logo-zurich.svg" alt="Zurich">
     <h1>Investments section redesign</h1>
-    <p class="case-subtitle">UI design and front-end development to simplify a complex experience and improve understanding of investment products.</p>
+    <p class="description">UI design and front-end development to simplify a complex experience and improve understanding of investment products.</p>
   </section>
 
   <div class="case-cover-wrap">
@@ -75,6 +88,8 @@
     <p>However, the section had comprehension problems, making it hard for users to understand the available alternatives and make informed decisions.</p>
     <p class="case-quote">The main problem wasn't usability, but the lack of information needed to make decisions.</p>
     <img class="case-img" src="/images/projects/zurich/Zurich%20-%20Dise%C3%B1o%20Inicialpng.png" alt="Original design of Zurich's investments section">
+  </section>
+
   </section>
 
   <!-- ── GOALS ── -->
@@ -119,6 +134,8 @@
     <img class="case-img" src="/images/projects/zurich/Zurich%2003.png" alt="Mobile adaptation of the investments section">
   </section>
 
+  </section>
+
   <!-- ── VALIDATION WITH HTML PROTOTYPE ── -->
   <section class="case-section">
     <h2>Validation with an HTML prototype</h2>
@@ -152,10 +169,13 @@
     </ul>
   </section>
 
-  <!-- ── PREV / NEXT ── -->
+  <!-- ── NEXT PROJECT ── -->
   <div class="case-nav">
-    <a href="/proyectos/ypf/en/" class="case-nav-prev" aria-label="Previous project">
-      <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3L4 7l7 4"/></svg>
+    <a href="/proyectos/vendor-onboarding/en/" class="btn btn-outline btn-sm">
+      <span class="btn-inner">
+        <span class="btn-top">Next project <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+        <span class="btn-bot" aria-hidden="true">Next project <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+      </span>
     </a>
   </div>
 

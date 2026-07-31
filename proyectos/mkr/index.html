@@ -10,7 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="/assets/style.css?v=32">
 
 </head>
 <body>
@@ -26,8 +28,19 @@
         </div>
       </a>
       <div class="nav-right">
-        <a href="/proyectos" class="nav-link">Proyectos</a>
-        <a href="/proyectos/mkr/en/" class="nav-lang">ES</a>
+        <a href="/proyectos" class="btn btn-text btn-sm"><span class="btn-inner"><span class="btn-top">Proyectos</span><span class="btn-bot" aria-hidden="true">Proyectos</span></span></a>
+        <a href="/estilos.html" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">Estilos</span>
+            <span class="btn-bot" aria-hidden="true">Estilos</span>
+          </span>
+        </a>
+        <a href="/proyectos/mkr/en/" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">ES</span>
+            <span class="btn-bot" aria-hidden="true">ES</span>
+          </span>
+        </a>
         <a href="#" class="btn btn-primary btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Descargar CV</span>
@@ -42,9 +55,9 @@
 
   <!-- ── CASE HERO ── -->
   <section class="case-hero">
-    <p class="case-eyebrow" style="color:#65a30d;">MKR</p>
+    <img class="case-logo" src="/images/logos/logo-mkr.svg" alt="MKR">
     <h1>Automatización de ads a escala</h1>
-    <p class="case-subtitle">MKR es una plataforma AdTech que automatiza la producción de display ads a gran volumen editando un conjunto mínimo de variables.</p>
+    <p class="description">MKR es una plataforma AdTech que automatiza la producción de display ads a gran volumen editando un conjunto mínimo de variables.</p>
   </section>
 
   <div class="case-cover-wrap">
@@ -166,14 +179,13 @@
     </div>
   </section>
 
-  <!-- ── PREV / NEXT ── -->
+  <!-- ── NEXT PROJECT ── -->
   <div class="case-nav">
-    <a href="/proyectos/blink-content-studio" class="case-nav-prev" aria-label="Proyecto anterior">
-      <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3L4 7l7 4"/></svg>
-    </a>
-    <a href="/proyectos/remax" class="case-nav-next">
-      Próximo proyecto
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+    <a href="/proyectos/remax/" class="btn btn-outline btn-sm">
+      <span class="btn-inner">
+        <span class="btn-top">Próximo proyecto <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+        <span class="btn-bot" aria-hidden="true">Próximo proyecto <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+      </span>
     </a>
   </div>
 

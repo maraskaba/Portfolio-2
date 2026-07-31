@@ -10,7 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="/assets/style.css?v=32">
 
 </head>
 <body>
@@ -26,8 +28,19 @@
         </div>
       </a>
       <div class="nav-right">
-        <a href="/proyectos/en/" class="nav-link">Projects</a>
-        <a href="/proyectos/remax" class="nav-lang">EN</a>
+        <a href="/en/proyectos" class="btn btn-text btn-sm"><span class="btn-inner"><span class="btn-top">Projects</span><span class="btn-bot" aria-hidden="true">Projects</span></span></a>
+        <a href="/estilos.html" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">Styles</span>
+            <span class="btn-bot" aria-hidden="true">Styles</span>
+          </span>
+        </a>
+        <a href="/proyectos/remax/" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">EN</span>
+            <span class="btn-bot" aria-hidden="true">EN</span>
+          </span>
+        </a>
         <a href="#" class="btn btn-primary btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Download CV</span>
@@ -42,9 +55,9 @@
 
   <!-- ── CASE HERO ── -->
   <section class="case-hero">
-    <p class="case-eyebrow" style="color:#e11d48;">RE/MAX</p>
+    <img class="case-logo" src="/images/logos/logo-remax.svg" alt="RE/MAX">
     <h1>Lead management system</h1>
-    <p class="case-subtitle">Redesign of RE/MAX Argentina's lead management process. From an email-based flow across 160+ offices to a centralized, traceable system.</p>
+    <p class="description">Redesign of RE/MAX Argentina's lead management process. From an email-based flow across 160+ offices to a centralized, traceable system.</p>
   </section>
 
   <div class="case-cover-wrap">
@@ -123,12 +136,16 @@
     <img class="case-img" src="/images/projects/remax/Remax%20-%20Flow%20-%20ES.png" alt="Lead assignment process">
   </section>
 
+  </section>
+
   <!-- ── ROADMAP ── -->
   <section class="case-section">
     <h2>Roadmap</h2>
     <p>Based on the findings, it was clear the solution couldn't be a fully automated system from day one. Office managers wouldn't accept it, agents wouldn't trust it, and the central team would risk a flawed rollout.</p>
     <p>The decision was to design a system in four progressive stages, each one paving the way for the next. The scope of this stage was manual, but fully traceable, assignment.</p>
     <img class="case-img" src="/images/projects/remax/Gantt%20-%20ES.png" alt="Four-stage roadmap toward automation">
+  </section>
+
   </section>
 
   <!-- ── SOLUTION ── -->
@@ -153,6 +170,8 @@
     <img class="case-img" src="/images/projects/remax/Remax%20-%20screens.png" alt="Lead assignment flow to offices and agents">
   </section>
 
+  </section>
+
   <!-- ── VALIDATION ── -->
   <section class="case-section">
     <h2>Validation</h2>
@@ -173,6 +192,8 @@
     <img class="case-img" src="/images/projects/remax/Remax%20-%20Prototype.png" alt="Overview of the clickable Figma prototype">
   </section>
 
+  </section>
+
   <!-- ── RESULTS ── -->
   <section class="case-section">
     <h2>Results</h2>
@@ -186,14 +207,15 @@
     <img class="case-img" src="/images/projects/remax/handoff.png" alt="Handoff documentation for the lead management system">
   </section>
 
-  <!-- ── PREV / NEXT ── -->
+  </section>
+
+  <!-- ── NEXT PROJECT ── -->
   <div class="case-nav">
-    <a href="/proyectos/mkr/en/" class="case-nav-prev" aria-label="Previous project">
-      <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3L4 7l7 4"/></svg>
-    </a>
-    <a href="/proyectos/booking/en/" class="case-nav-next">
-      Next project
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+    <a href="/proyectos/booking/en/" class="btn btn-outline btn-sm">
+      <span class="btn-inner">
+        <span class="btn-top">Next project <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+        <span class="btn-bot" aria-hidden="true">Next project <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+      </span>
     </a>
   </div>
 

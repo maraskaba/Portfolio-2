@@ -10,7 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="/assets/style.css?v=32">
 
 </head>
 <body>
@@ -26,8 +28,19 @@
         </div>
       </a>
       <div class="nav-right">
-        <a href="/proyectos" class="nav-link">Proyectos</a>
-        <a href="/proyectos/remax/en/" class="nav-lang">ES</a>
+        <a href="/proyectos" class="btn btn-text btn-sm"><span class="btn-inner"><span class="btn-top">Proyectos</span><span class="btn-bot" aria-hidden="true">Proyectos</span></span></a>
+        <a href="/estilos.html" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">Estilos</span>
+            <span class="btn-bot" aria-hidden="true">Estilos</span>
+          </span>
+        </a>
+        <a href="/proyectos/remax/en/" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">ES</span>
+            <span class="btn-bot" aria-hidden="true">ES</span>
+          </span>
+        </a>
         <a href="#" class="btn btn-primary btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Descargar CV</span>
@@ -42,9 +55,9 @@
 
   <!-- ── CASE HERO ── -->
   <section class="case-hero">
-    <p class="case-eyebrow" style="color:#e11d48;">RE/MAX</p>
+    <img class="case-logo" src="/images/logos/logo-remax.svg" alt="RE/MAX">
     <h1>Sistema de gestión de leads</h1>
-    <p class="case-subtitle">Rediseño del proceso de gestión de leads de RE/MAX Argentina. De un flujo por email entre 160+ oficinas a un sistema centralizado con trazabilidad.</p>
+    <p class="description">Rediseño del proceso de gestión de leads de RE/MAX Argentina. De un flujo por email entre 160+ oficinas a un sistema centralizado con trazabilidad.</p>
   </section>
 
   <div class="case-cover-wrap">
@@ -123,12 +136,16 @@
     <img class="case-img" src="/images/projects/remax/Remax%20-%20Flow%20-%20ES.png" alt="Proceso de asignación de leads">
   </section>
 
+  </section>
+
   <!-- ── ROADMAP ── -->
   <section class="case-section">
     <h2>Roadmap</h2>
     <p>Con los hallazgos obtenidos, quedó claro que la solución no podía ser un sistema automatizado de entrada. Los responsables de las oficinas no lo iban a aceptar, los agentes no iban a confiar, y la central comprometería la implementación correcta del proceso.</p>
     <p>La decisión fue diseñar un sistema en cuatro etapas progresivas, donde cada una preparara el terreno para la siguiente. El alcance de esta etapa sería la asignación manual, pero trazable.</p>
     <img class="case-img" src="/images/projects/remax/Gantt%20-%20ES.png" alt="Roadmap de cuatro etapas hacia la automatización">
+  </section>
+
   </section>
 
   <!-- ── SOLUCIÓN ── -->
@@ -153,6 +170,8 @@
     <img class="case-img" src="/images/projects/remax/Remax%20-%20screens.png" alt="Flujo de asignación de leads a oficinas y agentes">
   </section>
 
+  </section>
+
   <!-- ── VALIDACIÓN ── -->
   <section class="case-section">
     <h2>Validación</h2>
@@ -173,6 +192,8 @@
     <img class="case-img" src="/images/projects/remax/Remax%20-%20Prototype.png" alt="Overview del prototipo navegable en Figma">
   </section>
 
+  </section>
+
   <!-- ── RESULTADOS ── -->
   <section class="case-section">
     <h2>Resultados</h2>
@@ -186,14 +207,15 @@
     <img class="case-img" src="/images/projects/remax/handoff.png" alt="Documentación de handoff del sistema de gestión de leads">
   </section>
 
-  <!-- ── PREV / NEXT ── -->
+  </section>
+
+  <!-- ── NEXT PROJECT ── -->
   <div class="case-nav">
-    <a href="/proyectos/mkr" class="case-nav-prev" aria-label="Proyecto anterior">
-      <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3L4 7l7 4"/></svg>
-    </a>
-    <a href="/proyectos/booking" class="case-nav-next">
-      Próximo proyecto
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+    <a href="/proyectos/booking/" class="btn btn-outline btn-sm">
+      <span class="btn-inner">
+        <span class="btn-top">Próximo proyecto <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+        <span class="btn-bot" aria-hidden="true">Próximo proyecto <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+      </span>
     </a>
   </div>
 

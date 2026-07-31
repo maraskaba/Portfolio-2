@@ -10,7 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="/assets/style.css?v=32">
 
 </head>
 <body>
@@ -26,8 +28,19 @@
         </div>
       </a>
       <div class="nav-right">
-        <a href="/proyectos" class="nav-link">Proyectos</a>
-        <a href="/proyectos/movistar-login/en/" class="nav-lang">ES</a>
+        <a href="/proyectos" class="btn btn-text btn-sm"><span class="btn-inner"><span class="btn-top">Proyectos</span><span class="btn-bot" aria-hidden="true">Proyectos</span></span></a>
+        <a href="/estilos.html" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">Estilos</span>
+            <span class="btn-bot" aria-hidden="true">Estilos</span>
+          </span>
+        </a>
+        <a href="/proyectos/movistar-login/en/" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">ES</span>
+            <span class="btn-bot" aria-hidden="true">ES</span>
+          </span>
+        </a>
         <a href="#" class="btn btn-primary btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Descargar CV</span>
@@ -42,9 +55,9 @@
 
   <!-- ── CASE HERO ── -->
   <section class="case-hero">
-    <p class="case-eyebrow">Movistar</p>
+    <img class="case-logo" src="/images/logos/logo-movistar.svg" alt="Movistar">
     <h1>Validación de registro y login unificado</h1>
-    <p class="case-subtitle">Validamos un flujo de login y registro unificado para detectar fricciones antes de desarrollo.</p>
+    <p class="description">Validamos un flujo de login y registro unificado para detectar fricciones antes de desarrollo.</p>
   </section>
 
   <div class="case-cover-wrap">
@@ -105,6 +118,8 @@
     <img class="case-img" src="/images/projects/movistar-login/usuarios.png" alt="Usuarios participantes de las sesiones de research">
   </section>
 
+  </section>
+
   <!-- ── PROTOTIPO FUNCIONAL ── -->
   <section class="case-section">
     <h2>Prototipo funcional (HTML, PHP, JS)</h2>
@@ -134,6 +149,8 @@
     <img class="case-img" src="/images/projects/movistar-login/01.png" alt="Resultado del SUS (System Usability Score)">
   </section>
 
+  </section>
+
   <!-- ── RESULTADOS ── -->
   <section class="case-section">
     <h2>Resultados</h2>
@@ -158,14 +175,15 @@
     <img class="case-img" src="/images/projects/movistar-login/Movistar%20IDP%2001.png" alt="Sesión de trabajo del equipo de investigación">
   </section>
 
-  <!-- ── PREV / NEXT ── -->
+  </section>
+
+  <!-- ── NEXT PROJECT ── -->
   <div class="case-nav">
-    <a href="/proyectos/booking" class="case-nav-prev" aria-label="Proyecto anterior">
-      <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3L4 7l7 4"/></svg>
-    </a>
-    <a href="/proyectos/ypf" class="case-nav-next">
-      Próximo proyecto
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+    <a href="/proyectos/ypf/" class="btn btn-outline btn-sm">
+      <span class="btn-inner">
+        <span class="btn-top">Próximo proyecto <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+        <span class="btn-bot" aria-hidden="true">Próximo proyecto <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+      </span>
     </a>
   </div>
 

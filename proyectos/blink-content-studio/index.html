@@ -10,7 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="/assets/style.css?v=32">
 
 </head>
 <body>
@@ -26,8 +28,19 @@
         </div>
       </a>
       <div class="nav-right">
-        <a href="/proyectos" class="nav-link">Proyectos</a>
-        <a href="/proyectos/blink-content-studio/en/" class="nav-lang">ES</a>
+        <a href="/proyectos" class="btn btn-text btn-sm"><span class="btn-inner"><span class="btn-top">Proyectos</span><span class="btn-bot" aria-hidden="true">Proyectos</span></span></a>
+        <a href="/estilos.html" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">Estilos</span>
+            <span class="btn-bot" aria-hidden="true">Estilos</span>
+          </span>
+        </a>
+        <a href="/proyectos/blink-content-studio/en/" class="btn btn-text btn-sm">
+          <span class="btn-inner">
+            <span class="btn-top">ES</span>
+            <span class="btn-bot" aria-hidden="true">ES</span>
+          </span>
+        </a>
         <a href="#" class="btn btn-primary btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Descargar CV</span>
@@ -42,9 +55,9 @@
 
   <!-- ── CASE HERO ── -->
   <section class="case-hero">
-    <p class="case-eyebrow">Blink.la</p>
+    <img class="case-logo" src="/images/logos/logo-blink.svg" alt="Blink.la">
     <h1>Blink Content Studio</h1>
-    <p class="case-subtitle">Content Studio es una plataforma interna de Blink.la para gestionar producciones audiovisuales de principio a fin. Presupuestos, equipos, proveedores, operación y control financiero.</p>
+    <p class="description">Content Studio es una plataforma interna de Blink.la para gestionar producciones audiovisuales de principio a fin. Presupuestos, equipos, proveedores, operación y control financiero.</p>
   </section>
 
   <div class="case-cover-wrap">
@@ -73,6 +86,8 @@
     <h2>Descripción general</h2>
     <p>Blink es una productora audiovisual que conecta talentos, creativos y equipos de producción. Content Studio es su plataforma propietaria: el lugar donde conviven la gestión de proyectos, los miembros del equipo, los proveedores y el control financiero de cada producción.</p>
     <img class="case-img" src="/images/projects/blink-content-studio/Ciclo%20produccion%20-%20ES.png" alt="Ciclo de la producción: presupuesto, armado del equipo, ejecución, cierre y control financiero">
+  </section>
+
   </section>
 
   <!-- ── EL PROBLEMA ── -->
@@ -122,11 +137,15 @@
     <img class="case-img" src="/images/projects/blink-content-studio/CS%20-%20Versus%20-%20VP.png" alt="Self onboarding de proveedores">
   </section>
 
+  </section>
+
   <!-- ── DESIGN SYSTEM ── -->
   <section class="case-section">
     <h2>Design System</h2>
     <p>A medida que Content Studio crecía, también trabajé en la consistencia del producto: componentes, patrones, estilos, estados y layouts reutilizables. Esto ayudó a acelerar nuevas funcionalidades y reducir inconsistencias entre módulos.</p>
     <img class="case-img" src="/images/projects/blink-content-studio/CS%20-%20Versus%20-%20Design%20system.png" alt="Design system de Content Studio">
+  </section>
+
   </section>
 
   <!-- ── OTROS FLUJOS REDISEÑADOS ── -->
@@ -150,14 +169,13 @@
     <p class="case-callout">Content Studio se volvió más integrado, consistente y operativo.</p>
   </section>
 
-  <!-- ── PREV / NEXT ── -->
+  <!-- ── NEXT PROJECT ── -->
   <div class="case-nav">
-    <a href="/proyectos/vendor-onboarding" class="case-nav-prev" aria-label="Proyecto anterior">
-      <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3L4 7l7 4"/></svg>
-    </a>
-    <a href="/proyectos/mkr" class="case-nav-next">
-      Próximo proyecto
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg>
+    <a href="/proyectos/mkr/" class="btn btn-outline btn-sm">
+      <span class="btn-inner">
+        <span class="btn-top">Próximo proyecto <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+        <span class="btn-bot" aria-hidden="true">Próximo proyecto <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
+      </span>
     </a>
   </div>
 
