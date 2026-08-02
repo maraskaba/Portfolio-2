@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <link rel="stylesheet" href="/assets/style.css?v=33">
+  <link rel="stylesheet" href="/assets/style.css?v=35">
 
   <style>
     button { font-family: inherit; }
@@ -976,11 +976,21 @@
         </div>
       </div>
     </div>
-    <p style="font-size:13px;color:var(--text-body);max-width:620px;margin-bottom:40px;">
+    <p style="font-size:13px;color:var(--text-body);max-width:620px;margin-bottom:24px;">
       5 items con <code>gap: 24px</code>. Los cuatro primeros son <code>.btn .btn-text .btn-sm</code>;
       el CTA es <code>.btn .btn-primary .btn-sm</code>. El botón de idioma muestra el idioma
       <strong>del contenido actual</strong> (ES en páginas españolas, EN en inglesas) y enlaza a su contraparte.
       Es idéntico en las 21 páginas: cualquier cambio que no sea de contenido va en todas.
+    </p>
+
+    <p class="kit-block-label">Nav mobile — ≤720px</p>
+    <p style="font-size:13px;color:var(--text-body);max-width:620px;margin-bottom:40px;">
+      Proyectos, Servicios, Estilos e idioma pasan a <code>.nav-links</code>, un panel desplegable
+      full-width que aparece debajo del header. <strong>Descargar CV queda fuera del panel</strong>,
+      siempre visible junto al botón hamburguesa (<code>.nav-burger</code>), a su izquierda — los dos
+      viven en <code>.nav-actions</code>. El toggle es <code>/assets/nav.js</code>, un script único
+      compartido por las 21 páginas: agrega/saca <code>.is-open</code> de <code>.nav-links</code> y
+      actualiza <code>aria-expanded</code> en el botón. Cierra con click afuera o tecla Escape.
     </p>
 
     <p class="kit-block-label">Footer</p>

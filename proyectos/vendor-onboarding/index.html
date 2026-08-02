@@ -12,7 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <link rel="stylesheet" href="/assets/style.css?v=33">
+  <link rel="stylesheet" href="/assets/style.css?v=35">
+  <script defer src="/assets/nav.js"></script>
 
 </head>
 <body>
@@ -28,36 +29,45 @@
         </div>
       </a>
       <div class="nav-right">
-        <a href="/proyectos" class="btn btn-text btn-sm">
+        <div class="nav-links" id="nav-links">
+          <a href="/proyectos" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Proyectos</span>
             <span class="btn-bot" aria-hidden="true">Proyectos</span>
           </span>
         </a>
-        <a href="/servicios" class="btn btn-text btn-sm">
+          <a href="/servicios" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Servicios</span>
             <span class="btn-bot" aria-hidden="true">Servicios</span>
           </span>
         </a>
-        <a href="/estilos.html" class="btn btn-text btn-sm">
+          <a href="/estilos.html" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Estilos</span>
             <span class="btn-bot" aria-hidden="true">Estilos</span>
           </span>
         </a>
-        <a href="/proyectos/vendor-onboarding/en/" class="btn btn-text btn-sm">
+          <a href="/proyectos/vendor-onboarding/en/" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">ES</span>
             <span class="btn-bot" aria-hidden="true">ES</span>
           </span>
         </a>
-        <a href="#" class="btn btn-primary btn-sm">
+        </div>
+        <div class="nav-actions">
+          <a href="#" class="btn btn-primary btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Descargar CV</span>
             <span class="btn-bot" aria-hidden="true">Descargar CV</span>
           </span>
         </a>
+          <button class="nav-burger" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+            <span class="nav-burger-bar"></span>
+            <span class="nav-burger-bar"></span>
+            <span class="nav-burger-bar"></span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>

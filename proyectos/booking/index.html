@@ -12,7 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <link rel="stylesheet" href="/assets/style.css?v=33">
+  <link rel="stylesheet" href="/assets/style.css?v=35">
+  <script defer src="/assets/nav.js"></script>
 
 </head>
 <body>
@@ -28,50 +29,161 @@
         </div>
       </a>
       <div class="nav-right">
-        <a href="/proyectos" class="btn btn-text btn-sm">
+        <div class="nav-links" id="nav-links">
+          <a href="/proyectos" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Proyectos</span>
             <span class="btn-bot" aria-hidden="true">Proyectos</span>
           </span>
         </a>
-        <a href="/servicios" class="btn btn-text btn-sm">
+          <a href="/servicios" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Servicios</span>
             <span class="btn-bot" aria-hidden="true">Servicios</span>
           </span>
         </a>
-        <a href="/estilos.html" class="btn btn-text btn-sm">
+          <a href="/estilos.html" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Estilos</span>
             <span class="btn-bot" aria-hidden="true">Estilos</span>
           </span>
         </a>
-        <a href="/proyectos/booking/en/" class="btn btn-text btn-sm">
+          <a href="/proyectos/booking/en/" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">ES</span>
             <span class="btn-bot" aria-hidden="true">ES</span>
           </span>
         </a>
-        <a href="#" class="btn btn-primary btn-sm">
+        </div>
+        <div class="nav-actions">
+          <a href="#" class="btn btn-primary btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Descargar CV</span>
             <span class="btn-bot" aria-hidden="true">Descargar CV</span>
           </span>
         </a>
+          <button class="nav-burger" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+            <span class="nav-burger-bar"></span>
+            <span class="nav-burger-bar"></span>
+            <span class="nav-burger-bar"></span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
 
   <hr class="divider">
 
-  <!-- ── PROJECT ── -->
-  <section class="project-hero">
+  <!-- ── CASE HERO ── -->
+  <section class="case-hero">
     <img class="case-logo" src="/images/logos/logo-blink.svg" alt="Blink.la">
     <h1>Monitoreo y conciliación de horas presupuestadas</h1>
+    <p class="description">Diseño y validación de un dashboard para monitorear horas presupuestadas, horas consumidas y desvíos financieros sin depender de análisis manuales.</p>
   </section>
-  <div class="project-cover-wrap">
-    <img class="project-cover-img" src="/images/projects/booking/cover.png" alt="Monitoreo y conciliación de horas presupuestadas">
+
+  <div class="case-cover-wrap">
+    <img class="case-img" style="margin-top:0;" src="/images/projects/booking/cover.png" alt="Monitoreo y conciliación de horas presupuestadas">
   </div>
+
+  <div class="case-meta-wrap">
+    <div class="case-meta">
+      <div>
+        <span class="case-meta-label">Cliente</span>
+        <span class="case-meta-val">Blink.la</span>
+      </div>
+      <div>
+        <span class="case-meta-label">Año</span>
+        <span class="case-meta-val">2024</span>
+      </div>
+      <div>
+        <span class="case-meta-label">Scope</span>
+        <span class="case-meta-val">Diseño UX / Diseño UI / Entrevistas exploratorias</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONTEXTO ── -->
+  <section class="case-section">
+    <h2>Contexto</h2>
+    <p>Content Studio es una suite de herramientas diseñada para automatizar, controlar y hacer seguimiento de producciones audiovisuales. El equipo de Finanzas necesitaba mayor visibilidad sobre uno de los datos clave de los proyectos. El análisis de datos se hacía con el uso de herramientas externas.</p>
+  </section>
+
+  <!-- ── PROBLEMA ── -->
+  <section class="case-section">
+    <h2>Problema</h2>
+    <p>El análisis financiero dependía de pasos manuales y herramientas externas. Las horas se cargaban en el módulo de time tracking, pasaban por aprobaciones y luego debían reconciliarse contra el budget correspondiente.</p>
+    <p>Para generar visibilidad, el equipo descargaba los datos en CSV, los subía a un dashboard externo y revisaba los desvíos en reuniones semanales.</p>
+    <img class="case-img" src="/images/projects/booking/proceso-anterior-es.jpg" alt="Proceso anterior: carga de horas, aprobación, reconciliación manual, exportación a CSV y presentación en reunión semanal">
+    <p style="margin-top:28px;">Esto generaba tres problemas principales:</p>
+    <p class="case-subhead" style="margin-top:0;">Información fragmentada</p>
+    <p>La información necesaria para entender el estado financiero de una producción estaba dispersa entre distintos módulos, planillas y dashboards externos.</p>
+    <p class="case-subhead">Falta de visibilidad temprana</p>
+    <p>Los desvíos entre horas cargadas y presupuesto se detectaban tarde, recién en la revisión semanal del equipo de Finanzas.</p>
+    <p class="case-subhead">Proceso operativo manual</p>
+    <p>El equipo dependía de exportaciones, cruces de datos y reuniones para entender qué producciones estaban dentro o fuera de presupuesto.</p>
+    <img class="case-img" src="/images/projects/booking/flujo-manual.png" alt="Flujo manual: planilla exportada y subida a un dashboard externo">
+  </section>
+
+  <!-- ── OBJETIVOS ── -->
+  <section class="case-section">
+    <h2>Objetivos</h2>
+    <ul class="case-list">
+      <li>Integrar el dashboard financiero dentro de Content Studio.</li>
+      <li>Habilitar alertas tempranas mediante indicadores visuales y notificaciones.</li>
+      <li>Simplificar la conciliación de las horas pendientes.</li>
+      <li>Mejorar la eficiencia del equipo de Finanzas en la detección y seguimiento de problemas.</li>
+    </ul>
+  </section>
+
+  <!-- ── ABORDAJE DE DISEÑO ── -->
+  <section class="case-section">
+    <h2>Abordaje de diseño</h2>
+    <p>El análisis mostró que el problema no era solamente visualizar datos, sino conectar distintas partes del flujo: carga de horas, aprobación, presupuesto, reconciliación y seguimiento financiero.</p>
+    <img class="case-img" src="/images/projects/booking/proceso-ux-es.jpg" alt="Proceso UX: análisis inicial, entrevistas, wireframes iniciales, iteración de diseño y prototipos interactivos">
+  </section>
+
+  <!-- ── SOLUCIÓN ── -->
+  <section class="case-section">
+    <h2>Solución</h2>
+    <p>Diseñamos un dashboard dentro de Content Studio para comparar horas presupuestadas, horas consumidas y costos asociados a cada producción.</p>
+    <img class="case-img" src="/images/projects/booking/dashboard.png" alt="Dashboard de eficiencia con horas vendidas, trabajadas y disponibilidad por etapa de producción">
+  </section>
+
+  <!-- ── FLUJO DE CONCILIACIÓN DE HORAS ── -->
+  <section class="case-section">
+    <h2>Flujo de conciliación de horas</h2>
+    <p>Además del dashboard, diseñamos una vista de conciliación para revisar horas, costos y estados asociados a una producción.</p>
+    <p>Esta vista permitía pasar del monitoreo general a la revisión operativa, diferenciando información pendiente, aprobada o reconciliada.</p>
+    <img class="case-img" src="/images/projects/booking/reconciliations.png" alt="Vista de conciliaciones con tareas seleccionadas y panel de reconciliación">
+  </section>
+
+  <!-- ── VALIDACIÓN CON STAKEHOLDERS ── -->
+  <section class="case-section">
+    <h2>Validación con stakeholders</h2>
+    <p>Validamos la propuesta con Finanzas y Operaciones para revisar si el flujo cubría las principales acciones del proceso:</p>
+    <ul class="case-list">
+      <li>Identificar horas sin reconciliar.</li>
+      <li>Seleccionar tareas pendientes.</li>
+      <li>Asignar cada tarea al budget item correspondiente.</li>
+      <li>Actualizar reconciliaciones.</li>
+      <li>Analizar el estado general desde el dashboard.</li>
+    </ul>
+    <p style="margin-top:28px;">La revisión permitió ajustar la jerarquía de información, reforzar estados e indicadores visuales, y conectar mejor el dashboard con la operación diaria.</p>
+  </section>
+
+  <!-- ── RESULTADOS ── -->
+  <section class="case-section">
+    <h2>Resultados</h2>
+    <p class="case-subhead" style="margin-top:0;">Flujo integrado</p>
+    <p>Se eliminó la necesidad de exportaciones manuales a herramientas externas.</p>
+    <p class="case-subhead">Detección temprana de desvíos</p>
+    <p>Se identifican rápidamente sobreusos o subusos de tiempo y desajustes presupuestarios.</p>
+    <p class="case-subhead">Seguimiento estructurado</p>
+    <p>Los problemas se revisan de forma periódica en reuniones semanales.</p>
+    <p class="case-subhead">Simplificación de aprobación de costos</p>
+    <p>Se facilitó la detección y aprobación masiva de costos pendientes.</p>
+    <p class="case-quote">El equipo financiero pasó de revisar información fragmentada en herramientas externas a monitorear y operar desvíos desde un flujo integrado dentro de Content Studio.</p>
+  </section>
 
   <!-- ── NEXT PROJECT ── -->
   <div class="case-nav">
@@ -81,6 +193,33 @@
         <span class="btn-bot" aria-hidden="true">Próximo proyecto <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M7 3l4 4-4 4"/></svg></span>
       </span>
     </a>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <div class="footer-bg">
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-contacts">
+          <div>
+            <p class="footer-field-label">Email</p>
+            <a href="mailto:romanpaparella@gmail.com" class="footer-field-val">romanpaparella@gmail.com</a>
+          </div>
+          <div>
+            <p class="footer-field-label">Ubicación</p>
+            <p class="footer-field-val">Ciudad de Buenos Aires, Argentina</p>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/romanpaparella" target="_blank" rel="noopener" class="footer-icon-btn" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-disclaimer">El contenido de este portfolio, incluyendo capturas de pantalla, flujos, datos y nombres de clientes, es confidencial. Está destinado exclusivamente a procesos de evaluación profesional y no puede ser reproducido, compartido ni utilizado sin autorización expresa.</p>
+    </footer>
   </div>
 
 </body>

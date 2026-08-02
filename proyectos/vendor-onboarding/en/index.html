@@ -12,7 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <link rel="stylesheet" href="/assets/style.css?v=33">
+  <link rel="stylesheet" href="/assets/style.css?v=35">
+  <script defer src="/assets/nav.js"></script>
 
 </head>
 <body>
@@ -28,36 +29,45 @@
         </div>
       </a>
       <div class="nav-right">
-        <a href="/proyectos/en/" class="btn btn-text btn-sm">
+        <div class="nav-links" id="nav-links">
+          <a href="/proyectos/en/" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Projects</span>
             <span class="btn-bot" aria-hidden="true">Projects</span>
           </span>
         </a>
-        <a href="/servicios/" class="btn btn-text btn-sm">
+          <a href="/servicios/en/" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Services</span>
             <span class="btn-bot" aria-hidden="true">Services</span>
           </span>
         </a>
-        <a href="/estilos.html" class="btn btn-text btn-sm">
+          <a href="/estilos.html" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Styles</span>
             <span class="btn-bot" aria-hidden="true">Styles</span>
           </span>
         </a>
-        <a href="/proyectos/vendor-onboarding/" class="btn btn-text btn-sm">
+          <a href="/proyectos/vendor-onboarding/" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">EN</span>
             <span class="btn-bot" aria-hidden="true">EN</span>
           </span>
         </a>
-        <a href="#" class="btn btn-primary btn-sm">
+        </div>
+        <div class="nav-actions">
+          <a href="#" class="btn btn-primary btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Download CV</span>
             <span class="btn-bot" aria-hidden="true">Download CV</span>
           </span>
         </a>
+          <button class="nav-burger" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+            <span class="nav-burger-bar"></span>
+            <span class="nav-burger-bar"></span>
+            <span class="nav-burger-bar"></span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -68,7 +78,7 @@
   <section class="case-hero">
     <img class="case-logo" src="/images/logos/logo-blink.svg" alt="Blink.la">
     <h1>Vendor onboarding automation</h1>
-    <p class="description">Design of a guided experience for vendors to complete their onboarding without operational assistance, with fewer errors and greater clarity throughout the process.</p>
+    <p class="description">Designing a guided experience helped vendors complete onboarding with less operational support, fewer errors, and greater clarity throughout the process.</p>
   </section>
 
   <div class="case-cover-wrap">
@@ -87,7 +97,7 @@
       </div>
       <div>
         <span class="case-meta-label">Scope</span>
-        <span class="case-meta-val">Product design / Usability testing</span>
+        <span class="case-meta-val">Product Design / Usability Testing</span>
       </div>
     </div>
   </div>
@@ -95,39 +105,39 @@
   <!-- ── CONTEXT ── -->
   <section class="case-section">
     <h2>Context</h2>
-    <p>Blink is an audiovisual production company that connects talent and creative teams around the world. The company had internal platforms for managing productions, vendors, and finances, but the initial vendor onboarding still relied on a manual process run by Operations.</p>
+    <p>Blink is an audiovisual production company that connects talent and creative teams in different parts of the world. The company had internal platforms to manage productions, vendors, and finance, but the initial vendor onboarding still depended on a manual process handled by Operations.</p>
   </section>
 
   <!-- ── PROBLEM ── -->
   <section class="case-section">
     <h2>Problem</h2>
-    <p>Vendor onboarding was an operational bottleneck that could jeopardize the start of a production.</p>
-    <p>Operations had to collect personal information, company data, tax forms, document photos, error corrections, and contract signatures. All of this happened close to the start of production, when timing was most sensitive.</p>
-    <p>The main issues identified were:</p>
+    <p>Vendor onboarding was an operational bottleneck that could put the start of a production at risk.</p>
+    <p>Operations had to collect personal information, company details, tax forms, ID photos, corrections for errors, and contract signatures. All of this happened close to the start of the production, when timing was most critical.</p>
+    <p>The main problems identified were:</p>
     <ul class="case-list">
-      <li>A manual, slow process.</li>
+      <li>Manual and slow process.</li>
       <li>Constant dependency on the Operations team.</li>
       <li>Information prone to errors.</li>
-      <li>Risk of delaying the start of production.</li>
+      <li>Risk of delays in the start of the production.</li>
     </ul>
   </section>
 
   <!-- ── RESEARCH AND PROCESS MAPPING ── -->
   <section class="case-section">
     <h2>Research and process mapping</h2>
-    <p>We first mapped the As-Is process together with the Operations team to understand how a vendor was onboarded, which steps depended on the internal team, and where the main friction points appeared.</p>
-    <p>The analysis showed the problem wasn't only about the interface: many rules, decisions, and validations lived in the team's institutional knowledge, but weren't documented or built into the system.</p>
-    <p class="case-subhead">Key findings</p>
+    <p>First, we mapped the As-Is process with the Operations team to understand how a vendor was onboarded, which steps depended on the internal team, and where the main friction points appeared.</p>
+    <p>The analysis showed that the problem was not only related to the interface: many rules, decisions, and validations lived in the team’s knowledge, but were not documented or included in the system.</p>
+    <p class="case-subhead">Main findings</p>
     <ul class="case-list">
-      <li>Different onboarding scenarios existed depending on the vendor type.</li>
-      <li>Required documentation varied case by case.</li>
-      <li>Tax, banking, and legal data required specific validations.</li>
+      <li>There were different onboarding scenarios depending on the type of vendor.</li>
+      <li>The required documentation changed depending on each case.</li>
+      <li>Tax, banking, and legal information needed specific validations.</li>
       <li>There was no clear or standardized flow.</li>
     </ul>
-    <p style="margin-top:28px;">This complexity meant onboarding couldn't be solved with a single linear form. It needed a flexible, guided flow with early validations.</p>
-    <p>The goal was to turn that process into a guided system able to collect personal, tax, and banking information, validate critical data, and prepare the documentation needed for operational review and approval.</p>
-    <img class="case-img" src="/images/projects/vendor-onboarding/Smartsheets.png" alt="Spreadsheet the production team used to request vendor onboarding">
-    <p class="case-caption">Spreadsheet the production team used to request vendor onboarding</p>
+    <p style="margin-top:28px;">This complexity meant that onboarding could not be solved with a single linear form. It needed a flexible, guided flow with early validations.</p>
+    <p>The goal was to turn that process into a guided system capable of collecting personal, tax, and banking information, validating critical data, and preparing the required documentation for operational review and approval.</p>
+    <img class="case-img" src="/images/projects/vendor-onboarding/Smartsheets.png" alt="Spreadsheet used by the production team to request vendor onboarding">
+    <p class="case-caption">Spreadsheet used by the production team to request vendor onboarding</p>
     <img class="case-img" src="/images/projects/vendor-onboarding/Figjam.png" alt="As-Is process mapping">
     <p class="case-caption">As-Is process mapping</p>
   </section>
@@ -135,10 +145,10 @@
   <!-- ── DESIGN DECISIONS ── -->
   <section class="case-section">
     <h2>Design decisions</h2>
-    <p>Based on the process mapping, we defined a series of decisions to reduce complexity, anticipate errors, and lower operational dependency.</p>
+    <p>Based on the process mapping, we defined a series of decisions to reduce complexity, anticipate errors, and decrease operational dependency.</p>
     <ul class="case-list">
       <li>Many complex steps → <strong>Multi-step form</strong></li>
-      <li>Different vendor types → <strong>Conditional flow</strong></li>
+      <li>Different types of vendors → <strong>Conditional flow</strong></li>
       <li>Errors in critical data → <strong>Early validations</strong></li>
       <li>Sensitive information → <strong>Contextual help</strong></li>
       <li>Contract requests by email → <strong>Contracts integrated into the flow</strong></li>
@@ -148,70 +158,70 @@
   <!-- ── SOLUTION ── -->
   <section class="case-section">
     <h2>Solution</h2>
-    <p>We designed a guided onboarding flow that adapts its steps based on vendor type and centralizes data entry, documentation, tax forms, review, and contract signing.</p>
+    <p>We designed a guided onboarding flow that adapts the steps depending on the type of vendor and centralizes data entry, documentation, tax forms, review, and contract signing.</p>
     <p>The flow was organized into stages to reduce cognitive load, show only the necessary information, and allow early validations before operational approval.</p>
     <ul class="case-list">
-      <li>Early identification of vendor type</li>
+      <li>Early identification of the vendor type</li>
       <li>Progressive step-by-step navigation</li>
       <li>Adaptive forms</li>
       <li>Real-time validations</li>
-      <li>Immediate feedback on errors and missing fields</li>
+      <li>Immediate feedback on errors and missing information</li>
       <li>Final review before submission</li>
     </ul>
     <img class="case-img" src="/images/projects/vendor-onboarding/Vendor%20portal%20-%20Flujo.png" alt="To-Be flow of the complete onboarding process">
     <p class="case-caption">To-Be flow of the complete onboarding process, including validations, operational review, and final approval.</p>
     <img class="case-img" src="/images/projects/vendor-onboarding/Design-proposal.jpg" alt="End-to-end onboarding flow">
-    <p class="case-caption">End-to-end onboarding flow, from entering information and documentation to approval or correction requests and sending the contract.</p>
+    <p class="case-caption">End-to-end onboarding flow, from information and document upload to approval or requests for adjustments, and contract submission.</p>
   </section>
 
   <!-- ── VALIDATION ── -->
   <section class="case-section">
     <h2>Validation</h2>
-    <p>We ran usability testing with company vendors to validate how well the flow was understood and identify opportunities for improvement before handoff.</p>
-    <p>Validation showed a good overall understanding of the process and helped surface friction in specific steps.</p>
+    <p>We ran usability tests with company vendors to validate their understanding of the flow and identify improvement opportunities before handoff.</p>
+    <p>The validation showed a good general understanding of the process and helped identify friction in specific steps.</p>
     <div class="case-stat">
       <div class="case-stat-value">0%</div>
       <div class="case-stat-label">Effectiveness</div>
     </div>
-    <p class="case-subhead" style="margin-top:0;">Key findings</p>
+    <p class="case-subhead" style="margin-top:0;">Main findings</p>
     <ul class="case-list">
-      <li>The overall flow was well understood.</li>
-      <li>The stages were clear to users.</li>
+      <li>The overall flow was easy to understand.</li>
+      <li>The steps were clear to users.</li>
       <li>Vendors were able to correctly identify their profile type.</li>
-      <li>The tax form was chosen correctly.</li>
-      <li>Some users started onboarding without having key information on hand.</li>
-      <li>It wasn't always obvious that the legal name had to match exactly across all documents.</li>
-      <li>Downloading, signing, and re-uploading forms created friction.</li>
+      <li>Users understood how to select the correct tax form.</li>
+      <li>Some users started the onboarding without having key information ready.</li>
+      <li>It was not always clear that the legal name had to match exactly across all documents.</li>
+      <li>Downloading, signing, and uploading forms again created friction.</li>
     </ul>
   </section>
 
   <!-- ── ITERATION AND FINAL PROPOSAL ── -->
   <section class="case-section">
     <h2>Iteration and final proposal</h2>
-    <p>Based on the validation findings, we adjusted the flow to better anticipate required information, reduce errors in critical data, and make the relationship between documentation, taxes, contract, and operational review clearer.</p>
+    <p>Based on the validation findings, we adjusted the flow to better anticipate the required information, reduce errors in critical data, and make the relationship between documentation, taxes, contract, and operational review clearer.</p>
 
-    <p style="margin-top:28px;">We added visibility into status and required information at the start of the process.</p>
+    <p style="margin-top:28px;">We added visibility into the process status and required information at the beginning of the flow.</p>
     <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-1.jpg" alt="Start screen with visibility into process status">
 
-    <p style="margin-top:28px;">We identified vendor type upfront to adapt the flow and show only the necessary steps and fields.</p>
+    <p style="margin-top:28px;">We identified the vendor type at the beginning of the process to show only the relevant steps and fields.</p>
     <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-2.jpg" alt="Vendor type identification screen">
 
-    <p style="margin-top:28px;">In the personal information step, we added a confirmation of the legal name against the documentation.</p>
+    <p style="margin-top:28px;">We added a validation step so users could confirm that the entered name matched their documentation exactly.</p>
     <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-3.jpg" alt="Legal name confirmation screen">
 
-    <p style="margin-top:28px;">We guided tax form selection based on tax residency and reinforced the use of the validated legal name.</p>
+    <p style="margin-top:28px;">We guided users through selecting and downloading the correct form based on their tax residence, while reinforcing the use of the validated legal name.</p>
     <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-4.jpg" alt="Tax form selection screen">
 
-    <p style="margin-top:28px;">We allowed payment details to be temporarily skipped so onboarding could continue.</p>
+    <p style="margin-top:28px;">We allowed users to skip payment details temporarily and complete them later.</p>
     <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-5.jpg" alt="Payment information screen with skip option">
 
-    <p style="margin-top:28px;">We integrated data validation, onboarding approval, and freelancer contract sending into Content Studio.</p>
+    <p style="margin-top:28px;">We added actions in Content Studio to validate data, approve the onboarding, and send the freelancer contract.</p>
     <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-6.jpg" alt="Validation and approval screen in Content Studio">
 
-    <p style="margin-top:28px;">Operations can request corrections from the platform, and the vendor updates their data to move the process forward.</p>
+    <p style="margin-top:28px;">Operations can request corrections from the platform, allowing the vendor to update the information and continue the process.</p>
     <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-7.jpg" alt="Correction request screen">
 
-    <p style="margin-top:28px;">We centralized digital contract signing within the onboarding flow.</p>
+    <p style="margin-top:28px;">We integrated digital contract signing into the vendor onboarding flow.</p>
     <img class="case-img" src="/images/projects/vendor-onboarding/vp-screens-8.jpg" alt="Digital contract signing screen">
   </section>
 
@@ -225,10 +235,10 @@
       <div class="case-stat-label">Productivity increase</div>
     </div>
     <ul class="case-list">
-      <li>Operations team involvement was significantly reduced.</li>
+      <li>The intervention of the Operations team was significantly reduced.</li>
       <li>Errors in documentation and critical data decreased.</li>
-      <li>Vendor onboarding times sped up.</li>
-      <li>The system was able to absorb a higher onboarding volume without increasing operational workload.</li>
+      <li>Vendor onboarding times were reduced.</li>
+      <li>The system was able to handle a higher onboarding volume without increasing the operational workload.</li>
     </ul>
     <p class="case-callout">👉 The Operations team stopped managing repetitive tasks and was able to focus on critical production situations.</p>
   </section>

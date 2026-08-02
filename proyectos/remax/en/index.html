@@ -12,7 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <link rel="stylesheet" href="/assets/style.css?v=33">
+  <link rel="stylesheet" href="/assets/style.css?v=35">
+  <script defer src="/assets/nav.js"></script>
 
 </head>
 <body>
@@ -28,36 +29,45 @@
         </div>
       </a>
       <div class="nav-right">
-        <a href="/proyectos/en/" class="btn btn-text btn-sm">
+        <div class="nav-links" id="nav-links">
+          <a href="/proyectos/en/" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Projects</span>
             <span class="btn-bot" aria-hidden="true">Projects</span>
           </span>
         </a>
-        <a href="/servicios/" class="btn btn-text btn-sm">
+          <a href="/servicios/en/" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Services</span>
             <span class="btn-bot" aria-hidden="true">Services</span>
           </span>
         </a>
-        <a href="/estilos.html" class="btn btn-text btn-sm">
+          <a href="/estilos.html" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Styles</span>
             <span class="btn-bot" aria-hidden="true">Styles</span>
           </span>
         </a>
-        <a href="/proyectos/remax/" class="btn btn-text btn-sm">
+          <a href="/proyectos/remax/" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">EN</span>
             <span class="btn-bot" aria-hidden="true">EN</span>
           </span>
         </a>
-        <a href="#" class="btn btn-primary btn-sm">
+        </div>
+        <div class="nav-actions">
+          <a href="#" class="btn btn-primary btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Download CV</span>
             <span class="btn-bot" aria-hidden="true">Download CV</span>
           </span>
         </a>
+          <button class="nav-burger" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+            <span class="nav-burger-bar"></span>
+            <span class="nav-burger-bar"></span>
+            <span class="nav-burger-bar"></span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -68,7 +78,7 @@
   <section class="case-hero">
     <img class="case-logo" src="/images/logos/logo-remax.svg" alt="RE/MAX">
     <h1>Lead management system</h1>
-    <p class="description">Redesign of RE/MAX Argentina's lead management process. From an email-based flow across 160+ offices to a centralized, traceable system.</p>
+    <p class="description">Redesign of RE/MAX Argentina's lead management process. From an email-based workflow across 160+ offices to a centralized system with traceability.</p>
   </section>
 
   <div class="case-cover-wrap">
@@ -87,7 +97,7 @@
       </div>
       <div>
         <span class="case-meta-label">Scope</span>
-        <span class="case-meta-val">Product design / UX Research</span>
+        <span class="case-meta-val">Product Design / UX Research</span>
       </div>
     </div>
   </div>
@@ -95,20 +105,20 @@
   <!-- ── CONTEXT ── -->
   <section class="case-section">
     <h2>Context</h2>
-    <p>RE/MAX Argentina received property inquiries through a web form that fed into a manual workflow across three groups: the central team, RE/MAX offices, and agents. Each lead moved through email, with no system providing visibility or continuity to the process.</p>
+    <p>RE/MAX Argentina received property inquiries through a web form that led to a manual workflow between three areas: the central team, RE/MAX offices, and agents. Each lead circulated by email, without a system to provide visibility or continuity across the process.</p>
   </section>
 
   <!-- ── THE CHALLENGE ── -->
   <section class="case-section">
     <h2>The challenge</h2>
-    <p>The challenge was to propose a flow within the existing system (Red RE/MAX) that could be adopted in stages, without forcing an overnight cultural change.</p>
-    <p>This required understanding how the three groups actually worked, identifying the real friction points, and designing a solution that supported the existing process while making it possible to organize and scale it.</p>
+    <p>The challenge was to propose a flow within the existing Red RE/MAX system that could be adopted in stages, without forcing a cultural change overnight.</p>
+    <p>To do this, it was necessary to understand how the three areas involved worked, identify the real points of friction, and design a solution that supported the existing process while also making it more organized and scalable.</p>
   </section>
 
   <!-- ── MY ROLE ── -->
   <section class="case-section">
     <h2>My role</h2>
-    <p>As part of the Kambrica team, my role combined research and product design. I conducted exploratory interviews with all three user profiles, led usability testing on the functional prototype, and translated the findings into the system's design decisions.</p>
+    <p>Within the Kambrica team, my role combined research and product design: I conducted exploratory interviews with the three user profiles, led usability testing sessions on the functional prototype, and translated the findings into the system design decisions.</p>
   </section>
 
   <!-- ── GOALS ── -->
@@ -116,33 +126,33 @@
     <h2>Goals</h2>
     <p class="case-subhead" style="margin-top:0;">Business goals</p>
     <ul class="case-list">
-      <li>Centralize lead management in a single platform (Red RE/MAX).</li>
-      <li>Provide traceability for the full cycle: Reception → Assignment → Acceptance → Contact → Conversion.</li>
-      <li>Lay the groundwork for future automatic assignment and for generating metrics to evaluate performance by office and by agent.</li>
+      <li>Centralize lead management within a single platform (Red RE/MAX).</li>
+      <li>Provide traceability across the full cycle: received → assigned → accepted → contacted → listed.</li>
+      <li>Lay the groundwork for future automated assignment and for metrics to evaluate performance by office and by agent.</li>
     </ul>
     <p class="case-subhead">Experience goals</p>
     <ul class="case-list">
-      <li>Reduce the manual coordination time between the central team and RE/MAX offices.</li>
+      <li>Reduce manual coordination time between the central team and RE/MAX offices.</li>
       <li>Give agents clarity on the expected actions at each step.</li>
-      <li>Establish a simple, scalable system that could accommodate new features without overwhelming agents.</li>
+      <li>Build a simple, scalable system that can accommodate new features without overwhelming agents.</li>
     </ul>
   </section>
 
   <!-- ── RESEARCH AND FINDINGS ── -->
   <section class="case-section">
-    <h2>Research and findings</h2>
-    <p>The process began with in-depth interviews across the three groups: agents, RE/MAX office managers, and the central team. The goal was to map the existing flow end to end and identify the real friction points.</p>
+    <h2>Research and insights</h2>
+    <p>The process began with in-depth interviews with the three areas involved: agents, office managers, and the central team. The goal was to map the existing flow end to end and identify the real points of friction.</p>
     <p class="case-subhead">Methodology</p>
     <ul class="case-list">
-      <li>I conducted exploratory interviews with teams from all three groups.</li>
-      <li>I mapped the complete flow, from inquiry to assignment.</li>
+      <li>I conducted exploratory interviews with the teams from the three areas involved.</li>
+      <li>I mapped the full flow alongside the team, from inquiry to assignment.</li>
       <li>I analyzed the parallel tools agents used outside the system.</li>
     </ul>
-    <p class="case-subhead">Key findings</p>
+    <p class="case-subhead">Main findings</p>
     <ul class="case-list">
-      <li>Agents only started using Red RE/MAX once a property had been secured. Everything before that lived in email and personal tools.</li>
-      <li>Office managers were explicitly resistant to automatic assignment: not all agents take on all properties, and "on-call" rotations have too many exceptions to automate easily.</li>
-      <li>Two of the five agents interviewed openly said they'd keep using their personal spreadsheets "just in case," even after the new system was in place.</li>
+      <li>Agents only used Red RE/MAX once a property had already been listed. The entire prior process lived in email and personal tools.</li>
+      <li>RE/MAX office managers showed explicit resistance to automatic assignment: not all agents take all properties, and agent duty rotations had too many exceptions to be easily automated.</li>
+      <li>Two of the five agents interviewed openly said they would keep using their personal spreadsheets "just in case," even with the new system implemented.</li>
     </ul>
     <img class="case-img" src="/images/projects/remax/Remax%20-%20Flow%20-%20ES.png" alt="Lead assignment process">
   </section>
@@ -152,8 +162,8 @@
   <!-- ── ROADMAP ── -->
   <section class="case-section">
     <h2>Roadmap</h2>
-    <p>Based on the findings, it was clear the solution couldn't be a fully automated system from day one. Office managers wouldn't accept it, agents wouldn't trust it, and the central team would risk a flawed rollout.</p>
-    <p>The decision was to design a system in four progressive stages, each one paving the way for the next. The scope of this stage was manual, but fully traceable, assignment.</p>
+    <p>Based on the findings, it became clear that the solution could not be a fully automated system. Office managers would not accept it, agents would not trust it, and the implementation of the process would be at risk.</p>
+    <p>The decision was to design the system in four progressive stages, each one laying the groundwork for the next. The scope of this stage was manual but traceable assignment.</p>
     <img class="case-img" src="/images/projects/remax/Gantt%20-%20ES.png" alt="Four-stage roadmap toward automation">
   </section>
 
@@ -162,21 +172,21 @@
   <!-- ── SOLUTION ── -->
   <section class="case-section">
     <h2>Solution</h2>
-    <p>I worked on designing a workflow integrated into the existing platform to centralize lead management, organized around three touchpoints:</p>
+    <p>I worked on the design of a workflow integrated into the existing platform to centralize lead management. The workflow was organized around three touchpoints:</p>
     <ul class="case-list">
       <li>The central team assigning leads to RE/MAX offices.</li>
-      <li>Office managers assigning leads to agents.</li>
+      <li>Office managers assigning leads to their agents.</li>
       <li>Agents accepting and managing the lead.</li>
     </ul>
     <p class="case-subhead">Key components</p>
     <ul class="case-list">
-      <li>A lead list with filters and prioritization. Leads show a visible countdown timer.</li>
-      <li>An assignment system for offices and agents.</li>
-      <li>Information to decide who to assign: distance to the lead, number of previous sends and rejections, and eventually a score (for future automation).</li>
-      <li>Clear process states (received, assigned, contacted, converted, rejected).</li>
-      <li>An activity log for full traceability.</li>
+      <li>Lead list with filters and prioritization. Leads have a visible time counter.</li>
+      <li>Assignment system for offices and agents.</li>
+      <li>Information to support assignment decisions: distance to the lead, number of previous assignments and rejections, and eventually a score. (Future automation)</li>
+      <li>Clear process states (received, assigned, contacted, listed, rejected)</li>
+      <li>Activity history for full traceability</li>
     </ul>
-    <p style="margin-top:28px;">This turned scattered manual coordination into a centralized flow, with full traceability and ready for future automation.</p>
+    <p style="margin-top:28px;">This transformed a scattered manual coordination process into a centralized, fully traceable flow, prepared for future automation.</p>
     <img class="case-img" src="/images/projects/remax/Remax%20-%20Platform.png" alt="Received leads list in the platform">
     <img class="case-img" src="/images/projects/remax/Remax%20-%20screens.png" alt="Lead assignment flow to offices and agents">
   </section>
@@ -186,19 +196,19 @@
   <!-- ── VALIDATION ── -->
   <section class="case-section">
     <h2>Validation</h2>
-    <p>I ran usability testing on the prototype with agents and office managers, covering different scenarios.</p>
+    <p>I conducted usability testing on the prototype with agents and RE/MAX office managers, covering different scenarios.</p>
     <p class="case-subhead">Usability results</p>
     <ul class="case-list">
       <li>All users operated the system without significant usability issues.</li>
-      <li>Points of confusion were resolved quickly and intuitively.</li>
-      <li>The process of rejecting/discarding a received lead was understood without friction.</li>
-      <li>The countdown timer was correctly interpreted as a signal of urgency and reassignment.</li>
+      <li>The points that raised questions were quickly and intuitively resolved.</li>
+      <li>The process for rejecting or discarding a received lead was understood without friction.</li>
+      <li>The time counter was correctly interpreted as a signal of urgency and reassignment.</li>
     </ul>
-    <p class="case-subhead">Identified opportunities for change</p>
+    <p class="case-subhead">Identified opportunities for improvement</p>
     <ul class="case-list">
-      <li>Client data was hidden until formal acceptance of the lead. Agents suggested calling before accepting.</li>
-      <li>Copy and label adjustments to bring clarity to each action.</li>
-      <li>New states (like "following up") were added, which agents explicitly requested.</li>
+      <li>Client data was hidden until formal lead acceptance. Agents suggested calling before accepting.</li>
+      <li>Copy and label adjustments to create clarity around each action.</li>
+      <li>New states were added (such as "in follow-up") that agents explicitly requested.</li>
     </ul>
     <img class="case-img" src="/images/projects/remax/Remax%20-%20Prototype.png" alt="Overview of the clickable Figma prototype">
   </section>
@@ -210,10 +220,10 @@
     <h2>Results</h2>
     <p>The project delivered a designed and validated system:</p>
     <ul class="case-list">
-      <li>The system organizes leads through clear process states (received, assigned, contacted, converted, rejected).</li>
-      <li>It enables assignment to offices and agents.</li>
-      <li>It prioritizes urgent inquiries.</li>
-      <li>It provides full traceability through the activity log.</li>
+      <li>The system organizes leads through clear process states (received, assigned, contacted, listed, rejected).</li>
+      <li>It allows assignment to offices and agents.</li>
+      <li>It prioritizes urgent leads.</li>
+      <li>It provides full traceability through activity history.</li>
     </ul>
     <img class="case-img" src="/images/projects/remax/handoff.png" alt="Handoff documentation for the lead management system">
   </section>

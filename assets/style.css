@@ -70,30 +70,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--black);
 }
 
-/* Hero title — Configuración tipográfica Framer */
-.hero-title {
-  font-family: var(--font-heading);
-  font-size: 72px;
-  font-weight: 600;
-  font-style: normal;
-  line-height: 1.1em;
-  letter-spacing: -0.04em;
-  text-align: center;
-  text-decoration: none;
-  text-transform: none;
-  color: var(--black);
-  font-feature-settings:
-    "cv11" 1,
-    "cv10" 1,
-    "cv05" 1,
-    "cv06" 1;
-  -webkit-font-feature-settings:
-    "cv11" 1,
-    "cv10" 1,
-    "cv05" 1,
-    "cv06" 1;
-}
-
 /* Headline 1 — unificado en todas las páginas (72px / line-height 90px) */
 h1 {
   font-size: clamp(38px, 6vw, 72px);
@@ -183,6 +159,46 @@ h2 {
   transition: opacity .15s;
 }
 .nav-lang:hover { opacity: .6; }
+
+/* .nav-links (Proyectos/Servicios/Estilos/idioma) y .nav-actions
+   (Descargar CV + botón hamburguesa) viven dentro de .nav-right.
+   En desktop se ven como una sola fila — igual que antes. En mobile
+   .nav-links se convierte en panel desplegable; .nav-actions queda
+   siempre visible. Ver @media (max-width: 720px) más abajo. */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  flex-shrink: 0;
+  transition: background .15s;
+}
+.nav-burger:hover { background: var(--gray-bg); }
+.nav-burger-bar {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  border-radius: 1px;
+  background: var(--black);
+  transition: transform .25s ease, opacity .2s ease;
+}
+.nav-burger[aria-expanded="true"] .nav-burger-bar:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-burger[aria-expanded="true"] .nav-burger-bar:nth-child(2) { opacity: 0; }
+.nav-burger[aria-expanded="true"] .nav-burger-bar:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
 /* ── BUTTONS ─────────────────────────────── */
 /* Sistema de botones: 2 estilos (primary/outline) × 2 tamaños (sm/lg) */
@@ -887,6 +903,27 @@ a.footer-field-val:hover { opacity: .75; }
   .case-meta          { gap: 28px; }
   .footer-top         { flex-direction: column; gap: 28px; }
   .footer-contacts    { flex-direction: column; gap: 24px; }
+
+  /* Nav mobile: Proyectos/Servicios/Estilos/idioma pasan a un panel
+     desplegable. Descargar CV y el botón hamburguesa quedan siempre
+     visibles en el header, fuera del panel. */
+  .nav-burger { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 12px 16px 20px;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-border);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+  }
+  .nav-links.is-open { display: flex; }
+  .nav-links .btn-text { width: 100%; justify-content: flex-start; }
 }
 
 @media (max-width: 480px) {

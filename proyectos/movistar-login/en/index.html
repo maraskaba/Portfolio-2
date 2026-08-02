@@ -4,15 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Unified sign-up &amp; login validation — Román Paparella</title>
-  <meta name="description" content="Product design project: Unified sign-up &amp; login validation, by Román Paparella.">
+  <title>Unified login and registration — Román Paparella</title>
+  <meta name="description" content="Product design project: Unified login and registration, by Román Paparella.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <link rel="stylesheet" href="/assets/style.css?v=33">
+  <link rel="stylesheet" href="/assets/style.css?v=35">
+  <script defer src="/assets/nav.js"></script>
 
 </head>
 <body>
@@ -28,36 +29,45 @@
         </div>
       </a>
       <div class="nav-right">
-        <a href="/proyectos/en/" class="btn btn-text btn-sm">
+        <div class="nav-links" id="nav-links">
+          <a href="/proyectos/en/" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Projects</span>
             <span class="btn-bot" aria-hidden="true">Projects</span>
           </span>
         </a>
-        <a href="/servicios/" class="btn btn-text btn-sm">
+          <a href="/servicios/en/" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Services</span>
             <span class="btn-bot" aria-hidden="true">Services</span>
           </span>
         </a>
-        <a href="/estilos.html" class="btn btn-text btn-sm">
+          <a href="/estilos.html" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Styles</span>
             <span class="btn-bot" aria-hidden="true">Styles</span>
           </span>
         </a>
-        <a href="/proyectos/movistar-login/" class="btn btn-text btn-sm">
+          <a href="/proyectos/movistar-login/" class="btn btn-text btn-sm">
           <span class="btn-inner">
             <span class="btn-top">EN</span>
             <span class="btn-bot" aria-hidden="true">EN</span>
           </span>
         </a>
-        <a href="#" class="btn btn-primary btn-sm">
+        </div>
+        <div class="nav-actions">
+          <a href="#" class="btn btn-primary btn-sm">
           <span class="btn-inner">
             <span class="btn-top">Download CV</span>
             <span class="btn-bot" aria-hidden="true">Download CV</span>
           </span>
         </a>
+          <button class="nav-burger" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+            <span class="nav-burger-bar"></span>
+            <span class="nav-burger-bar"></span>
+            <span class="nav-burger-bar"></span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -67,12 +77,12 @@
   <!-- ── CASE HERO ── -->
   <section class="case-hero">
     <img class="case-logo" src="/images/logos/logo-movistar.svg" alt="Movistar">
-    <h1>Unified sign-up &amp; login validation</h1>
-    <p class="description">We validated a unified login and sign-up flow to catch friction points before development.</p>
+    <h1>Unified login and registration</h1>
+    <p class="description">Validating a unified access flow before development through usability testing.</p>
   </section>
 
   <div class="case-cover-wrap">
-    <img class="case-img" style="margin-top:0;" src="/images/projects/movistar-login/cover.png" alt="Unified sign-up &amp; login validation">
+    <img class="case-img" style="margin-top:0;" src="/images/projects/movistar-login/cover.png" alt="Unified login and registration">
   </div>
 
   <div class="case-meta-wrap">
@@ -95,28 +105,28 @@
   <!-- ── CONTEXT ── -->
   <section class="case-section">
     <h2>Context</h2>
-    <p>Movistar wanted to unify the access experience for different types of users, products, and services within a single system.</p>
-    <p>The challenge was to validate an architecture capable of integrating different account types, products, and authentication methods within one flow, and to reduce friction before implementation.</p>
-    <p>I ran remote user sessions to validate a flow proposed by Movistar's UX team.</p>
+    <p>Movistar aimed to create a unified access experience across multiple user types, products and services.</p>
+    <p>The challenge was to validate an architecture capable of integrating different types of accounts, products, and authentication methods within the same flow and reducing friction before implementation.</p>
+    <p>I conducted remote user testing to validate a proposed flow from Movistar's UX team.</p>
   </section>
 
   <!-- ── THE PROBLEM ── -->
   <section class="case-section">
     <h2>The problem</h2>
-    <p>The project's complexity wasn't just in the screens, but in how users could understand the system's logic and the relationships between accounts, lines, products, and authentication methods.</p>
+    <p>The complexity of the project was not only in the screens, but in how users could understand the system logic and the relationships between accounts, lines, products, and authentication methods.</p>
     <p>The flow had to account for:</p>
     <ul class="case-list">
       <li>Individual and corporate users.</li>
-      <li>Mobile lines and home products (WiFi, TV).</li>
-      <li>First-party and third-party products.</li>
-      <li>Authentication via SMS, or username and password.</li>
-      <li>Multiple identity validation methods (KYC).</li>
-      <li>Accounts tied to a national ID (individuals) and a tax ID (companies).</li>
+      <li>mobile lines and home products (WiFi, TV).</li>
+      <li>own and third-party products.</li>
+      <li>SMS authentication, username and password.</li>
+      <li>multiple identity verification methods (KYC).</li>
+      <li>accounts associated with DNI (Individuals) and CUIT (Companies).</li>
     </ul>
-    <p style="margin-top:28px;">The main challenge was validating whether users understood:</p>
+    <p style="margin-top:28px;">The main challenge was to validate whether users understood:</p>
     <ul class="case-list">
       <li>How to access their services.</li>
-      <li>What they could manage within a single session.</li>
+      <li>What they could manage within the same session.</li>
       <li>How the associations between accounts, lines, and products worked.</li>
     </ul>
   </section>
@@ -125,7 +135,7 @@
   <section class="case-section">
     <h2>Methodology</h2>
     <p>18 moderated remote sessions with individual and corporate users to validate the proposal received from Movistar.</p>
-    <p>I took part in moderating sessions and analyzing insights with the team to identify friction points, validate flows, and surface opportunities for improvement.</p>
+    <p>I participated in moderating the sessions and analyzing findings to identify pain points, validate flows, and uncover improvement opportunities.</p>
     <img class="case-img" src="/images/projects/movistar-login/usuarios.png" alt="Participants of the research sessions">
   </section>
 
@@ -134,13 +144,13 @@
   <!-- ── FUNCTIONAL PROTOTYPE ── -->
   <section class="case-section">
     <h2>Functional prototype (HTML, PHP, JS)</h2>
-    <p>For this project I built a high-fidelity functional prototype based on Movistar's team designs. Given the complexity of the flows and the limitations of traditional prototyping tools, I built it in HTML, PHP, and JavaScript, capable of simulating conditions close to production.</p>
-    <p>Building the prototype itself also helped surface inconsistencies and opportunities for improvement in the flow documentation, significantly raising the quality of the insights gathered during testing.</p>
+    <p>For this project, I developed a high-fidelity functional prototype based on the Movistar team's designs. Due to the complexity of the flows and the limitations of traditional prototypes, I built it in HTML, PHP, and JavaScript, capable of replicating production-like conditions.</p>
+    <p>The prototype-building process itself also helped detect inconsistencies and opportunities to improve the flow documentation, significantly increasing the quality of the insights obtained during the tests.</p>
     <p style="margin-top:28px;">Unlike a traditional prototype, this environment made it possible to:</p>
     <ul class="case-list">
-      <li>Simulate real interactions: working form fields, states, validations, and errors.</li>
-      <li>Integrate real SMS: users received codes on their own devices.</li>
-      <li>Evaluate more realistic performance: load and response times similar to production.</li>
+      <li>Real interactions to be simulated: interaction with form fields, states, validations, and errors.</li>
+      <li>Real SMS to be integrated: users received codes on their own devices.</li>
+      <li>A more realistic performance to be evaluated: load and response times similar to production.</li>
     </ul>
   </section>
 
@@ -148,12 +158,12 @@
   <section class="case-section">
     <h2>Key findings</h2>
     <ul class="case-list">
-      <li>Many of the issues found weren't related to visual UI, but to mismatches between users' mental model and the system's logic.</li>
-      <li>Users didn't always understand when they should log in with their own data versus the service holder's data.</li>
-      <li>Users interpreted labels literally. "Add more lines" was understood only as adding mobile lines.</li>
-      <li>Most users logged in via SMS and avoided traditional username-and-password login.</li>
-      <li>Users tended to assume the system was failing when the flow didn't respond as expected.</li>
-      <li>The concept of "national ID, tax ID, or both" was ambiguous within users' mental model.</li>
+      <li>Many of the issues detected were not related to visual UI but to mismatches between users' mental models and the system logic.</li>
+      <li>Users did not always understand when they should log in with their own data and when with the service holder's data.</li>
+      <li>Users interpreted labels very literally. “Add more lines” was understood only as adding mobile lines.</li>
+      <li>The majority accessed via SMS and avoided the traditional login with username and password.</li>
+      <li>Users often assumed something had gone wrong when the flow behaved differently than expected.</li>
+      <li>The concept “DNI, CUIT or both” proved ambiguous within users' mental models.</li>
     </ul>
     <img class="case-img" src="/images/projects/movistar-login/03.png" alt="Finding: confusion over the national ID, tax ID, or both registration option">
     <img class="case-img" src="/images/projects/movistar-login/02.png" alt="Effectiveness and efficiency observations and insights">
@@ -167,9 +177,9 @@
     <h2>Results</h2>
     <p>The validation process made it possible to:</p>
     <ul class="case-list">
-      <li>Detect conceptual friction points before development.</li>
-      <li>Redefine labels and the service grouping logic.</li>
-      <li>Confirm SMS as the primary access method.</li>
+      <li>Detect conceptual friction before development.</li>
+      <li>Redefine labels and the logic for grouping services.</li>
+      <li>Confirmed SMS as the primary authentication method.</li>
       <li>Identify specific limitations in corporate flows.</li>
       <li>Improve feedback and operational clarity in critical scenarios.</li>
     </ul>
@@ -179,9 +189,9 @@
   <section class="case-section">
     <h2>Conclusions</h2>
     <ul class="case-list">
-      <li>Early validation made it possible to detect structural friction before implementation and to make product decisions backed by real user behavior.</li>
-      <li>Using a functional prototype was decisive: by replicating conditions close to production, users interacted with the system genuinely, significantly raising the quality of the findings obtained.</li>
-      <li>The study confirmed there was no need to rethink the overall architecture. The main improvements needed to focus on communication, feedback, and the visual clarity of the flows.</li>
+      <li>Early validation made it possible to detect structural friction before implementation and make product decisions backed by real user behavior.</li>
+      <li>The use of a functional prototype was decisive: by replicating conditions close to production, users interacted with the system genuinely and the quality of the findings obtained increased significantly.</li>
+      <li>The study confirmed that the overall architecture was solid and did not require structural redesign. The main improvements should focus on communication, feedback, and the visual clarity of the flows.</li>
     </ul>
     <img class="case-img" src="/images/projects/movistar-login/Movistar%20IDP%2001.png" alt="Research team working session">
   </section>
